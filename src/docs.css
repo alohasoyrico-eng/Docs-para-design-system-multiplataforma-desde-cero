@@ -1,0 +1,46 @@
+/* Docs chrome — app-level styling (not part of the design system packages). */
+.docs-root {
+  min-height: 100vh;
+  background: var(--sys-surface-canvas);
+  color: var(--sys-text-primary);
+  transition: background 200ms ease;
+}
+.docs-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 12px 24px;
+  background: var(--sys-surface-card);
+  border-bottom: var(--sys-border-width-thin) solid var(--sys-border-subtle);
+}
+.docs-spacer {
+  flex: 1 1 auto;
+}
+.docs-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 96px;
+}
+.docs-frame {
+  border: var(--sys-border-width-thin) solid var(--sys-border-default);
+  border-radius: var(--sys-radius-lg);
+  overflow: hidden;
+  max-height: 640px;
+}
+.docs-frame .flow-auth {
+  min-height: 560px;
+}
+.docs-frame--tall {
+  height: 640px;
+  resize: none;
+}
+.docs-frame--tall .fleet {
+  height: 100%;
+}
+.docs-frame--phone {
+  overflow-y: auto;
+  background: var(--sys-surface-canvas);
+}
+.docs-frame--phone .flow-wallet {
+  min-height: 100%;
+}
