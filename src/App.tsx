@@ -60,7 +60,7 @@ import {
   type TableColumn,
   type FleetUnit,
   type WalletTransaction,
-} from "@flow/design-system";
+} from "@flowds/design-system";
 
 const ONBOARDING_SLIDES = [
   {
