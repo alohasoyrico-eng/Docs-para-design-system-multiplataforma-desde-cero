@@ -1,0 +1,177 @@
+.radio-scenario {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(var(--doc-column-min), .65fr);
+  gap: var(--ref-frame-space-5);
+  align-items: stretch;
+}
+
+.radio-console {
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  padding: var(--ref-frame-space-5);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+.radio-console header {
+  display: flex;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+}
+
+.radio-console header small {
+  display: block;
+  color: var(--sys-energy-text-secondary);
+}
+
+.radio-stack {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+}
+
+.radio-demo {
+  --comp-radio-button-row-gap: var(--ref-frame-space-2);
+  --comp-radio-button-copy-gap: var(--ref-frame-space-1);
+  --comp-radio-button-label-color: var(--sys-energy-text-primary);
+  --comp-radio-button-label-size: var(--sys-voice-size-4);
+  --comp-radio-button-label-weight: var(--sys-voice-weight-bold);
+  --comp-radio-button-support-color: var(--sys-energy-text-secondary);
+  --comp-radio-button-support-size: var(--sys-voice-size-3);
+  --comp-radio-button-control-size: var(--sys-symbol-size-lg);
+  --comp-radio-button-dot-size: calc(var(--comp-radio-button-control-size) / 2);
+  --comp-radio-button-border-width: var(--sys-frame-border-medium);
+  --comp-radio-button-border: var(--sys-energy-border-default);
+  --comp-radio-button-border-hover: var(--sys-energy-border-strong);
+  --comp-radio-button-border-selected: var(--sys-energy-action-primary);
+  --comp-radio-button-bg: var(--sys-energy-surface-primary);
+  --comp-radio-button-dot-bg: var(--sys-energy-action-primary);
+  --comp-radio-button-focus-ring: var(--sys-state-focus-ring);
+  --comp-radio-button-focus-offset: var(--sys-state-focus-offset);
+  --comp-radio-button-error-color: var(--sys-energy-status-error);
+  --comp-radio-button-error-bg: color-mix(in srgb, color-mix(in srgb, var(--sys-energy-status-error) 12%, var(--sys-energy-surface-primary)) 24%, var(--sys-energy-surface-primary));
+  --comp-radio-button-disabled-opacity: var(--sys-state-disabled-opacity);
+  --comp-radio-button-transition: var(--sys-momentum-transition-touch);
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--comp-radio-button-row-gap);
+  align-items: start;
+  min-block-size: var(--density-control-height);
+  color: var(--comp-radio-button-label-color);
+  cursor: pointer;
+}
+
+.radio-demo__control {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: var(--comp-radio-button-control-size);
+  block-size: var(--comp-radio-button-control-size);
+  margin-block-start: calc(var(--density-control-padding-y) / 2);
+}
+
+.radio-demo input {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.radio-demo__circle {
+  display: inline-grid;
+  place-items: center;
+  inline-size: var(--comp-radio-button-control-size);
+  block-size: var(--comp-radio-button-control-size);
+  border: var(--comp-radio-button-border-width) solid var(--comp-radio-button-border);
+  border-radius: var(--ref-frame-radius-full);
+  background: var(--comp-radio-button-bg);
+  transition:
+    transform var(--comp-radio-button-transition),
+    border-color var(--comp-radio-button-transition),
+    background var(--comp-radio-button-transition),
+    box-shadow var(--comp-radio-button-transition);
+}
+
+.radio-demo__circle span {
+  display: block;
+  inline-size: var(--comp-radio-button-dot-size);
+  block-size: var(--comp-radio-button-dot-size);
+  border-radius: var(--ref-frame-radius-full);
+  background: var(--comp-radio-button-dot-bg);
+  transform: var(--component-transform-scale-none);
+  transition: transform var(--comp-radio-button-transition);
+}
+
+.radio-demo__copy {
+  display: grid;
+  gap: var(--comp-radio-button-copy-gap);
+  min-inline-size: 0;
+}
+
+.radio-demo__copy strong {
+  color: var(--comp-radio-button-label-color);
+  font-size: var(--comp-radio-button-label-size);
+  font-weight: var(--comp-radio-button-label-weight);
+  line-height: var(--sys-voice-line-height-tight);
+}
+
+.radio-demo__copy small {
+  display: inline-flex;
+  gap: var(--ref-frame-space-1);
+  align-items: center;
+  color: var(--comp-radio-button-support-color);
+  font-size: var(--comp-radio-button-support-size);
+  line-height: var(--sys-voice-line-height-normal);
+}
+
+.radio-demo:hover .radio-demo__circle {
+  border-color: var(--comp-radio-button-border-hover);
+  transform: scale(var(--sys-momentum-scale-hover));
+}
+
+.radio-demo:active .radio-demo__circle {
+  transform: scale(var(--sys-momentum-scale-press));
+}
+
+.radio-demo[data-checked="true"] .radio-demo__circle {
+  border-color: var(--comp-radio-button-border-selected);
+}
+
+.radio-demo[data-checked="true"] .radio-demo__circle span {
+  transform: var(--component-transform-scale-rest);
+}
+
+.radio-demo[data-state="focus"] .radio-demo__circle,
+.radio-demo:focus-within .radio-demo__circle {
+  border-color: var(--comp-radio-button-border-selected);
+  outline: var(--comp-radio-button-focus-ring);
+  outline-offset: var(--comp-radio-button-focus-offset);
+}
+
+.radio-demo[data-state="error"] .radio-demo__circle {
+  border-color: var(--comp-radio-button-error-color);
+  background: var(--comp-radio-button-error-bg);
+}
+
+.radio-demo[data-state="error"] .radio-demo__copy small {
+  color: var(--comp-radio-button-error-color);
+}
+
+.radio-demo[data-state="disabled"] {
+  cursor: not-allowed;
+  opacity: var(--comp-radio-button-disabled-opacity);
+}
+
+.radio-demo[data-state="disabled"] .radio-demo__circle {
+  background: var(--sys-energy-surface-secondary);
+}
+
+@media (max-width: 52rem) {
+  .radio-scenario {
+    grid-template-columns: 1fr;
+  }
+}

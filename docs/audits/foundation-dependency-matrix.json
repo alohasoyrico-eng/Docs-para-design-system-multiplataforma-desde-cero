@@ -1,0 +1,400 @@
+{
+  "schemaVersion": "1.0.0",
+  "principle": "Foundations compose through explicit dependency edges. Package-owned foundations may depend on another foundation only when the dependency is listed here and backed by token evidence.",
+  "activeFoundations": [
+    "Energy",
+    "Voice",
+    "Frame",
+    "State",
+    "Momentum",
+    "Depth",
+    "Tone",
+    "Accessibility",
+    "Symbol",
+    "Iconography",
+    "Growth"
+  ],
+  "contextFoundations": [
+    "Density"
+  ],
+  "pendingFoundations": [],
+  "cssAliases": {
+    "Accessibility": "a11y"
+  },
+  "dependencies": [
+    {
+      "from": "State",
+      "to": "Energy",
+      "reason": "Interaction state uses Energy action semantics for focus, hover, pressed, and selected surfaces.",
+      "evidence": [
+        {
+          "token": "--sys-state-focus-ring",
+          "uses": "--sys-energy-action-primary"
+        },
+        {
+          "token": "--sys-state-hover-overlay",
+          "uses": "--sys-energy-action-primary"
+        },
+        {
+          "token": "--sys-state-pressed-overlay",
+          "uses": "--sys-energy-action-primary"
+        },
+        {
+          "token": "--sys-state-selected-overlay",
+          "uses": "--sys-energy-action-primary"
+        }
+      ]
+    },
+    {
+      "from": "State",
+      "to": "Frame",
+      "reason": "Interaction state uses Frame geometry for focus offset so focus does not invent its own spacing.",
+      "evidence": [
+        {
+          "token": "--ref-state-focus-ring-offset",
+          "uses": "--ref-frame-border-indicator"
+        }
+      ]
+    },
+    {
+      "from": "Accessibility",
+      "to": "State",
+      "reason": "Accessible focus delegates visual focus geometry to State so focus is consistent across components.",
+      "evidence": [
+        {
+          "token": "--sys-a11y-focus-ring",
+          "uses": "--sys-state-focus-ring"
+        },
+        {
+          "token": "--sys-a11y-focus-offset",
+          "uses": "--sys-state-focus-offset"
+        }
+      ]
+    },
+    {
+      "from": "Accessibility",
+      "to": "Momentum",
+      "reason": "Accessible motion duration delegates to Momentum so reduced-motion and timing rules share one source.",
+      "evidence": [
+        {
+          "token": "--sys-a11y-motion-duration",
+          "uses": "--sys-momentum-duration-default"
+        }
+      ]
+    },
+    {
+      "from": "Accessibility",
+      "to": "Voice",
+      "reason": "Accessible readability delegates line-height to Voice so dense labels, helpers, and recovery copy do not create a parallel type rhythm.",
+      "evidence": [
+        {
+          "token": "--sys-a11y-readable-line-height",
+          "uses": "--sys-voice-line-height-body"
+        }
+      ]
+    },
+    {
+      "from": "Accessibility",
+      "to": "Frame",
+      "reason": "Accessible target size composes the minimum touch target with Frame control height so density cannot shrink interaction below usable geometry.",
+      "evidence": [
+        {
+          "token": "--sys-a11y-touch-target-min",
+          "uses": "--sys-frame-height-control-sm"
+        }
+      ]
+    },
+    {
+      "from": "Accessibility",
+      "to": "Energy",
+      "reason": "Accessible contrast uses Energy text and surface semantics instead of inventing contrast-only colors.",
+      "evidence": [
+        {
+          "token": "--sys-a11y-contrast-text",
+          "uses": "--sys-energy-text-primary"
+        },
+        {
+          "token": "--sys-a11y-contrast-surface",
+          "uses": "--sys-energy-surface-primary"
+        }
+      ]
+    },
+    {
+      "from": "Accessibility",
+      "to": "Depth",
+      "reason": "Accessible overlays use Depth elevation to preserve separation and reading order without local shadow recipes.",
+      "evidence": [
+        {
+          "token": "--sys-a11y-overlay-depth",
+          "uses": "--sys-depth-elevation-2"
+        }
+      ]
+    },
+    {
+      "from": "Tone",
+      "to": "Voice",
+      "reason": "Tone weight uses Voice weights instead of defining a separate type scale.",
+      "evidence": [
+        {
+          "token": "--ref-tone-weight-neutral",
+          "uses": "--ref-voice-weight-regular"
+        },
+        {
+          "token": "--ref-tone-weight-assistive",
+          "uses": "--ref-voice-weight-medium"
+        },
+        {
+          "token": "--ref-tone-weight-urgent",
+          "uses": "--ref-voice-weight-bold"
+        },
+        {
+          "token": "--ref-tone-weight-repair",
+          "uses": "--ref-voice-weight-bold"
+        }
+      ]
+    },
+    {
+      "from": "Tone",
+      "to": "Energy",
+      "reason": "Tone color maps semantic language to Energy color decisions.",
+      "evidence": [
+        {
+          "token": "--sys-tone-neutral-color",
+          "uses": "--sys-energy-text-secondary"
+        },
+        {
+          "token": "--sys-tone-assistive-color",
+          "uses": "--sys-energy-action-primary"
+        },
+        {
+          "token": "--sys-tone-urgent-color",
+          "uses": "--sys-energy-status-warning-foreground"
+        },
+        {
+          "token": "--sys-tone-repair-color",
+          "uses": "--sys-energy-status-error"
+        },
+        {
+          "token": "--sys-tone-confirm-color",
+          "uses": "--sys-energy-status-success"
+        }
+      ]
+    },
+    {
+      "from": "Depth",
+      "to": "Energy",
+      "reason": "Overlay depth uses Energy neutral contrast instead of a separate overlay palette.",
+      "evidence": [
+        {
+          "token": "--ref-depth-overlay-light",
+          "uses": "--ref-energy-neutral-900"
+        },
+        {
+          "token": "--ref-depth-overlay-dark",
+          "uses": "--ref-energy-neutral-900"
+        }
+      ]
+    },
+    {
+      "from": "Depth",
+      "to": "Frame",
+      "reason": "Depth lift distances use Frame geometry so motion/depth offsets scale with the frame system.",
+      "evidence": [
+        {
+          "token": "--sys-depth-lift-subtle",
+          "uses": "--ref-frame-border-thin"
+        },
+        {
+          "token": "--sys-depth-lift-rest",
+          "uses": "--ref-frame-space-micro"
+        },
+        {
+          "token": "--sys-depth-lift-raised",
+          "uses": "--ref-frame-space-3"
+        },
+        {
+          "token": "--sys-depth-lift-overlay",
+          "uses": "--ref-frame-space-5"
+        }
+      ]
+    },
+    {
+      "from": "Frame",
+      "to": "Density",
+      "status": "context",
+      "reason": "Frame runtime geometry delegates control size, padding, and gaps to the viewport/density context.",
+      "evidence": [
+        {
+          "token": "--sys-frame-height-control-md",
+          "uses": "--density-control-height"
+        },
+        {
+          "token": "--sys-frame-padding-control",
+          "uses": "--density-control-padding-x"
+        },
+        {
+          "token": "--sys-frame-gap-component",
+          "uses": "--density-component-gap"
+        }
+      ]
+    },
+    {
+      "from": "Density",
+      "to": "Frame",
+      "status": "context",
+      "reason": "Density profiles are composed from Frame spacing and control-height primitives, then feed Frame runtime aliases back into components.",
+      "evidence": [
+        {
+          "token": "--density-control-height",
+          "uses": "--ref-frame-height-control-md"
+        },
+        {
+          "token": "--density-control-padding-x",
+          "uses": "--ref-frame-space-5"
+        },
+        {
+          "token": "--density-panel-padding",
+          "uses": "--ref-frame-space-6"
+        },
+        {
+          "token": "--density-card-padding",
+          "uses": "--ref-frame-space-6"
+        },
+        {
+          "token": "--density-section-gap",
+          "uses": "--ref-frame-space-16"
+        }
+      ]
+    },
+    {
+      "from": "Density",
+      "to": "Voice",
+      "status": "context",
+      "reason": "Density profiles tune documentation and demo typography through Voice sizes and line-height tokens.",
+      "evidence": [
+        {
+          "token": "--density-doc-heading-size",
+          "uses": "--ref-voice-size-10"
+        },
+        {
+          "token": "--density-doc-subheading-size",
+          "uses": "--ref-voice-size-9"
+        },
+        {
+          "token": "--density-doc-heading-line-height",
+          "uses": "--ref-voice-line-height-tight"
+        },
+        {
+          "token": "--density-doc-body-size",
+          "uses": "--ref-voice-size-6"
+        },
+        {
+          "token": "--density-doc-body-line-height",
+          "uses": "--ref-voice-line-height-relaxed"
+        }
+      ]
+    },
+    {
+      "from": "Growth",
+      "to": "Energy",
+      "reason": "Growth stage colors delegate to Energy so maturity states do not introduce a separate status palette.",
+      "evidence": [
+        {
+          "token": "--sys-growth-stage-seed-color",
+          "uses": "--sys-energy-action-primary"
+        },
+        {
+          "token": "--sys-growth-stage-stable-color",
+          "uses": "--sys-energy-status-success"
+        },
+        {
+          "token": "--sys-growth-stage-measured-color",
+          "uses": "--sys-energy-status-info"
+        },
+        {
+          "token": "--sys-growth-stage-deprecated-color",
+          "uses": "--sys-energy-status-error"
+        }
+      ]
+    },
+    {
+      "from": "Growth",
+      "to": "Voice",
+      "reason": "Growth event notation delegates to Voice mono typography for traceable audit/event strings.",
+      "evidence": [
+        {
+          "token": "--sys-growth-event-font",
+          "uses": "--ref-voice-family-mono"
+        }
+      ]
+    },
+    {
+      "from": "Iconography",
+      "to": "Symbol",
+      "reason": "Iconography maps functional glyph family, size, and semantic color roles to Symbol so icons do not create a parallel visual language.",
+      "evidence": [
+        {
+          "token": "--sys-iconography-family",
+          "uses": "--sys-symbol-family"
+        },
+        {
+          "token": "--sys-iconography-size-md",
+          "uses": "--sys-symbol-size-md"
+        },
+        {
+          "token": "--sys-iconography-color-action",
+          "uses": "--sys-symbol-color-action"
+        },
+        {
+          "token": "--sys-iconography-color-muted",
+          "uses": "--sys-symbol-color-muted"
+        }
+      ]
+    },
+    {
+      "from": "Iconography",
+      "to": "Accessibility",
+      "reason": "Iconography exposes target and focus aliases through Accessibility; naming policy stays in docs/specs, while measurable affordance tokens are package-owned.",
+      "evidence": [
+        {
+          "token": "--sys-iconography-touch-target-min",
+          "uses": "--sys-a11y-touch-target-min"
+        },
+        {
+          "token": "--sys-iconography-focus-ring",
+          "uses": "--sys-a11y-focus-ring"
+        },
+        {
+          "token": "--sys-iconography-focus-offset",
+          "uses": "--sys-a11y-focus-offset"
+        }
+      ]
+    },
+    {
+      "from": "Iconography",
+      "to": "Energy",
+      "reason": "Iconography uses Energy for disabled glyph availability without changing Symbol color roles.",
+      "evidence": [
+        {
+          "token": "--sys-iconography-color-disabled",
+          "uses": "--sys-energy-text-tertiary"
+        }
+      ]
+    },
+    {
+      "from": "Symbol",
+      "to": "Energy",
+      "reason": "Symbol color roles delegate to Energy so symbolic states do not create a separate color system.",
+      "evidence": [
+        {
+          "token": "--sys-symbol-color-action",
+          "uses": "--sys-energy-action-primary"
+        },
+        {
+          "token": "--sys-symbol-color-muted",
+          "uses": "--sys-energy-text-tertiary"
+        }
+      ]
+    }
+  ]
+}

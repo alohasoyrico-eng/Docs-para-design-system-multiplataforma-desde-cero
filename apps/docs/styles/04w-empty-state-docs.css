@@ -1,0 +1,71 @@
+:is(.detail-page, .reference-doc) {
+  --comp-empty-state-padding-y: var(--ref-frame-space-8);
+  --comp-empty-state-padding-x: var(--ref-frame-space-6);
+  --comp-empty-state-gap: var(--ref-frame-space-2);
+  --comp-empty-state-icon-size: var(--sys-frame-height-control-lg);
+  --comp-empty-state-icon-bg: var(--sys-energy-surface-secondary);
+  --comp-empty-state-icon-text: var(--sys-energy-text-secondary);
+  --comp-empty-state-title: var(--sys-energy-text-primary);
+  --comp-empty-state-description: var(--sys-energy-text-secondary);
+  --comp-empty-state-action-bg: var(--sys-energy-action-primary);
+  --comp-empty-state-action-text: var(--sys-energy-text-on-action);
+  --comp-empty-state-radius: var(--sys-frame-radius-container);
+  --comp-empty-state-focus-ring: var(--sys-a11y-focus-ring);
+}
+
+.empty-state-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--comp-empty-state-gap);
+  inline-size: min(100%, var(--sys-frame-doc-device-min-block));
+  min-block-size: var(--sys-frame-doc-panel-min-sm);
+  padding: var(--comp-empty-state-padding-y) var(--comp-empty-state-padding-x);
+  border-radius: var(--comp-empty-state-radius);
+  background: var(--sys-energy-surface-primary);
+  color: var(--comp-empty-state-description);
+  text-align: center;
+}
+
+.empty-state-demo__icon {
+  display: inline-grid;
+  place-items: center;
+  inline-size: var(--comp-empty-state-icon-size);
+  block-size: var(--comp-empty-state-icon-size);
+  margin-block-end: var(--ref-frame-space-1);
+  border-radius: var(--sys-frame-radius-full);
+  background: var(--comp-empty-state-icon-bg);
+  color: var(--comp-empty-state-icon-text);
+}
+
+.empty-state-demo strong {
+  color: var(--comp-empty-state-title);
+  font-size: var(--sys-voice-size-5);
+  line-height: var(--sys-voice-line-height-tight);
+}
+
+.empty-state-demo p {
+  max-inline-size: var(--sys-frame-content-search-results-max-block);
+  margin: 0;
+  color: var(--comp-empty-state-description);
+  font-size: var(--sys-voice-size-3);
+  line-height: var(--sys-voice-line-height-normal);
+}
+
+.empty-state-demo__action {
+  min-block-size: var(--sys-frame-height-control-sm);
+  margin-block-start: var(--ref-frame-space-3);
+  padding: 0 var(--ref-frame-space-4);
+  border: 0;
+  border-radius: var(--sys-frame-radius-control);
+  background: var(--comp-empty-state-action-bg);
+  color: var(--comp-empty-state-action-text);
+  font: inherit;
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.empty-state-demo__action:focus-visible {
+  outline: var(--comp-empty-state-focus-ring);
+  outline-offset: var(--sys-a11y-focus-offset);
+}

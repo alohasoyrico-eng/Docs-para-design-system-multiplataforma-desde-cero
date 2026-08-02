@@ -1,0 +1,154 @@
+.simple-scenario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: var(--density-component-gap-lg, var(--sys-frame-gap-component-lg));
+  min-inline-size: 0;
+  margin-block-start: var(--sys-frame-gap-component-lg);
+}
+
+.simple-console {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+  align-content: start;
+  min-inline-size: 0;
+  padding: var(--density-card-padding, var(--sys-frame-padding-container));
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+  box-shadow: none;
+  transition:
+    border-color var(--sys-momentum-transition-fast),
+    box-shadow var(--sys-momentum-transition-fast),
+    transform var(--sys-momentum-transition-fast);
+}
+
+.simple-console:focus-within,
+.simple-console:hover {
+  border-color: color-mix(in srgb, var(--sys-energy-action-primary) 20%, var(--sys-energy-border-default));
+  box-shadow: var(--sys-depth-elevation-1);
+  transform: translateY(var(--sys-depth-lift-subtle));
+}
+
+.simple-console > header {
+  display: flex;
+  align-items: center;
+  gap: var(--sys-frame-gap-component);
+}
+
+.simple-console > header div {
+  display: grid;
+  gap: var(--ref-frame-space-1);
+  min-inline-size: 0;
+}
+
+.simple-console > header strong,
+.simple-console > header small {
+  display: block;
+}
+
+.simple-console > header > .material-symbol {
+  display: grid;
+  place-items: center;
+  inline-size: var(--sys-frame-doc-icon-lg);
+  block-size: var(--sys-frame-doc-icon-lg);
+  border-radius: var(--ref-frame-radius-full);
+  background: var(--sys-energy-surface-accent);
+  color: var(--sys-energy-action-primary);
+}
+
+.simple-console small {
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--sys-voice-size-3);
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.component-decision-panel dl {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+  margin: 0;
+}
+
+.component-decision-panel div {
+  display: grid;
+  gap: var(--ref-frame-space-1);
+  padding-block-start: var(--ref-frame-space-3);
+  border-block-start: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+}
+
+.component-decision-panel dt {
+  color: var(--sys-energy-text-primary);
+  font-size: var(--sys-voice-size-3);
+  font-weight: var(--sys-voice-weight-black);
+  line-height: var(--sys-voice-line-height-tight);
+}
+
+.component-decision-panel dd {
+  margin: 0;
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--sys-voice-size-3);
+  line-height: var(--sys-voice-line-height-dense);
+}
+
+.simple-demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sys-frame-gap-component);
+  min-inline-size: 0;
+}
+
+.docs-package-demo[data-full-width="true"] {
+  inline-size: 100%;
+  max-inline-size: 100%;
+}
+
+.docs-demo-layout--popover.simple-demo-row {
+  align-items: flex-start;
+}
+
+.docs-demo-layout--popover .popover.docs-package-demo[data-open="true"] .popover__panel {
+  inset: auto;
+  margin-block-start: var(--popover-panel-offset);
+  position: relative;
+}
+
+.fab.docs-package-demo[data-full-width="true"] {
+  inline-size: auto;
+  max-inline-size: none;
+}
+
+.simple-viewport-demo {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--ref-frame-space-2);
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: auto;
+  margin-block-start: var(--sys-frame-gap-component);
+  padding: var(--ref-frame-space-3);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .simple-console {
+    transform: var(--component-transform-none);
+  }
+}
+
+@media (max-width: 767px) {
+  .simple-scenario {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  :is(.detail-page, .reference-doc) .simple-scenario {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--density-component-gap);
+  }
+}

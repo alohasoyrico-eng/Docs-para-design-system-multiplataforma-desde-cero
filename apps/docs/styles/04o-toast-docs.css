@@ -1,0 +1,32 @@
+/* Toast visuals are package-owned. Docs only provide placement regions below. */
+
+.toast-full-width-demo {
+  grid-template-columns: 1fr;
+}
+
+.toast-full-width-demo article {
+  inline-size: 100%;
+}
+
+.toast-region-demo {
+  display: flex;
+  inline-size: 100%;
+  min-block-size: var(--density-doc-card-min-block);
+  align-items: center;
+  justify-content: flex-end;
+  margin-block-start: var(--ref-frame-space-3);
+  padding: var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) dashed var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--sys-energy-action-primary) 6%, transparent), transparent 46%),
+    var(--sys-energy-surface-secondary);
+}
+
+.toast-region-demo[data-toast-align="start"] {
+  justify-content: flex-start;
+}
+
+.toast-region-demo[data-toast-align="center"] {
+  justify-content: center;
+}

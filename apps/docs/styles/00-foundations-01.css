@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Edenred";
+  src:
+    local("Edenred"),
+    local("Edenred Display");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Edenred";
+  src:
+    local("Edenred Black"),
+    local("Edenred Display Black"),
+    local("Edenred-Black");
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Material Symbols Rounded";
+  src: local("Material Symbols Rounded");
+  font-display: block;
+}

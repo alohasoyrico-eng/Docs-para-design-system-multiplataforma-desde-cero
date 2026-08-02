@@ -1,0 +1,284 @@
+.select-scenario {
+  display: grid;
+  grid-template-columns: minmax(var(--sys-frame-content-search-min), 1fr) minmax(var(--sys-frame-content-menu-min), 0.8fr);
+  gap: var(--sys-frame-gap-component-lg);
+  margin-block-start: var(--sys-frame-gap-component-lg);
+}
+
+.filter-console {
+  display: grid;
+  gap: var(--sys-frame-gap-component-lg);
+  padding: var(--sys-frame-padding-container);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.filter-console header {
+  display: flex;
+  gap: var(--sys-frame-gap-component);
+  align-items: center;
+}
+
+.filter-console header > span {
+  display: grid;
+  place-items: center;
+  inline-size: var(--sys-frame-doc-icon-md);
+  block-size: var(--sys-frame-doc-icon-md);
+  border-radius: var(--ref-frame-radius-full);
+  background: var(--sys-energy-surface-accent);
+  color: var(--sys-energy-action-primary);
+}
+
+.filter-console small {
+  display: block;
+  color: var(--sys-energy-text-secondary);
+}
+
+.select-stack {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+}
+
+.select-density-scale {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+}
+
+.select-density-scale > div {
+  display: grid;
+  gap: var(--ref-frame-space-2);
+}
+
+.select-density-scale > div::before {
+  content: attr(data-density-label);
+  justify-self: start;
+  padding: var(--ref-frame-space-1) var(--ref-frame-space-2);
+  border-radius: var(--sys-frame-radius-full);
+  background: var(--sys-energy-surface-primary);
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--sys-voice-size-caption);
+  font-weight: var(--sys-voice-weight-bold);
+  text-transform: uppercase;
+}
+
+.select {
+  --comp-select-gap: var(--ref-frame-space-1);
+  --comp-select-label-color: var(--sys-energy-text-primary);
+  --comp-select-label-size: var(--sys-voice-size-3);
+  --comp-select-label-weight: var(--sys-voice-weight-bold);
+  --comp-select-helper-color: var(--sys-energy-text-secondary);
+  --comp-select-helper-size: var(--sys-voice-size-3);
+  --comp-select-control-gap: var(--sys-frame-gap-component);
+  --comp-select-control-height: var(--density-control-height);
+  --comp-select-control-padding-block: var(--density-control-padding-y);
+  --comp-select-control-padding-inline: var(--density-control-padding-x);
+  --comp-select-control-border-width: var(--sys-frame-border-thin);
+  --comp-select-control-border: var(--sys-energy-border-default);
+  --comp-select-control-radius: var(--ref-frame-radius-5);
+  --comp-select-control-bg: var(--sys-energy-surface-primary);
+  --comp-select-control-text: var(--sys-energy-text-primary);
+  --comp-select-control-weight: var(--sys-voice-weight-bold);
+  --comp-select-control-font-size: var(--sys-voice-size-label);
+  --comp-select-focus-border: var(--sys-energy-action-primary);
+  --comp-select-focus-ring: var(--sys-state-focus-ring);
+  --comp-select-focus-offset: var(--sys-state-focus-offset);
+  --comp-select-rest-shadow: var(--sys-depth-elevation-1);
+  --comp-select-hover-shadow: var(--sys-depth-elevation-2);
+  --comp-select-open-shadow: var(--sys-depth-elevation-3), 0 0 0 var(--ref-frame-space-1) color-mix(in srgb, var(--sys-energy-action-primary) 14%, transparent);
+  --comp-select-hover-lift: var(--sys-momentum-lift-hover);
+  --comp-select-error-border: var(--sys-energy-status-error);
+  --comp-select-error-bg: color-mix(in srgb, color-mix(in srgb, var(--sys-energy-status-error) 12%, var(--sys-energy-surface-primary)) 38%, var(--sys-energy-surface-primary));
+  --comp-select-disabled-opacity: var(--sys-state-disabled-opacity);
+  --comp-select-menu-offset: var(--ref-frame-space-micro);
+  --comp-select-menu-z-index: var(--sys-depth-z-dropdown);
+  --comp-select-menu-gap: var(--ref-frame-space-1);
+  --comp-select-menu-padding: var(--ref-frame-space-2);
+  --comp-select-menu-border: var(--sys-energy-border-strong);
+  --comp-select-menu-radius: var(--ref-frame-radius-5);
+  --comp-select-menu-bg: var(--sys-energy-surface-primary);
+  --comp-select-menu-shadow: var(--sys-depth-elevation-3);
+  --comp-select-option-gap: var(--ref-frame-space-2);
+  --comp-select-option-height: var(--density-row-height);
+  --comp-select-option-padding: var(--density-control-padding-y);
+  --comp-select-option-radius: var(--ref-frame-radius-4);
+  --comp-select-option-hover-bg: var(--sys-energy-surface-accent);
+  --comp-select-option-selected-bg: color-mix(in srgb, var(--sys-energy-action-primary) 12%, var(--sys-energy-surface-secondary));
+  --comp-select-icon-color: var(--sys-energy-action-primary);
+  display: grid;
+  gap: var(--comp-select-gap);
+  inline-size: 100%;
+  position: relative;
+}
+
+.select label {
+  color: var(--comp-select-label-color);
+  font-size: var(--comp-select-label-size);
+  font-weight: var(--comp-select-label-weight);
+}
+
+.select > button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--comp-select-control-gap);
+  inline-size: 100%;
+  min-block-size: var(--comp-select-control-height);
+  padding: var(--comp-select-control-padding-block) var(--comp-select-control-padding-inline);
+  border: var(--comp-select-control-border-width) solid var(--comp-select-control-border);
+  border-radius: var(--comp-select-control-radius);
+  background: var(--comp-select-control-bg);
+  color: var(--comp-select-control-text);
+  font-size: var(--comp-select-control-font-size);
+  font-weight: var(--comp-select-control-weight);
+  text-align: left;
+  box-shadow: var(--comp-select-rest-shadow);
+  cursor: pointer;
+  transition:
+    transform var(--sys-momentum-transition-touch),
+    border-color var(--sys-momentum-transition-touch),
+    box-shadow var(--sys-momentum-transition-touch),
+    background var(--sys-momentum-transition-touch);
+}
+
+.select > button:hover {
+  transform: translateY(var(--comp-select-hover-lift));
+  border-color: var(--sys-energy-border-strong);
+  box-shadow: var(--comp-select-hover-shadow);
+}
+
+.select > button:active {
+  transform: scale(var(--sys-momentum-scale-press));
+}
+
+.select > button .material-symbol:last-child {
+  transition: transform var(--sys-momentum-transition-touch);
+}
+
+.select small {
+  color: var(--comp-select-helper-color);
+  font-size: var(--comp-select-helper-size);
+}
+
+.select.is-open > button {
+  border-color: var(--comp-select-focus-border);
+  box-shadow: var(--comp-select-open-shadow);
+}
+
+.select.is-focus > button {
+  outline: var(--comp-select-focus-ring);
+  outline-offset: var(--comp-select-focus-offset);
+}
+
+.select.is-error > button {
+  border-color: var(--comp-select-error-border);
+  background: var(--comp-select-error-bg);
+}
+
+.select.is-disabled {
+  opacity: var(--comp-select-disabled-opacity);
+}
+
+.select-menu {
+  position: absolute;
+  inset-block-start: calc(100% - var(--comp-select-menu-offset));
+  inset-inline: 0;
+  z-index: var(--comp-select-menu-z-index);
+  display: grid;
+  gap: var(--comp-select-menu-gap);
+  padding: var(--comp-select-menu-padding);
+  border: var(--comp-select-control-border-width) solid var(--comp-select-menu-border);
+  border-radius: var(--comp-select-menu-radius);
+  background: var(--comp-select-menu-bg);
+  box-shadow: var(--comp-select-menu-shadow);
+  animation: card-in var(--sys-momentum-duration-touch) var(--sys-momentum-easing-enter);
+}
+
+.select-menu[hidden] {
+  display: none;
+}
+
+.select-menu button {
+  display: flex;
+  align-items: center;
+  gap: var(--comp-select-option-gap);
+  inline-size: 100%;
+  min-block-size: var(--comp-select-option-height);
+  padding: var(--comp-select-option-padding);
+  border: 0;
+  border-radius: var(--comp-select-option-radius);
+  background: transparent;
+  color: var(--comp-select-control-text);
+  text-align: left;
+  transition:
+    transform var(--sys-momentum-transition-touch),
+    background var(--sys-momentum-transition-touch),
+    color var(--sys-momentum-transition-touch);
+}
+
+.select-menu button:hover,
+.select-menu button:focus-visible {
+  background: var(--comp-select-option-hover-bg);
+  outline: none;
+  transform: translateX(var(--ref-frame-space-micro));
+}
+
+.select-menu button[aria-selected="true"] {
+  background: var(--comp-select-option-selected-bg);
+}
+
+.select-menu button > .material-symbol {
+  flex: 0 0 auto;
+  color: var(--comp-select-icon-color);
+}
+
+.select-menu button span {
+  display: grid;
+  gap: var(--ref-frame-space-micro);
+}
+
+.select-menu button strong {
+  font-size: var(--sys-voice-size-3);
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.select-menu button small {
+  color: var(--comp-select-helper-color);
+  font-size: var(--sys-voice-size-2);
+}
+
+.select-menu-demo {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.75fr) minmax(18rem, 1fr);
+  gap: var(--sys-frame-gap-component-lg);
+  align-items: start;
+  margin-block-start: var(--sys-frame-gap-component-lg);
+}
+
+.select-menu-panel {
+  display: grid;
+  gap: var(--ref-frame-space-2);
+  padding: var(--sys-frame-padding-container);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-strong);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+  box-shadow: var(--sys-depth-elevation-3);
+}
+
+.select-menu-panel div {
+  display: flex;
+  gap: var(--ref-frame-space-3);
+  align-items: center;
+  min-block-size: var(--sys-frame-height-control-sm);
+  padding: var(--ref-frame-space-2) var(--ref-frame-space-3);
+  border-radius: var(--sys-frame-radius-container);
+}
+
+.select-menu-panel .selected {
+  background: var(--sys-energy-text-primary);
+  color: var(--sys-energy-surface-secondary);
+}
+
+.select-menu-panel .disabled {
+  opacity: var(--sys-state-disabled-opacity);
+}

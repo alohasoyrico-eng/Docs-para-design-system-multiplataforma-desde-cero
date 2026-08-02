@@ -1,0 +1,111 @@
+.pattern-stage--docs-sidebar {
+  transition: grid-template-columns var(--sys-momentum-transition-default);
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar {
+  animation: pattern-sidebar-enter var(--sys-momentum-duration-default) var(--sys-momentum-easing-enter) both;
+}
+
+.pattern-stage--docs-sidebar .pattern-workspace {
+  animation: pattern-content-enter var(--sys-momentum-duration-slow) var(--sys-momentum-easing-enter) both;
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar-group summary,
+.pattern-stage--docs-sidebar .pattern-doc-sidebar a,
+.pattern-stage--docs-sidebar .pattern-doc-stack-link {
+  transition:
+    background var(--sys-momentum-transition-fast),
+    color var(--sys-momentum-transition-fast),
+    box-shadow var(--sys-momentum-transition-fast),
+    transform var(--sys-momentum-transition-fast);
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar-group summary::after {
+  transform-origin: center;
+  transition: transform var(--sys-momentum-transition-default);
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar-group[open] summary::after {
+  transform: var(--component-transform-rotate-expanded);
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar-group[open] div {
+  animation: pattern-sidebar-reveal var(--sys-momentum-duration-default) var(--sys-momentum-easing-enter) both;
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar-group summary:hover,
+.pattern-stage--docs-sidebar .pattern-doc-sidebar a:hover,
+.pattern-stage--docs-sidebar .pattern-doc-stack-link:hover {
+  background: color-mix(in srgb, var(--sys-energy-action-primary) 10%, transparent);
+  color: var(--sys-energy-text-primary);
+  transform: translateX(var(--ref-frame-space-micro));
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar-group summary:active,
+.pattern-stage--docs-sidebar .pattern-doc-sidebar a:active,
+.pattern-stage--docs-sidebar .pattern-doc-stack-link:active {
+  transform: scale(var(--sys-momentum-scale-press));
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar-group summary:focus-visible,
+.pattern-stage--docs-sidebar .pattern-doc-sidebar a:focus-visible,
+.pattern-stage--docs-sidebar .pattern-doc-stack-link:focus-visible {
+  outline: var(--sys-a11y-focus-ring);
+  outline-offset: var(--sys-a11y-focus-offset);
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar a.active {
+  box-shadow: inset var(--ref-frame-space-micro) 0 0 var(--sys-energy-text-on-action);
+}
+
+@media (max-width: 1180px) {
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar-group summary:hover,
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar a:hover,
+  .pattern-stage--docs-sidebar .pattern-doc-stack-link:hover {
+    transform: translateY(calc(var(--ref-frame-space-micro) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pattern-stage--docs-sidebar,
+  .pattern-stage--docs-sidebar *,
+  .pattern-stage--docs-sidebar *::before,
+  .pattern-stage--docs-sidebar *::after {
+    animation: none !important;
+    transition-duration: var(--ref-a11y-motion-reduced-duration) !important;
+    transform: var(--component-transform-none) !important;
+  }
+}
+
+@keyframes pattern-sidebar-enter {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--ref-frame-space-4) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: var(--component-transform-x-rest);
+  }
+}
+
+@keyframes pattern-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ref-frame-space-3));
+  }
+  to {
+    opacity: 1;
+    transform: var(--component-transform-y-rest);
+  }
+}
+
+@keyframes pattern-sidebar-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--ref-frame-space-2) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: var(--component-transform-y-rest);
+  }
+}

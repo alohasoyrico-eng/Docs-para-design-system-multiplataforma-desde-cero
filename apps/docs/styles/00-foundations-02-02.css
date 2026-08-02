@@ -1,0 +1,9 @@
+:root {
+  --frame-grid-columns: var(--sys-frame-grid-sm-columns);
+  --frame-grid-gutter: var(--sys-frame-grid-sm-gutter);
+  --frame-grid-margin: var(--sys-frame-grid-sm-margin);
+  --frame-page-x: var(--frame-grid-margin);
+  --frame-section-y: var(--density-section-gap);
+  --frame-page-shell: calc(var(--sys-frame-content-max) + (var(--frame-page-x) * 2));
+  --frame-card-min: 16rem;
+}

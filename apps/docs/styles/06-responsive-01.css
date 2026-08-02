@@ -1,0 +1,273 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: var(--ref-a11y-motion-reduced-duration) !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: var(--ref-a11y-motion-reduced-duration) !important;
+  }
+
+  [data-state="loading"],
+  [data-state="playing"],
+  [data-live="true"],
+  [data-indeterminate="true"] {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .topbar {
+    grid-template-columns: auto auto minmax(10rem, 1fr) auto;
+    gap: var(--sys-space-md);
+  }
+
+  .search-slot,
+  .topbar__search {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: stretch;
+  }
+
+  .top-actions {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .icon-button.menu-button {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    inline-size: var(--sys-frame-height-control-sm);
+    block-size: var(--sys-frame-height-control-sm);
+  }
+
+  .topnav {
+    display: none;
+  }
+
+  .app-shell,
+  .detail-hero,
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    inset: var(--sys-frame-height-shell-topbar) var(--sys-space-lg) var(--sys-space-lg) var(--sys-space-lg);
+    z-index: var(--sys-depth-z-overlay);
+    display: grid;
+    gap: var(--sys-space-sm);
+    min-inline-size: 0;
+    max-inline-size: calc(100vw - (var(--sys-space-lg) * 2));
+    block-size: calc(100svh - var(--sys-frame-height-shell-topbar) - var(--sys-space-lg));
+    max-block-size: calc(100svh - var(--sys-frame-height-shell-topbar) - var(--sys-space-lg));
+    padding: var(--sys-space-md);
+    overflow: auto;
+    border-inline-end: var(--sys-frame-border-thin) solid var(--sys-energy-border-strong);
+    border: var(--sys-frame-border-thin) solid var(--sys-energy-border-strong);
+    border-radius: var(--sys-frame-radius-container);
+    background: var(--sys-energy-surface-primary);
+    box-shadow: var(--sys-depth-elevation-3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.4rem);
+    transition:
+      opacity var(--sys-momentum-transition-default),
+      transform var(--sys-momentum-transition-default);
+  }
+
+  body[data-nav-open="true"] .sidebar {
+    opacity: 1;
+    pointer-events: auto;
+    transform: var(--component-transform-y-rest);
+  }
+
+  .sidebar-close {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--sys-depth-z-raised);
+    display: grid;
+    margin-inline-start: auto;
+    background: var(--sys-energy-surface-primary);
+  }
+
+  .sidebar a {
+    min-inline-size: 0;
+  }
+
+  .detail-tabs {
+    gap: var(--sys-space-sm);
+  }
+
+  .detail-tabs button {
+    flex: 0 0 auto;
+    gap: var(--sys-space-xs);
+    min-inline-size: max-content;
+  }
+
+  .hero {
+    min-block-size: auto;
+  }
+
+  .foundation-case,
+  .component-case,
+  .primitive-case,
+  .template-product {
+    grid-template-columns: 1fr;
+  }
+
+  .button-scenario,
+  .select-scenario,
+  .select-menu-demo,
+  .component-standard-demo,
+  .migration-rule-grid,
+  .card-scenario-grid,
+  .card-mini-grid,
+  .button-principles,
+  .checklist-grid,
+  .foundation-compact-list,
+  .density-inheritance-grid,
+  .density-rule-strip,
+  .button-density-scale,
+  .density-contract-grid,
+  .two-column-list,
+  .playground-layout,
+  .voice-type-row,
+  .reference-layout,
+  .operational-explorer,
+  .action-layout.three,
+  .action-layout.split,
+  .energy-product-demo,
+  .action-layout.two {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-peer-nav {
+    position: static;
+  }
+
+  .reference-peer-nav nav {
+    display: flex;
+    gap: var(--sys-space-xs);
+    overflow-x: auto;
+    padding-block-end: var(--sys-space-xs);
+  }
+
+  .reference-peer-nav a {
+    flex: 0 0 auto;
+  }
+
+  .pattern-case {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .voice-type-samples,
+  .voice-token-grid,
+  .frame-token-grid,
+  .frame-system-grid,
+  .frame-density-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .frame-spacing-demo article {
+    grid-template-columns: 3.5rem 4.5rem minmax(0, 1fr);
+  }
+
+  .frame-spacing-demo p,
+  .frame-spacing-demo code {
+    grid-column: 3;
+  }
+
+  .viewport-doc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .viewport-laptop-demo .button-row,
+  .viewport-tv-demo .button-row {
+    display: grid;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: var(--density-component-gap-lg);
+    inline-size: min(100%, var(--frame-page-shell));
+    justify-content: stretch;
+    padding-inline: var(--frame-page-x);
+  }
+
+  .hero-copy,
+  .hero-visual {
+    align-self: center;
+    padding: 0;
+  }
+
+  .hero-visual {
+    justify-self: stretch;
+    place-items: center;
+  }
+
+  .hero-visual img {
+    inline-size: min(100%, var(--sys-frame-doc-device-min-block));
+    transform: var(--component-transform-none);
+  }
+}
+
+@media (min-width: 1280px) {
+  .detail-summary {
+    max-inline-size: 104ch;
+  }
+}
+
+@media (max-width: 900px) {
+  :is(.detail-page, .reference-doc) .button-demo-grid,
+  :is(.detail-page, .reference-doc) .state-behavior-grid,
+  :is(.detail-page, .reference-doc) .full-width-demo,
+  :is(.detail-page, .reference-doc) .responsive-actions-demo,
+  :is(.detail-page, .reference-doc) .viewport-doc-grid,
+  :is(.detail-page, .reference-doc) .checklist-grid,
+  :is(.detail-page, .reference-doc) .guidelines-grid,
+  :is(.detail-page, .reference-doc) .card-mini-grid {
+    inline-size: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 861px) and (max-width: 1180px) {
+  .icon-button.menu-button {
+    display: none;
+  }
+
+  .app-shell {
+    grid-template-columns: var(--sys-frame-sidebar-expanded) minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: sticky;
+    inset: auto;
+    top: var(--sys-frame-height-shell-topbar);
+    z-index: auto;
+    align-self: start;
+    align-content: start;
+    gap: var(--sys-space-xs);
+    block-size: calc(100svh - var(--sys-frame-height-shell-topbar));
+    max-block-size: none;
+    max-inline-size: none;
+    padding: var(--sys-space-lg) var(--sys-space-md);
+    border: 0;
+    border-inline-end: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+    border-radius: 0;
+    background: color-mix(in srgb, var(--sys-energy-surface-secondary) 72%, transparent);
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: var(--component-transform-none);
+  }
+
+  .sidebar .sidebar-close {
+    display: none;
+  }
+}

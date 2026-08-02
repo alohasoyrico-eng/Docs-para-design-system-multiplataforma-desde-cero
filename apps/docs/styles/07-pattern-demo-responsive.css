@@ -1,0 +1,164 @@
+@media (max-width: 720px) {
+  .pattern-stage-panel {
+    gap: var(--ref-frame-space-4);
+  }
+
+  .pattern-stage {
+    min-block-size: auto;
+  }
+
+  .pattern-workspace {
+    gap: var(--ref-frame-space-4);
+    padding: var(--ref-frame-space-4);
+  }
+
+  .pattern-workspace h3 {
+    margin-block: var(--ref-frame-space-1);
+    font-size: var(--sys-voice-size-9);
+    line-height: var(--sys-voice-line-height-tight);
+  }
+
+  .pattern-workspace p {
+    font-size: var(--sys-voice-size-4);
+  }
+
+  .pattern-workgrid,
+  .pattern-stage--docs-sidebar .pattern-workgrid {
+    grid-template-columns: 1fr;
+    gap: var(--ref-frame-space-3);
+  }
+
+  .pattern-workgrid article {
+    min-block-size: auto;
+    padding: var(--ref-frame-space-3);
+  }
+
+  .pattern-workgrid strong {
+    font-size: var(--sys-voice-size-7);
+  }
+
+  .pattern-stage .breadcrumbs {
+    flex-wrap: wrap;
+    gap: var(--ref-frame-space-1);
+  }
+
+  .pattern-stage .breadcrumbs a,
+  .pattern-stage .breadcrumbs a[href] {
+    min-inline-size: auto;
+    min-block-size: var(--sys-frame-height-control-sm);
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-topbar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: var(--ref-frame-space-2);
+    padding: var(--ref-frame-space-2);
+  }
+
+  .pattern-stage--docs-topbar .pattern-topbar-leading,
+  .pattern-stage--docs-topbar .pattern-doc-brand {
+    min-inline-size: 0;
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-brand span:not(.pattern-brand-mark) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-actions {
+    gap: var(--ref-frame-space-1);
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-actions > .pattern-doc-icon-button:nth-of-type(n + 2) {
+    display: none;
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-topnav,
+  .pattern-stage--docs-topbar .pattern-topbar-search {
+    grid-column: 1 / -1;
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-topnav {
+    justify-content: start;
+    overflow-x: auto;
+    padding-block-end: var(--ref-frame-space-1);
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-topnav a:not(.is-active) {
+    display: none;
+  }
+
+  .pattern-stage--docs-topbar .pattern-doc-topnav a.is-active {
+    max-inline-size: 100%;
+  }
+
+  .pattern-stage--docs-topbar .pattern-search-results {
+    display: none;
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar {
+    display: flex;
+    align-items: center;
+    gap: var(--ref-frame-space-1);
+    max-block-size: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: var(--ref-frame-space-2);
+    border-inline-end: 0;
+    border-block-end: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar-group div {
+    display: none;
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar-group[open] div {
+    display: flex;
+    align-items: center;
+    gap: var(--ref-frame-space-1);
+    padding-inline-start: 0;
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar-group summary,
+  .pattern-stage--docs-sidebar .pattern-doc-stack-link,
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar a {
+    flex: 0 0 auto;
+    min-inline-size: auto;
+    min-block-size: var(--sys-frame-height-control-sm);
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar a[aria-current="page"] {
+    padding-inline: var(--ref-frame-space-3);
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar a[aria-current="page"]::before {
+    inset-inline: var(--ref-frame-space-2);
+    inset-block: auto var(--ref-frame-space-1);
+    inline-size: auto;
+    block-size: var(--sys-frame-border-thin);
+  }
+}
+
+@media (max-width: 480px) {
+  .pattern-stage--docs-topbar .pattern-topbar-search {
+    min-block-size: var(--sys-frame-height-control-sm);
+  }
+
+  .pattern-stage--docs-topbar .pattern-search-clear {
+    display: none;
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar-label > span:not(.material-symbol) {
+    position: absolute;
+    inline-size: var(--sys-frame-border-thin);
+    block-size: var(--sys-frame-border-thin);
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}

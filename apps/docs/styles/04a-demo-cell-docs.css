@@ -1,0 +1,100 @@
+.demo-cell__title {
+  display: block;
+  margin: 0;
+  padding-block-end: var(--ref-frame-space-2);
+  border-block-end: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  color: var(--sys-energy-text-primary);
+  font-size: var(--density-doc-subheading-size);
+  font-weight: var(--sys-voice-heading-md-weight);
+  line-height: var(--density-doc-heading-line-height);
+  text-align: start;
+}
+
+.demo-cell__body {
+  display: grid;
+  justify-items: stretch;
+  min-inline-size: 0;
+}
+
+.docs-demo-grid--wide {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 34rem), 1fr));
+}
+
+.detail-page .button-demo-grid.docs-demo-grid--wide,
+.reference-doc .button-demo-grid.docs-demo-grid--wide {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 34rem), 1fr));
+}
+
+.docs-demo-grid--wide.state-behavior-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 38rem), 1fr));
+}
+
+.detail-page .button-demo-grid.docs-demo-grid--wide.state-behavior-grid,
+.reference-doc .button-demo-grid.docs-demo-grid--wide.state-behavior-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 38rem), 1fr));
+}
+
+.docs-demo-grid--wide .demo-cell {
+  min-block-size: var(--density-doc-example-min-block);
+}
+
+.docs-demo-grid--wide .demo-cell__body {
+  align-content: center;
+  overflow-x: auto;
+}
+
+.docs-demo-grid--full {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.detail-page .button-demo-grid.docs-demo-grid--full,
+.reference-doc .button-demo-grid.docs-demo-grid--full {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.docs-demo-grid--full .demo-cell {
+  min-block-size: var(--sys-frame-doc-panel-min-sm);
+}
+
+.docs-demo-layout--wide.responsive-actions-demo,
+.docs-demo-layout--wide.viewport-doc-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr));
+}
+
+.docs-demo-layout--wide.simple-scenario {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.detail-page .docs-demo-layout--wide.responsive-actions-demo,
+.detail-page .docs-demo-layout--wide.viewport-doc-grid,
+.detail-page .docs-demo-layout--wide.simple-scenario,
+.reference-doc .docs-demo-layout--wide.responsive-actions-demo,
+.reference-doc .docs-demo-layout--wide.viewport-doc-grid,
+.reference-doc .docs-demo-layout--wide.simple-scenario {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr));
+}
+
+.docs-demo-layout--full.responsive-actions-demo,
+.docs-demo-layout--full.viewport-doc-grid,
+.docs-demo-layout--full.simple-scenario {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.detail-page .docs-demo-layout--full.responsive-actions-demo,
+.detail-page .docs-demo-layout--full.viewport-doc-grid,
+.detail-page .docs-demo-layout--full.simple-scenario,
+.reference-doc .docs-demo-layout--full.responsive-actions-demo,
+.reference-doc .docs-demo-layout--full.viewport-doc-grid,
+.reference-doc .docs-demo-layout--full.simple-scenario {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.docs-demo-layout--wide.simple-demo-row,
+.docs-demo-layout--wide.button-stack,
+.docs-demo-layout--wide.simple-viewport-demo,
+.docs-demo-layout--full.simple-demo-row,
+.docs-demo-layout--full.button-stack,
+.docs-demo-layout--full.simple-viewport-demo {
+  min-inline-size: 0;
+  overflow-x: auto;
+}

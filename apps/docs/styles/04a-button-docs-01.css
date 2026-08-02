@@ -1,0 +1,395 @@
+.comparison-table {
+  display: grid;
+  margin-block-start: var(--sys-frame-gap-component-lg);
+  overflow: hidden;
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+}
+
+.comparison-table > div {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.65fr) repeat(3, minmax(0, 1fr));
+  gap: var(--sys-frame-gap-component);
+  padding: var(--ref-frame-space-4);
+  border-block-end: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+}
+
+.comparison-table > div:first-child {
+  background: var(--sys-energy-text-primary);
+  color: var(--sys-energy-surface-secondary);
+}
+
+.comparison-table > div:last-child {
+  border-block-end: 0;
+}
+
+.button-scenario,
+.full-width-demo,
+.responsive-actions-demo {
+  display: grid;
+  gap: var(--sys-frame-gap-component-lg);
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  margin-block-start: var(--sys-frame-gap-component-lg);
+}
+
+.button-scenario {
+  grid-template-columns: minmax(18rem, 1fr) minmax(15rem, 0.8fr);
+}
+
+.driver-sheet,
+.fleet-panel-mini,
+.responsive-actions-demo article {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+  align-content: start;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  padding: var(--sys-frame-padding-container);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.driver-sheet header {
+  display: flex;
+  gap: var(--ref-frame-space-3);
+  align-items: center;
+}
+
+.driver-sheet header > span {
+  display: grid;
+  place-items: center;
+  inline-size: var(--sys-frame-doc-icon-md);
+  block-size: var(--sys-frame-doc-icon-md);
+  border-radius: var(--ref-frame-radius-full);
+  background: color-mix(in srgb, var(--sys-energy-status-error) 12%, var(--sys-energy-surface-primary));
+  color: var(--sys-energy-status-error);
+}
+
+.driver-sheet small,
+.overline {
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--sys-voice-size-3);
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.button-row,
+.button-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sys-frame-gap-component);
+}
+
+.button-stack {
+  display: grid;
+}
+
+.button-stack.natural {
+  justify-items: start;
+}
+
+.button-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--sys-frame-gap-component-lg);
+  inline-size: 100%;
+  margin-block-start: var(--sys-frame-gap-component-lg);
+}
+
+.variant-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.state-behavior-grid {
+  inline-size: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}
+
+.demo-cell {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+  align-content: start;
+  justify-items: stretch;
+  min-block-size: var(--density-doc-card-min-block);
+  padding: var(--sys-frame-padding-container);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+  text-align: start;
+  transition:
+    background var(--sys-momentum-transition-fast),
+    border-color var(--sys-momentum-transition-fast),
+    box-shadow var(--sys-momentum-transition-fast),
+    transform var(--sys-momentum-transition-fast);
+}
+
+.demo-cell:hover,
+.demo-cell:focus-within {
+  border-color: color-mix(in srgb, var(--sys-energy-action-primary) 24%, var(--sys-energy-border-default));
+  background: var(--sys-energy-surface-primary);
+  box-shadow: var(--sys-depth-elevation-1);
+  transform: translateY(var(--sys-depth-lift-subtle));
+}
+
+:is(.detail-page, .reference-doc) .tab-panel {
+  display: grid;
+  gap: var(--density-section-gap);
+}
+
+:is(.detail-page, .reference-doc) .doc-panel {
+  gap: var(--density-subsection-gap);
+  padding: var(--density-surface-padding);
+  background: color-mix(in srgb, var(--sys-energy-surface-primary) 94%, transparent);
+  box-shadow: none;
+}
+
+:is(.detail-page, .reference-doc) .doc-panel > h2,
+:is(.detail-page, .reference-doc) .doc-panel > h3 {
+  font-size: var(--density-doc-heading-size);
+  line-height: var(--density-doc-heading-line-height);
+}
+
+:is(.detail-page, .reference-doc) .doc-panel > p,
+:is(.detail-page, .reference-doc) .doc-panel li,
+:is(.detail-page, .reference-doc) .doc-panel dd {
+  font-size: var(--density-doc-body-size);
+  line-height: var(--density-doc-body-line-height);
+}
+
+:is(.detail-page, .reference-doc) .button-scenario,
+:is(.detail-page, .reference-doc) .select-scenario,
+:is(.detail-page, .reference-doc) .select-menu-demo,
+:is(.detail-page, .reference-doc) .component-standard-demo,
+:is(.detail-page, .reference-doc) .full-width-demo,
+:is(.detail-page, .reference-doc) .responsive-actions-demo,
+:is(.detail-page, .reference-doc) .button-demo-grid,
+:is(.detail-page, .reference-doc) .button-principles,
+:is(.detail-page, .reference-doc) .button-anatomy,
+:is(.detail-page, .reference-doc) .checklist-grid,
+:is(.detail-page, .reference-doc) .role-grid,
+:is(.detail-page, .reference-doc) .reference-role-grid,
+:is(.detail-page, .reference-doc) .guidelines-grid,
+:is(.detail-page, .reference-doc) .foundation-compact-list,
+:is(.detail-page, .reference-doc) .button-density-scale,
+:is(.detail-page, .reference-doc) .density-contract-grid,
+:is(.detail-page, .reference-doc) .two-column-list,
+:is(.detail-page, .reference-doc) .viewport-doc-grid,
+:is(.detail-page, .reference-doc) .playground-layout,
+:is(.detail-page, .reference-doc) .button-matrix,
+:is(.detail-page, .reference-doc) .button-state-matrix,
+:is(.detail-page, .reference-doc) .comparison-table,
+:is(.detail-page, .reference-doc) .props-table,
+:is(.detail-page, .reference-doc) .reference-token-grid,
+:is(.detail-page, .reference-doc) .foundation-explorer,
+:is(.detail-page, .reference-doc) .primitive-demo,
+:is(.detail-page, .reference-doc) .foundation-case,
+:is(.detail-page, .reference-doc) .primitive-case {
+  gap: var(--density-component-gap-lg);
+  margin-block-start: 0;
+}
+
+:is(.detail-page, .reference-doc) .button-demo-grid,
+:is(.detail-page, .reference-doc) .variant-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+:is(.detail-page, .reference-doc) .state-behavior-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+}
+
+:is(.detail-page, .reference-doc) .simple-scenario,
+:is(.detail-page, .reference-doc) .component-standard-demo {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+:is(.detail-page, .reference-doc) .checklist-grid,
+:is(.detail-page, .reference-doc) .guidelines-grid,
+:is(.detail-page, .reference-doc) .two-column-list,
+:is(.detail-page, .reference-doc) .viewport-doc-grid,
+:is(.detail-page, .reference-doc) .responsive-actions-demo {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+:is(.detail-page, .reference-doc) .button-principles article,
+:is(.detail-page, .reference-doc) .button-anatomy article,
+:is(.detail-page, .reference-doc) .checklist-grid article,
+:is(.detail-page, .reference-doc) .role-grid article,
+:is(.detail-page, .reference-doc) .reference-role-card,
+:is(.detail-page, .reference-doc) .guidelines-grid article,
+:is(.detail-page, .reference-doc) .button-decision-list article,
+:is(.detail-page, .reference-doc) .foundation-compact-list article,
+:is(.detail-page, .reference-doc) .button-density-scale article,
+:is(.detail-page, .reference-doc) .density-contract-grid article,
+:is(.detail-page, .reference-doc) .two-column-list article,
+:is(.detail-page, .reference-doc) .viewport-doc-grid > article,
+:is(.detail-page, .reference-doc) .playground-preview,
+:is(.detail-page, .reference-doc) .driver-sheet,
+:is(.detail-page, .reference-doc) .fleet-panel-mini,
+:is(.detail-page, .reference-doc) .filter-console,
+:is(.detail-page, .reference-doc) .select-menu-panel,
+:is(.detail-page, .reference-doc) .component-standard-demo article,
+:is(.detail-page, .reference-doc) .component-standard-surface,
+:is(.detail-page, .reference-doc) .responsive-actions-demo article,
+:is(.detail-page, .reference-doc) .demo-cell,
+:is(.detail-page, .reference-doc) .reference-section-block,
+:is(.detail-page, .reference-doc) .foundation-explorer,
+:is(.detail-page, .reference-doc) .primitive-demo,
+:is(.detail-page, .reference-doc) .primitive-surface,
+:is(.detail-page, .reference-doc) .real-example,
+:is(.detail-page, .reference-doc) .viewport-phone-demo,
+:is(.detail-page, .reference-doc) .viewport-laptop-demo,
+:is(.detail-page, .reference-doc) .viewport-tv-demo {
+  gap: var(--density-component-gap);
+  min-block-size: var(--density-doc-card-min-block);
+  padding: var(--density-card-padding);
+  background: var(--sys-energy-surface-primary);
+  box-shadow: none;
+}
+
+:is(.detail-page, .reference-doc) .button-operational-panel .driver-sheet,
+:is(.detail-page, .reference-doc) .button-operational-panel .button-decision-list,
+:is(.detail-page, .reference-doc) .button-playground .playground-preview,
+:is(.detail-page, .reference-doc) .button-viewport-panel .viewport-doc-grid > article,
+:is(.detail-page, .reference-doc) .select-scenario .filter-console,
+:is(.detail-page, .reference-doc) .select-menu-panel,
+:is(.detail-page, .reference-doc) .component-standard-demo article,
+:is(.detail-page, .reference-doc) .foundation-explorer,
+:is(.detail-page, .reference-doc) .primitive-demo {
+  min-block-size: var(--density-doc-example-min-block);
+}
+
+:is(.detail-page, .reference-doc) .button-principles article strong,
+:is(.detail-page, .reference-doc) .button-anatomy article strong,
+:is(.detail-page, .reference-doc) .foundation-compact-list article strong,
+:is(.detail-page, .reference-doc) .button-density-scale article strong,
+:is(.detail-page, .reference-doc) .density-contract-grid article h3,
+:is(.detail-page, .reference-doc) .viewport-doc-grid article h3,
+:is(.detail-page, .reference-doc) .role-grid article strong,
+:is(.detail-page, .reference-doc) .reference-role-card strong,
+:is(.detail-page, .reference-doc) .guidelines-grid article h3,
+:is(.detail-page, .reference-doc) .driver-sheet strong,
+:is(.detail-page, .reference-doc) .fleet-panel-mini strong,
+:is(.detail-page, .reference-doc) .filter-console strong,
+:is(.detail-page, .reference-doc) .component-standard-demo article strong {
+  font-size: var(--density-doc-card-title-size);
+  line-height: var(--density-doc-heading-line-height);
+}
+
+:is(.detail-page, .reference-doc) .button-principles article span,
+:is(.detail-page, .reference-doc) .button-anatomy article p,
+:is(.detail-page, .reference-doc) .foundation-compact-list article p,
+:is(.detail-page, .reference-doc) .foundation-compact-list article small,
+:is(.detail-page, .reference-doc) .button-density-scale article p,
+:is(.detail-page, .reference-doc) .density-contract-grid article dd,
+:is(.detail-page, .reference-doc) .viewport-doc-grid article p,
+:is(.detail-page, .reference-doc) .role-grid article p,
+:is(.detail-page, .reference-doc) .reference-role-card p,
+:is(.detail-page, .reference-doc) .guidelines-grid article li,
+:is(.detail-page, .reference-doc) .driver-sheet p,
+:is(.detail-page, .reference-doc) .fleet-panel-mini li,
+:is(.detail-page, .reference-doc) .filter-console p,
+:is(.detail-page, .reference-doc) .component-standard-demo article p,
+:is(.detail-page, .reference-doc) .button-decision-list article span {
+  font-size: var(--density-doc-card-body-size);
+  line-height: var(--density-doc-body-line-height);
+}
+
+:is(.detail-page, .reference-doc) .button-decision-list article {
+  padding: var(--density-card-padding);
+}
+
+:is(.detail-page, .reference-doc) .playground-controls {
+  gap: var(--density-component-gap);
+}
+
+:is(.detail-page, .reference-doc) .reference-section-block {
+  gap: var(--density-subsection-gap);
+  padding: var(--density-surface-padding);
+}
+
+:is(.detail-page, .reference-doc) .playground-controls label,
+:is(.detail-page, .reference-doc) .button-matrix > b,
+:is(.detail-page, .reference-doc) .button-matrix > strong,
+:is(.detail-page, .reference-doc) .button-state-matrix > b,
+:is(.detail-page, .reference-doc) .button-state-matrix > strong,
+:is(.detail-page, .reference-doc) .overline,
+:is(.detail-page, .reference-doc) .driver-sheet small {
+  font-size: var(--density-doc-label-size);
+  line-height: var(--density-doc-body-line-height);
+}
+
+.button-principles,
+.button-anatomy,
+.checklist-grid,
+.foundation-compact-list,
+.button-density-scale,
+.density-contract-grid,
+.two-column-list,
+.viewport-doc-grid,
+.playground-layout {
+  display: grid;
+  gap: var(--sys-frame-gap-component-lg);
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  margin-block-start: var(--sys-frame-gap-component-lg);
+}
+
+.button-principles {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.button-principles article,
+.button-anatomy article,
+.checklist-grid article,
+.button-decision-list article,
+.foundation-compact-list article,
+.button-density-scale article,
+.density-contract-grid article,
+.two-column-list article,
+.viewport-doc-grid > article,
+.playground-preview {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+  align-content: start;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  padding: var(--sys-frame-padding-container);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.button-principles article strong,
+.button-anatomy article strong,
+.foundation-compact-list article strong,
+.button-density-scale article strong,
+.density-contract-grid article h3,
+.viewport-doc-grid article h3 {
+  color: var(--sys-energy-text-primary);
+}
+
+.button-principles article span,
+.button-anatomy article p,
+.foundation-compact-list article p,
+.foundation-compact-list article small,
+.button-density-scale article p,
+.density-contract-grid article dd,
+.viewport-doc-grid article p {
+  color: var(--sys-energy-text-secondary);
+}
+
+.button-anatomy article {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.button-anatomy article > b {
+  display: grid;
+  place-items: center;
+  inline-size: var(--sys-frame-height-control-sm);
+  block-size: var(--sys-frame-height-control-sm);
+  border-radius: var(--sys-frame-radius-full);
+  background: var(--sys-energy-action-primary);
+  color: var(--sys-energy-text-on-action);
+  font-family: var(--sys-voice-family-title);
+}

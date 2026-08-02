@@ -1,0 +1,38 @@
+.pattern-design-shell-demo .search-slot--package,
+.pattern-stage--real-shell .search-slot--package,
+.search-slot.search-slot--package {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.pattern-design-shell-demo .search-slot--package > .field,
+.pattern-stage--real-shell .search-slot--package > .field,
+.search-slot.search-slot--package > .field {
+  inline-size: 100%;
+}
+
+.pattern-design-shell-demo .search-slot--package .field__label,
+.pattern-stage--real-shell .search-slot--package .field__label,
+.search-slot.search-slot--package .field__label {
+  position: absolute;
+  inline-size: var(--sys-frame-border-thin);
+  block-size: var(--sys-frame-border-thin);
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.pattern-design-shell-demo .search-slot--package .field__helper,
+.pattern-stage--real-shell .search-slot--package .field__helper,
+.search-slot.search-slot--package .field__helper {
+  display: none;
+}
+
+.pattern-design-shell-demo .pattern-topbar-action,
+.pattern-stage--real-shell .pattern-topbar-action {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+}

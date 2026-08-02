@@ -1,0 +1,38 @@
+{
+  "name": "documentation-site",
+  "version": "0.3.0-platform-mvp",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alohasoyrico-eng/Docs-para-design-system-multiplataforma-desde-cero.git"
+  },
+  "dependencies": {
+    "flow": "file:../Design-system-multiplataforma-desde-cero"
+  },
+  "imports": {
+    "#design-system/components": "flow/packages/components/src/index.js",
+    "#design-system/components-css": "flow/packages/components/styles/components.css",
+    "#design-system/content/catalog": "flow/packages/content/content/catalog.json",
+    "#design-system/content/component-docs": "flow/packages/content/content/component-docs.json",
+    "#design-system/content/component-copy": "flow/packages/content/content/component-copy.json",
+    "#design-system/content/pattern-copy": "flow/packages/content/content/pattern-copy.json",
+    "#design-system/content/component-implementation-status": "flow/packages/content/content/component-implementation-status.json",
+    "#design-system/content/foundation-copy": "flow/packages/content/content/foundation-copy.json",
+    "#design-system/content/primitive-copy": "flow/packages/content/content/primitive-copy.json",
+    "#design-system/content/reference-copy": "flow/packages/content/content/reference-copy.json",
+    "#design-system/content/template-blueprints": "flow/packages/content/content/template-blueprints.json",
+    "#design-system/content/home": "flow/packages/content/content/home.json",
+    "#design-system/content/i18n-ui": "flow/packages/content/content/i18n/ui.json",
+    "#design-system/specs/system": "flow/packages/specs/specs/unison.system.json",
+    "#design-system/tokens-css": "flow/packages/tokens/styles/tokens.css"
+  },
+  "scripts": {
+    "build:docs-content": "node scripts/build-docs-content.mjs",
+    "build:docs-assets": "node scripts/build-docs-assets.mjs",
+    "build:docs": "npm run build:docs-content && npm run build:docs-assets",
+    "audit:docs": "node audit/audit-docs.js",
+    "audit:docs-runtime": "node audit/audit-docs-runtime.mjs",
+    "validate:docs": "npm run build:docs && npm run audit:docs && npm run audit:docs-runtime"
+  }
+}

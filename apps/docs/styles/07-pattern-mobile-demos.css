@@ -1,0 +1,127 @@
+.pattern-mobile-panel {
+  overflow: visible;
+}
+
+.pattern-mobile-demo {
+  position: relative;
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  margin-block-start: var(--ref-frame-space-4);
+  padding: var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+.pattern-mobile-demo [hidden] {
+  display: none;
+}
+
+.pattern-fullscreen-sheet-demo__sheet,
+.pattern-drawer-adapter-demo__drawer {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+  max-inline-size: var(--sys-frame-content-dialog);
+  padding: var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+  box-shadow: var(--sys-depth-elevation-2);
+}
+
+.pattern-fullscreen-sheet-demo__body,
+.pattern-fullscreen-sheet-demo__body [data-fullscreen-step],
+.pattern-fullscreen-sheet-demo__review,
+.pattern-drawer-adapter-demo__drawer footer {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+}
+
+.pattern-fullscreen-sheet-demo__sheet footer,
+.pattern-swipe-actions-demo footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--ref-frame-space-2);
+}
+
+.pattern-fullscreen-sheet-demo [data-fullscreen-sheet-component],
+.pattern-drawer-adapter-demo [data-drawer-adapter-component] {
+  max-inline-size: 100%;
+}
+
+.pattern-swipe-actions-demo__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ref-frame-space-3);
+  align-items: stretch;
+}
+
+.pattern-swipe-actions-demo__rail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(var(--sys-frame-height-control-lg), 1fr));
+  gap: var(--ref-frame-space-2);
+  align-content: center;
+  min-inline-size: var(--sys-frame-doc-panel-min-sm);
+  padding: var(--ref-frame-space-2);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.pattern-quick-actions-grid-demo__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(var(--density-doc-card-min-block), 1fr));
+  gap: var(--ref-frame-space-3);
+}
+
+.pattern-quick-actions-grid-demo [data-quick-grid-tooltip],
+.pattern-quick-actions-grid-demo [data-quick-grid-dialog],
+.pattern-drawer-adapter-demo [data-drawer-adapter-dialog] {
+  max-inline-size: var(--sys-frame-content-search-results-max-block);
+}
+
+.pattern-drawer-adapter-demo__drawer {
+  display: block;
+  max-inline-size: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .pattern-mobile-demo,
+  .pattern-fullscreen-sheet-demo__sheet,
+  .pattern-drawer-adapter-demo__drawer {
+    padding: var(--ref-frame-space-3);
+  }
+
+  .pattern-swipe-actions-demo__row {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-swipe-actions-demo__rail,
+  .pattern-quick-actions-grid-demo__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pattern-fullscreen-sheet-demo__sheet,
+  .pattern-drawer-adapter-demo__drawer {
+    max-inline-size: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .pattern-mobile-demo {
+    margin-inline: calc(var(--ref-frame-space-2) * -1);
+    border-inline: 0;
+    border-radius: 0;
+  }
+
+  .pattern-swipe-actions-demo__rail,
+  .pattern-quick-actions-grid-demo__grid {
+    grid-template-columns: 1fr;
+  }
+}

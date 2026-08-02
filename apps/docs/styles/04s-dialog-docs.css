@@ -1,0 +1,180 @@
+:is(.detail-page, .reference-doc) {
+  --comp-dialog-overlay-bg: color-mix(in srgb, var(--sys-energy-text-primary) 42%, transparent);
+  --comp-dialog-overlay-blur: blur(var(--sys-depth-backdrop-blur));
+  --comp-dialog-panel-inline: min(100%, 27.5rem);
+  --comp-dialog-panel-padding: var(--ref-frame-space-6);
+  --comp-dialog-panel-radius: var(--sys-frame-radius-container);
+  --comp-dialog-panel-bg: var(--sys-energy-surface-primary);
+  --comp-dialog-panel-border: var(--sys-energy-border-default);
+  --comp-dialog-panel-shadow: var(--sys-depth-elevation-4);
+  --comp-dialog-gap: var(--ref-frame-space-4);
+  --comp-dialog-icon-size: var(--sys-a11y-touch-target-min);
+  --comp-dialog-icon-bg-danger: color-mix(in srgb, var(--sys-energy-status-error) 12%, var(--sys-energy-surface-primary));
+  --comp-dialog-icon-bg-success: color-mix(in srgb, var(--sys-energy-status-success) 14%, var(--sys-energy-surface-primary));
+  --comp-dialog-icon-bg-info: color-mix(in srgb, var(--sys-energy-action-primary) 12%, var(--sys-energy-surface-primary));
+  --comp-dialog-icon-text-danger: var(--sys-energy-status-error);
+  --comp-dialog-icon-text-success: var(--sys-energy-status-success);
+  --comp-dialog-icon-text-info: var(--sys-energy-action-primary);
+  --comp-dialog-close-size: var(--sys-frame-height-control-sm);
+  --comp-dialog-action-height: var(--sys-frame-height-control-sm);
+  --comp-dialog-action-radius: var(--sys-frame-radius-control);
+  --comp-dialog-action-primary-bg: var(--sys-energy-action-primary);
+  --comp-dialog-action-primary-text: var(--sys-energy-text-on-action);
+  --comp-dialog-action-secondary-bg: var(--sys-energy-surface-secondary);
+  --comp-dialog-action-secondary-text: var(--sys-energy-text-primary);
+  --comp-dialog-focus-ring: var(--sys-a11y-focus-ring);
+  --comp-dialog-transition: opacity var(--sys-momentum-duration-fast) var(--sys-momentum-easing-touch), transform var(--sys-momentum-duration-fast) var(--sys-momentum-easing-touch);
+  --comp-dialog-enter-transform: var(--component-transform-rest);
+  --comp-dialog-exit-transform: translateY(var(--ref-frame-space-4)) scale(0.96);
+}
+
+.dialog-demo {
+  display: grid;
+  inline-size: min(100%, var(--sys-frame-doc-stage-inline));
+  min-block-size: var(--sys-frame-content-search-min);
+  place-items: center;
+  padding: var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.dialog-demo__trigger {
+  min-block-size: var(--sys-frame-height-control-md);
+  padding: 0 var(--ref-frame-space-4);
+  border: 0;
+  border-radius: var(--sys-frame-radius-control);
+  background: var(--sys-energy-action-primary);
+  color: var(--sys-energy-text-on-action);
+  font: inherit;
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.dialog-demo__overlay {
+  display: none;
+  place-items: center;
+  inline-size: 100%;
+  min-block-size: 100%;
+  padding: var(--ref-frame-space-4);
+  border-radius: inherit;
+  background: var(--comp-dialog-overlay-bg);
+  backdrop-filter: var(--comp-dialog-overlay-blur);
+}
+
+.dialog-demo[data-open="true"] .dialog-demo__trigger { display: none; }
+.dialog-demo[data-open="true"] .dialog-demo__overlay { display: grid; }
+
+.dialog-demo__panel {
+  position: relative;
+  display: grid;
+  gap: var(--comp-dialog-gap);
+  inline-size: var(--comp-dialog-panel-inline);
+  padding: var(--comp-dialog-panel-padding);
+  border: var(--sys-frame-border-thin) solid var(--comp-dialog-panel-border);
+  border-radius: var(--comp-dialog-panel-radius);
+  background: var(--comp-dialog-panel-bg);
+  box-shadow: var(--comp-dialog-panel-shadow);
+  color: var(--sys-energy-text-primary);
+  animation: dialog-demo-in var(--sys-momentum-duration-fast) var(--sys-momentum-easing-touch);
+}
+
+.dialog-demo__icon {
+  display: grid;
+  place-items: center;
+  inline-size: var(--comp-dialog-icon-size);
+  block-size: var(--comp-dialog-icon-size);
+  border-radius: var(--sys-frame-radius-full);
+  background: var(--comp-dialog-icon-bg-danger);
+  color: var(--comp-dialog-icon-text-danger);
+}
+
+.dialog-demo[data-tone="success"] .dialog-demo__icon { background: var(--comp-dialog-icon-bg-success); color: var(--comp-dialog-icon-text-success); }
+.dialog-demo[data-tone="info"] .dialog-demo__icon { background: var(--comp-dialog-icon-bg-info); color: var(--comp-dialog-icon-text-info); }
+
+.dialog-demo__close {
+  position: absolute;
+  inset-block-start: var(--ref-frame-space-3);
+  inset-inline-end: var(--ref-frame-space-3);
+  display: grid;
+  place-items: center;
+  inline-size: var(--comp-dialog-close-size);
+  block-size: var(--comp-dialog-close-size);
+  border: 0;
+  border-radius: var(--sys-frame-radius-full);
+  background: transparent;
+  color: var(--sys-energy-text-secondary);
+}
+
+.dialog-demo__content {
+  display: grid;
+  gap: var(--ref-frame-space-2);
+}
+
+.dialog-demo__content h3,
+.dialog-demo__content p {
+  margin: 0;
+}
+
+.dialog-demo__content h3 {
+  padding-inline-end: var(--ref-frame-space-7);
+  font-size: var(--sys-voice-size-6);
+  line-height: var(--sys-voice-line-height-tight);
+}
+
+.dialog-demo__content p {
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--sys-voice-size-3);
+  line-height: var(--sys-voice-line-height-normal);
+}
+
+.dialog-demo__panel footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--ref-frame-space-2);
+}
+
+.dialog-demo__panel footer button {
+  min-block-size: var(--comp-dialog-action-height);
+  padding: 0 var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) solid transparent;
+  border-radius: var(--comp-dialog-action-radius);
+  font: inherit;
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.dialog-demo__panel footer button[data-dialog-action="primary"] {
+  background: var(--comp-dialog-action-primary-bg);
+  color: var(--comp-dialog-action-primary-text);
+}
+
+.dialog-demo__panel footer button[data-dialog-action="secondary"] {
+  border-color: var(--sys-energy-border-default);
+  background: var(--comp-dialog-action-secondary-bg);
+  color: var(--comp-dialog-action-secondary-text);
+}
+
+.dialog-demo :is(button):focus-visible {
+  outline: var(--comp-dialog-focus-ring);
+  outline-offset: var(--sys-a11y-focus-offset);
+}
+
+@keyframes dialog-demo-in {
+  from { opacity: 0; transform: var(--comp-dialog-exit-transform); }
+  to { opacity: 1; transform: var(--comp-dialog-enter-transform); }
+}
+
+@media (max-width: 767px) {
+  .dialog-demo {
+    inline-size: 100%;
+    min-block-size: var(--sys-frame-doc-panel-min-xl);
+  }
+
+  .dialog-demo__panel footer {
+    flex-direction: column-reverse;
+  }
+
+  .dialog-demo__panel footer button {
+    inline-size: 100%;
+  }
+}

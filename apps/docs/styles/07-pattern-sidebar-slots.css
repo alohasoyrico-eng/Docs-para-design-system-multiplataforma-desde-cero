@@ -1,0 +1,58 @@
+.pattern-design-shell-demo--sidebar-slots .sidebar {
+  align-content: stretch;
+  min-block-size: var(--sys-frame-doc-panel-min-xl);
+  max-block-size: var(--sys-frame-content-search-results-max-block);
+  grid-template-rows: auto auto auto auto auto minmax(var(--sys-frame-height-control-sm), 1fr);
+}
+
+.pattern-sidebar-brand {
+  justify-content: flex-start;
+  min-block-size: var(--sys-frame-height-control-md);
+  margin-block-end: var(--ref-frame-space-2);
+  padding-inline: var(--ref-frame-space-2);
+  border: var(--sys-frame-border-thin) solid transparent;
+}
+
+.pattern-sidebar-brand img {
+  max-inline-size: var(--sys-frame-content-tab-label-max);
+  max-block-size: var(--sys-frame-height-control-sm);
+}
+
+.pattern-sidebar-footer {
+  display: grid;
+  gap: var(--ref-frame-space-1);
+  align-self: end;
+  min-inline-size: 0;
+  margin-block-start: auto;
+  padding-block-end: var(--ref-frame-space-2);
+  padding-block-start: var(--ref-frame-space-3);
+  border-block-start: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+}
+
+.pattern-sidebar-footer button {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+  min-block-size: var(--sys-frame-height-control-sm);
+  padding: var(--ref-frame-space-2) var(--ref-frame-space-3);
+  border: 0;
+  border-radius: var(--sys-frame-radius-container);
+  background: transparent;
+  color: var(--sys-energy-text-secondary);
+  font: inherit;
+  font-weight: var(--sys-voice-weight-bold);
+  cursor: pointer;
+}
+
+.pattern-sidebar-footer button:is(:hover, :focus-visible) {
+  background: var(--sys-state-hover-overlay);
+  color: var(--sys-energy-text-primary);
+}
+
+.pattern-sidebar-footer > span {
+  padding-inline: var(--ref-frame-space-3);
+  color: var(--sys-energy-text-secondary);
+  font-family: var(--sys-growth-event-font);
+  font-size: var(--sys-voice-size-2);
+}

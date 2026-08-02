@@ -1,0 +1,77 @@
+:is(.detail-page, .reference-doc) {
+  --comp-card-summary-width: min(100%, 22rem);
+  --comp-card-summary-gap: var(--ref-frame-space-3);
+  --comp-card-summary-padding: var(--ref-frame-space-4);
+  --comp-card-summary-radius: var(--sys-frame-radius-container);
+  --comp-card-summary-metric-radius: var(--sys-frame-radius-control);
+  --comp-card-summary-bg: var(--sys-energy-surface-primary);
+  --comp-card-summary-bg-muted: var(--sys-energy-surface-secondary);
+  --comp-card-summary-text: var(--sys-energy-text-primary);
+  --comp-card-summary-muted: var(--sys-energy-text-secondary);
+  --comp-card-summary-border: var(--sys-energy-border-default);
+  --comp-card-summary-action: var(--sys-energy-action-primary);
+  --comp-card-summary-warning: var(--sys-energy-status-warning);
+  --comp-card-summary-danger: var(--sys-energy-status-error);
+  --comp-card-summary-success: var(--sys-energy-status-success);
+  --comp-card-summary-shadow: var(--sys-depth-elevation-1);
+  --comp-card-summary-focus-ring: var(--sys-a11y-focus-ring);
+  --comp-card-summary-motion: var(--sys-momentum-transition-fast);
+  --comp-card-summary-title-size: var(--sys-voice-size-label);
+  --comp-card-summary-number-size: var(--sys-voice-heading-md-size);
+  --comp-card-summary-caption-size: var(--sys-voice-size-4);
+  --comp-card-summary-icon-size: var(--ref-frame-space-9);
+}
+
+.card-summary-demo {
+  display: grid;
+  gap: var(--comp-card-summary-gap);
+  inline-size: var(--comp-card-summary-width);
+  max-inline-size: 100%;
+  padding: var(--comp-card-summary-padding);
+  border: var(--sys-frame-border-thin) solid var(--comp-card-summary-border);
+  border-radius: var(--comp-card-summary-radius);
+  background: var(--comp-card-summary-bg);
+  color: var(--comp-card-summary-text);
+  box-shadow: var(--comp-card-summary-shadow);
+  transition: border-color var(--comp-card-summary-motion), transform var(--comp-card-summary-motion);
+}
+
+.card-summary-demo header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--comp-card-summary-gap);
+}
+
+.card-summary-demo header > span {
+  display: grid;
+  place-items: center;
+  inline-size: var(--comp-card-summary-icon-size);
+  block-size: var(--comp-card-summary-icon-size);
+  border-radius: var(--sys-frame-radius-full);
+  background: color-mix(in srgb, var(--comp-card-summary-action) 12%, var(--comp-card-summary-bg-muted));
+  color: var(--comp-card-summary-action);
+}
+
+.card-summary-demo strong { font-size: var(--comp-card-summary-title-size); }
+.card-summary-demo small { color: var(--comp-card-summary-muted); font-size: var(--comp-card-summary-caption-size); }
+.card-summary-demo em { font-style: normal; color: var(--comp-card-summary-success); font-size: var(--comp-card-summary-caption-size); font-weight: var(--sys-voice-weight-semibold); }
+.card-summary-demo > p { margin: 0; font-size: var(--comp-card-summary-number-size); font-weight: var(--sys-voice-weight-semibold); letter-spacing: 0; }
+
+.card-summary-demo__metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--comp-card-summary-gap); }
+.card-summary-demo__metrics span { display: grid; gap: var(--ref-frame-space-1); padding: var(--ref-frame-space-3); border-radius: var(--comp-card-summary-metric-radius); background: var(--comp-card-summary-bg-muted); }
+.card-summary-demo[data-state="hover"] { transform: translateY(calc(var(--ref-frame-space-1) * -1)); }
+.card-summary-demo[data-state="focus"] { outline: var(--comp-card-summary-focus-ring); outline-offset: var(--sys-a11y-focus-offset); }
+.card-summary-demo[data-state="warning"] { border-color: var(--comp-card-summary-warning); }
+.card-summary-demo[data-state="frozen"] em,
+.card-summary-demo[data-state="error"] em { color: var(--comp-card-summary-danger); }
+.card-summary-demo[data-state="disabled"] { opacity: var(--sys-state-disabled-opacity); }
+.card-summary-demo[data-variant="virtual"] { --comp-card-summary-action: var(--sys-energy-status-success); }
+.card-summary-demo[data-variant="compact"] { --comp-card-summary-padding: var(--ref-frame-space-3); --comp-card-summary-number-size: var(--sys-voice-heading-sm-size); }
+.card-summary-demo[data-variant="limit"] { --comp-card-summary-action: var(--sys-energy-status-warning); }
+.card-summary-demo[data-full-width="true"] { --comp-card-summary-width: 100%; }
+
+@media (max-width: 520px) {
+  .card-summary-demo { --comp-card-summary-width: 100%; }
+  .card-summary-demo__metrics { grid-template-columns: 1fr; }
+}

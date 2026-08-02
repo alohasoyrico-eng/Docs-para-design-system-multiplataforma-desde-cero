@@ -1,0 +1,84 @@
+.docs-demo-layout--station-pin.simple-scenario {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.docs-demo-layout--station-pin .simple-console {
+  min-block-size: clamp(var(--sys-frame-content-search-min), 36vw, var(--sys-frame-content-search-results-max-block));
+}
+
+.docs-demo-layout--station-pin.simple-demo-row,
+.docs-demo-layout--station-pin.button-stack,
+.docs-demo-layout--station-pin.simple-viewport-demo {
+  align-items: center;
+  background:
+    linear-gradient(135deg, transparent 47%, color-mix(in srgb, var(--sys-color-border) 48%, transparent) 49%, transparent 51%),
+    linear-gradient(30deg, transparent 42%, color-mix(in srgb, var(--sys-color-action) 20%, transparent) 44%, transparent 46%),
+    color-mix(in srgb, var(--sys-color-surface-raised) 78%, var(--sys-color-surface));
+  border: var(--component-border-width) solid color-mix(in srgb, var(--sys-color-border) 72%, transparent);
+  border-radius: var(--sys-frame-radius-container);
+  box-sizing: border-box;
+  gap: clamp(var(--sys-frame-gap-component-lg), 5vw, var(--sys-frame-gap-subsection));
+  inline-size: 100%;
+  justify-content: center;
+  min-block-size: clamp(var(--sys-frame-doc-card-min-block-md), 32vw, var(--sys-frame-doc-panel-min-xl));
+  overflow: visible;
+  padding: clamp(var(--sys-frame-gap-component-lg), 6vw, var(--sys-frame-gap-section));
+  position: relative;
+}
+
+.docs-demo-layout--station-pin.simple-demo-row::before,
+.docs-demo-layout--station-pin.button-stack::before,
+.docs-demo-layout--station-pin.simple-viewport-demo::before {
+  background:
+    radial-gradient(circle, var(--sys-color-action) 0 var(--sys-space-xs), transparent calc(var(--sys-space-xs) + var(--sys-frame-border-thin))),
+    linear-gradient(90deg, transparent 0 12%, color-mix(in srgb, var(--sys-color-action) 35%, transparent) 12% 88%, transparent 88%);
+  block-size: var(--sys-space-sm);
+  border-radius: var(--component-radius-pill);
+  content: "";
+  inline-size: min(var(--sys-frame-content-search-min), 56%);
+  inset-block-start: 50%;
+  inset-inline-start: 20%;
+  opacity: 0.34;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.docs-demo-layout--station-pin .station-pin.docs-package-demo {
+  margin: var(--ref-frame-space-2);
+  position: relative;
+  z-index: var(--sys-depth-z-raised);
+}
+
+.docs-demo-layout--station-pin .station-pin.docs-package-demo:nth-of-type(2) {
+  margin-block-start: calc(var(--ref-frame-space-10) * -1);
+}
+
+.docs-demo-layout--station-pin .station-pin.docs-package-demo:nth-of-type(3) {
+  margin-block-start: var(--ref-frame-space-10);
+}
+
+body[data-contrast="quiet"] .docs-demo-layout--station-pin.simple-demo-row,
+body[data-contrast="quiet"] .docs-demo-layout--station-pin.button-stack,
+body[data-contrast="quiet"] .docs-demo-layout--station-pin.simple-viewport-demo {
+  background:
+    linear-gradient(135deg, transparent 47%, color-mix(in srgb, var(--sys-color-border) 32%, transparent) 49%, transparent 51%),
+    linear-gradient(30deg, transparent 42%, color-mix(in srgb, var(--sys-color-action-hover) 24%, transparent) 44%, transparent 46%),
+    color-mix(in srgb, var(--sys-color-surface-raised) 88%, var(--sys-color-surface));
+}
+
+@media (max-width: 640px) {
+  .docs-demo-layout--station-pin.simple-demo-row,
+  .docs-demo-layout--station-pin.button-stack,
+  .docs-demo-layout--station-pin.simple-viewport-demo {
+    align-content: center;
+    flex-direction: column;
+    gap: var(--sys-frame-gap-component-lg);
+    min-block-size: var(--sys-frame-doc-panel-min-xl);
+    padding: var(--sys-frame-gap-component-lg);
+  }
+
+  .docs-demo-layout--station-pin .station-pin.docs-package-demo:nth-of-type(2),
+  .docs-demo-layout--station-pin .station-pin.docs-package-demo:nth-of-type(3) {
+    margin-block-start: 0;
+  }
+}

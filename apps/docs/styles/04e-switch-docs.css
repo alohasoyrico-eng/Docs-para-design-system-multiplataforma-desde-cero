@@ -1,0 +1,182 @@
+.switch-scenario {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(var(--doc-column-min), .65fr);
+  gap: var(--ref-frame-space-5);
+  align-items: stretch;
+}
+
+.switch-console {
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  padding: var(--ref-frame-space-5);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+.switch-console header {
+  display: flex;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+}
+
+.switch-console header small {
+  display: block;
+  color: var(--sys-energy-text-secondary);
+}
+
+.switch-stack {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+}
+
+.switch-demo {
+  --comp-switch-row-gap: var(--ref-frame-space-3);
+  --comp-switch-copy-gap: var(--ref-frame-space-1);
+  --comp-switch-label-color: var(--sys-energy-text-primary);
+  --comp-switch-label-size: var(--sys-voice-size-4);
+  --comp-switch-label-weight: var(--sys-voice-weight-bold);
+  --comp-switch-support-color: var(--sys-energy-text-secondary);
+  --comp-switch-support-size: var(--sys-voice-size-3);
+  --comp-switch-track-width: 3rem;
+  --comp-switch-track-height: 1.75rem;
+  --comp-switch-track-padding: var(--ref-frame-space-1);
+  --comp-switch-track-radius: var(--ref-frame-radius-full);
+  --comp-switch-track-bg: var(--sys-color-border-strong);
+  --comp-switch-track-bg-on: var(--sys-energy-action-primary);
+  --comp-switch-track-bg-error: color-mix(in srgb, var(--sys-energy-status-error) 18%, var(--sys-energy-surface-primary));
+  --comp-switch-thumb-size: 1.375rem;
+  --comp-switch-thumb-size-pressed: 1.625rem;
+  --comp-switch-thumb-bg: var(--sys-energy-surface-primary);
+  --comp-switch-thumb-shadow: var(--sys-depth-elevation-2);
+  --comp-switch-focus-ring: var(--sys-state-focus-ring);
+  --comp-switch-focus-offset: var(--sys-state-focus-offset);
+  --comp-switch-error-color: var(--sys-energy-status-error);
+  --comp-switch-error-ring: 0 0 0 var(--sys-frame-border-medium) var(--comp-switch-error-color);
+  --comp-switch-disabled-opacity: var(--sys-state-disabled-opacity);
+  --comp-switch-transition-touch: var(--sys-momentum-transition-touch);
+  --comp-switch-transition-enter: var(--sys-momentum-duration-touch) var(--sys-momentum-easing-enter);
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--comp-switch-row-gap);
+  align-items: start;
+  min-block-size: var(--density-control-height);
+  color: var(--comp-switch-label-color);
+  cursor: pointer;
+}
+
+.switch-demo__control {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: var(--comp-switch-track-width);
+  block-size: var(--comp-switch-track-height);
+  margin-block-start: calc(var(--density-control-padding-y) / 2);
+}
+
+.switch-demo input {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.switch-demo__track {
+  display: flex;
+  align-items: center;
+  inline-size: var(--comp-switch-track-width);
+  block-size: var(--comp-switch-track-height);
+  padding: var(--comp-switch-track-padding);
+  border-radius: var(--comp-switch-track-radius);
+  background: var(--comp-switch-track-bg);
+  box-sizing: border-box;
+  transition:
+    background var(--comp-switch-transition-enter),
+    box-shadow var(--comp-switch-transition-enter);
+}
+
+.switch-demo__thumb {
+  display: block;
+  inline-size: var(--comp-switch-thumb-size);
+  block-size: var(--comp-switch-thumb-size);
+  border-radius: var(--ref-frame-radius-full);
+  background: var(--comp-switch-thumb-bg);
+  box-shadow: var(--comp-switch-thumb-shadow);
+  transition:
+    transform var(--comp-switch-transition-touch),
+    inline-size var(--comp-switch-transition-enter);
+}
+
+.switch-demo__copy {
+  display: grid;
+  gap: var(--comp-switch-copy-gap);
+  min-inline-size: 0;
+}
+
+.switch-demo__copy strong {
+  color: var(--comp-switch-label-color);
+  font-size: var(--comp-switch-label-size);
+  font-weight: var(--comp-switch-label-weight);
+  line-height: var(--sys-voice-line-height-tight);
+}
+
+.switch-demo__copy small {
+  display: inline-flex;
+  gap: var(--ref-frame-space-1);
+  align-items: center;
+  color: var(--comp-switch-support-color);
+  font-size: var(--comp-switch-support-size);
+  line-height: var(--sys-voice-line-height-normal);
+}
+
+.switch-demo[data-checked="true"] .switch-demo__track {
+  background: var(--comp-switch-track-bg-on);
+}
+
+.switch-demo[data-checked="true"] .switch-demo__thumb {
+  transform: translateX(calc(var(--comp-switch-track-width) - var(--comp-switch-thumb-size) - (var(--comp-switch-track-padding) * 2)));
+}
+
+.switch-demo:hover .switch-demo__track {
+  transform: scale(var(--sys-momentum-scale-hover));
+}
+
+.switch-demo:active .switch-demo__thumb,
+.switch-demo[data-state="pressed"] .switch-demo__thumb {
+  inline-size: var(--comp-switch-thumb-size-pressed);
+}
+
+.switch-demo[data-state="pressed"][data-checked="true"] .switch-demo__thumb,
+.switch-demo:active[data-checked="true"] .switch-demo__thumb {
+  transform: translateX(calc(var(--comp-switch-track-width) - var(--comp-switch-thumb-size-pressed) - (var(--comp-switch-track-padding) * 2)));
+}
+
+.switch-demo[data-state="focus"] .switch-demo__track,
+.switch-demo:focus-within .switch-demo__track {
+  outline: var(--comp-switch-focus-ring);
+  outline-offset: var(--comp-switch-focus-offset);
+}
+
+.switch-demo[data-state="error"] .switch-demo__track {
+  background: var(--comp-switch-track-bg-error);
+  box-shadow: var(--comp-switch-error-ring);
+}
+
+.switch-demo[data-state="error"] .switch-demo__copy small {
+  color: var(--comp-switch-error-color);
+}
+
+.switch-demo[data-state="disabled"] {
+  cursor: not-allowed;
+  opacity: var(--comp-switch-disabled-opacity);
+}
+
+@media (max-width: 52rem) {
+  .switch-scenario {
+    grid-template-columns: 1fr;
+  }
+}

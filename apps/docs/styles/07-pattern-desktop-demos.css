@@ -1,0 +1,155 @@
+.pattern-desktop-demo {
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  margin-block-start: var(--ref-frame-space-4);
+  padding: var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+.pattern-kpi-card-demo__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ref-frame-space-3);
+}
+
+.pattern-kpi-card-demo footer,
+.pattern-virtual-table-demo footer,
+.pattern-advanced-filters-demo footer,
+.pattern-chart-wrapper-demo__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ref-frame-space-3);
+}
+
+.pattern-chart-wrapper-demo__header {
+  align-items: end;
+}
+
+.pattern-chart-wrapper-demo__summary,
+.pattern-virtual-table-demo [data-virtual-table] {
+  overflow-x: auto;
+}
+
+.pattern-virtual-table-demo__toolbar,
+.pattern-advanced-filters-demo__controls {
+  display: grid;
+  grid-template-columns: minmax(20rem, 1fr) auto;
+  gap: var(--ref-frame-space-3);
+  align-items: end;
+}
+
+.pattern-virtual-table-demo__actions,
+.pattern-virtual-table-demo__filters,
+.pattern-virtual-table-demo__bulk {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+}
+
+.pattern-virtual-table-demo__filters {
+  padding-block-end: var(--ref-frame-space-2);
+  border-block-end: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+}
+
+.pattern-virtual-table-demo__bulk {
+  justify-content: space-between;
+  padding: var(--ref-frame-space-3);
+  border: var(--sys-frame-border-thin) solid color-mix(in srgb, var(--sys-energy-action-primary) 42%, var(--sys-energy-border-default));
+  border-radius: var(--sys-frame-radius-control);
+  background: color-mix(in srgb, var(--sys-energy-action-primary) 8%, var(--sys-energy-surface-primary));
+}
+
+.pattern-virtual-table-demo__bulk > [data-pattern-component="badge"] {
+  margin-inline-end: auto;
+}
+
+.pattern-advanced-filters-demo__controls {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pattern-advanced-filters-demo__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+}
+
+.pattern-advanced-filters-demo__results {
+  overflow-x: auto;
+  padding-block-start: var(--ref-frame-space-2);
+}
+
+.pattern-column-config-demo__layout {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.32fr) minmax(0, 1fr);
+  gap: var(--ref-frame-space-4);
+  align-items: start;
+}
+
+.pattern-column-config-demo__panel,
+.pattern-roles-demo__controls,
+.pattern-admin-demo__summary {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+  padding: var(--ref-frame-space-3);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.pattern-column-config-demo__table,
+.pattern-roles-demo [data-roles-table],
+.pattern-admin-demo [data-admin-panel] {
+  overflow-x: auto;
+}
+
+.pattern-roles-demo__toolbar,
+.pattern-admin-demo__switcher,
+.pattern-admin-demo__summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pattern-roles-demo__controls,
+.pattern-admin-demo [data-admin-panel] {
+  gap: var(--ref-frame-space-3);
+}
+
+.pattern-admin-demo [data-admin-panel] {
+  display: grid;
+}
+
+.pattern-admin-demo [data-admin-panel][hidden] {
+  display: none;
+}
+
+.pattern-desktop-demo [hidden],
+.pattern-desktop-demo tr[hidden] {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .pattern-kpi-card-demo__grid,
+  .pattern-advanced-filters-demo__controls,
+  .pattern-virtual-table-demo__toolbar,
+  .pattern-column-config-demo__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-kpi-card-demo footer,
+  .pattern-virtual-table-demo footer,
+  .pattern-advanced-filters-demo footer,
+  .pattern-chart-wrapper-demo__header,
+  .pattern-roles-demo__toolbar,
+  .pattern-admin-demo__switcher {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

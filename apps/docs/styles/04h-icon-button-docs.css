@@ -1,0 +1,72 @@
+:root {
+  --comp-icon-button-size-compact: var(--sys-frame-height-control-sm);
+  --comp-icon-button-size-standard: var(--sys-frame-height-control-md);
+  --comp-icon-button-size-comfortable: var(--sys-frame-height-control-lg);
+  --comp-icon-button-icon-compact: var(--sys-symbol-size-sm);
+  --comp-icon-button-icon-standard: var(--sys-symbol-size-md);
+  --comp-icon-button-icon-comfortable: var(--sys-symbol-size-lg);
+  --comp-icon-button-badge-size: var(--ref-frame-space-2);
+  --comp-icon-button-hover-scale: var(--sys-momentum-scale-hover);
+  --comp-icon-button-press-scale: var(--sys-momentum-scale-press);
+  --comp-icon-button-radius: var(--sys-frame-radius-full);
+  --comp-icon-button-border-width: var(--sys-frame-border-thin);
+  --comp-icon-button-border-color: var(--sys-energy-border-default);
+  --comp-icon-button-surface: transparent;
+  --comp-icon-button-surface-tonal: var(--sys-energy-surface-primary);
+  --comp-icon-button-surface-hover: var(--sys-energy-surface-secondary);
+  --comp-icon-button-action: var(--sys-energy-action-primary);
+  --comp-icon-button-action-hover: var(--sys-energy-action-primary);
+  --comp-icon-button-action-text: var(--sys-energy-text-on-action);
+  --comp-icon-button-focus-color: var(--sys-energy-action-primary);
+  --comp-icon-button-focus-width: var(--ref-state-focus-ring-width);
+  --comp-icon-button-focus-offset: var(--sys-a11y-focus-offset);
+  --comp-icon-button-motion-fast: var(--sys-momentum-transition-fast);
+  --comp-icon-button-motion-press: var(--sys-momentum-transition-touch);
+  --comp-icon-button-motion-standard: var(--sys-momentum-easing-enter);
+  --comp-icon-button-motion-emphasis: var(--sys-momentum-easing-touch);
+}
+
+.icon-button-scenario {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(var(--doc-column-min), .65fr);
+  gap: var(--ref-frame-space-5);
+  align-items: stretch;
+}
+
+.icon-button-console {
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  padding: var(--ref-frame-space-5);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+.icon-button-console header {
+  display: flex;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+}
+
+.icon-button-console header small {
+  display: block;
+  color: var(--sys-energy-text-secondary);
+}
+
+.icon-button-toolbar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--ref-frame-space-3);
+  align-items: center;
+}
+
+.icon-button-toolbar button:focus-visible {
+  outline: var(--comp-icon-button-focus-width) solid var(--comp-icon-button-focus-color);
+  outline-offset: var(--comp-icon-button-focus-offset);
+}
+
+@media (max-width: 52rem) {
+  .icon-button-scenario {
+    grid-template-columns: 1fr;
+  }
+}

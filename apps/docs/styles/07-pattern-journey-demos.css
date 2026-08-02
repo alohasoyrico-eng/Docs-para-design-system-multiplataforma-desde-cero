@@ -1,0 +1,84 @@
+.pattern-journey-demo {
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  margin-block-start: var(--ref-frame-space-4);
+  padding: var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+.pattern-journey-demo--mobile {
+  max-inline-size: var(--sys-frame-content-search-results-max-block);
+}
+
+.pattern-auth-demo {
+  grid-template-columns: minmax(0, 1fr) minmax(var(--sys-frame-doc-panel-min-lg), 0.85fr);
+  align-items: start;
+}
+
+.pattern-auth-demo__identity,
+.pattern-auth-demo__otp,
+.pattern-auth-demo__biometric,
+.pattern-journey-step,
+.pattern-fleet-onboarding__aside {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+}
+
+.pattern-journey-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+}
+
+.pattern-journey-actions--split {
+  justify-content: space-between;
+}
+
+.pattern-fleet-onboarding__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+  gap: var(--ref-frame-space-4);
+  align-items: start;
+}
+
+.pattern-fleet-onboarding__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ref-frame-space-3);
+}
+
+.pattern-fleet-onboarding__aside {
+  padding: var(--ref-frame-space-3);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.pattern-journey-step--summary {
+  justify-items: start;
+}
+
+.pattern-journey-demo [hidden],
+.pattern-journey-demo [data-journey-panel][hidden] {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .pattern-auth-demo,
+  .pattern-fleet-onboarding__layout,
+  .pattern-fleet-onboarding__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-journey-demo--mobile {
+    max-inline-size: none;
+  }
+
+  .pattern-journey-actions--split {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+}

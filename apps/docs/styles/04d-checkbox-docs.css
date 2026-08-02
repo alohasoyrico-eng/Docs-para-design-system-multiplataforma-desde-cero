@@ -1,0 +1,262 @@
+.checkbox-scenario {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(var(--doc-column-min), .65fr);
+  gap: var(--ref-frame-space-5);
+  align-items: stretch;
+}
+
+.checkbox-console {
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  padding: var(--ref-frame-space-5);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+}
+
+.checkbox-console header {
+  display: flex;
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+}
+
+.checkbox-console header small {
+  display: block;
+  color: var(--sys-energy-text-secondary);
+}
+
+.checkbox-stack {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+}
+
+.checkbox-demo {
+  --comp-checkbox-row-gap: var(--ref-frame-space-2);
+  --comp-checkbox-copy-gap: var(--ref-frame-space-1);
+  --comp-checkbox-label-color: var(--sys-energy-text-primary);
+  --comp-checkbox-label-size: var(--sys-voice-size-4);
+  --comp-checkbox-label-weight: var(--sys-voice-weight-bold);
+  --comp-checkbox-support-color: var(--sys-energy-text-secondary);
+  --comp-checkbox-support-size: var(--sys-voice-size-3);
+  --comp-checkbox-box-size: var(--sys-symbol-size-lg);
+  --comp-checkbox-box-radius: var(--ref-frame-radius-2);
+  --comp-checkbox-box-border-width: var(--sys-frame-border-medium);
+  --comp-checkbox-box-border: var(--sys-energy-border-default);
+  --comp-checkbox-box-border-hover: var(--sys-energy-border-strong);
+  --comp-checkbox-box-bg: var(--sys-energy-surface-primary);
+  --comp-checkbox-box-bg-selected: var(--sys-energy-action-primary);
+  --comp-checkbox-box-border-selected: var(--sys-energy-action-primary);
+  --comp-checkbox-indicator-color: var(--sys-energy-surface-primary);
+  --comp-checkbox-focus-ring: var(--sys-state-focus-ring);
+  --comp-checkbox-focus-offset: var(--sys-state-focus-offset);
+  --comp-checkbox-error-color: var(--sys-energy-status-error);
+  --comp-checkbox-error-bg: color-mix(in srgb, color-mix(in srgb, var(--sys-energy-status-error) 12%, var(--sys-energy-surface-primary)) 32%, var(--sys-energy-surface-primary));
+  --comp-checkbox-disabled-opacity: var(--sys-state-disabled-opacity);
+  --comp-checkbox-hover-scale: var(--sys-momentum-scale-hover);
+  --comp-checkbox-transition: var(--sys-momentum-transition-touch);
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--comp-checkbox-row-gap);
+  align-items: start;
+  min-block-size: var(--density-control-height);
+  color: var(--comp-checkbox-label-color);
+  cursor: pointer;
+}
+
+.checkbox-demo__control {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: var(--comp-checkbox-box-size);
+  block-size: var(--comp-checkbox-box-size);
+  margin-block-start: calc(var(--density-control-padding-y) / 2);
+}
+
+.checkbox-demo input {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.checkbox-demo__box {
+  display: inline-grid;
+  place-items: center;
+  inline-size: var(--comp-checkbox-box-size);
+  block-size: var(--comp-checkbox-box-size);
+  border: var(--comp-checkbox-box-border-width) solid var(--comp-checkbox-box-border);
+  border-radius: var(--comp-checkbox-box-radius);
+  background: var(--comp-checkbox-box-bg);
+  color: var(--comp-checkbox-indicator-color);
+  transform-origin: center;
+  transition:
+    transform var(--comp-checkbox-transition),
+    border-color var(--comp-checkbox-transition),
+    background var(--comp-checkbox-transition),
+    box-shadow var(--comp-checkbox-transition);
+}
+
+.checkbox-demo__box .material-symbol {
+  --icon-color: currentColor;
+  --icon-weight: 700;
+  animation: checkbox-indicator-in var(--sys-momentum-transition-touch);
+}
+
+.checkbox-demo__copy {
+  display: grid;
+  gap: var(--comp-checkbox-copy-gap);
+  min-inline-size: 0;
+}
+
+.checkbox-demo__copy strong {
+  color: var(--comp-checkbox-label-color);
+  font-size: var(--comp-checkbox-label-size);
+  font-weight: var(--comp-checkbox-label-weight);
+  line-height: var(--sys-voice-line-height-tight);
+}
+
+.checkbox-demo__copy small {
+  display: inline-flex;
+  gap: var(--ref-frame-space-1);
+  align-items: center;
+  color: var(--comp-checkbox-support-color);
+  font-size: var(--comp-checkbox-support-size);
+  line-height: var(--sys-voice-line-height-normal);
+}
+
+.checkbox-demo:hover .checkbox-demo__box {
+  border-color: var(--comp-checkbox-box-border-hover);
+  transform: scale(var(--comp-checkbox-hover-scale));
+}
+
+.checkbox-demo:active .checkbox-demo__box {
+  transform: scale(var(--sys-momentum-scale-press));
+}
+
+.checkbox-demo[data-checked="true"] .checkbox-demo__box,
+.checkbox-demo[data-indeterminate="true"] .checkbox-demo__box {
+  border-color: var(--comp-checkbox-box-border-selected);
+  background: var(--comp-checkbox-box-bg-selected);
+}
+
+.checkbox-demo[data-state="focus"] .checkbox-demo__box,
+.checkbox-demo:focus-within .checkbox-demo__box {
+  border-color: var(--comp-checkbox-box-border-selected);
+  outline: var(--comp-checkbox-focus-ring);
+  outline-offset: var(--comp-checkbox-focus-offset);
+}
+
+.checkbox-demo[data-state="error"] .checkbox-demo__box {
+  border-color: var(--comp-checkbox-error-color);
+  background: var(--comp-checkbox-error-bg);
+}
+
+.checkbox-demo[data-state="error"] .checkbox-demo__copy small {
+  color: var(--comp-checkbox-error-color);
+}
+
+.checkbox-demo[data-state="disabled"] {
+  cursor: not-allowed;
+  opacity: var(--comp-checkbox-disabled-opacity);
+}
+
+.checkbox-demo[data-state="disabled"] .checkbox-demo__box {
+  background: var(--sys-energy-surface-secondary);
+}
+
+.playground-controls .playground-check {
+  --comp-playground-check-size: var(--sys-symbol-size-lg);
+  --comp-playground-check-radius: var(--ref-frame-radius-2);
+  --comp-playground-check-border: var(--sys-energy-border-default);
+  --comp-playground-check-border-active: var(--sys-energy-action-primary);
+  --comp-playground-check-bg: var(--sys-energy-surface-primary);
+  --comp-playground-check-bg-active: var(--sys-energy-action-primary);
+  --comp-playground-check-icon: var(--sys-energy-surface-primary);
+  --comp-playground-check-focus: var(--sys-state-focus-ring);
+  --comp-playground-check-offset: var(--sys-state-focus-offset);
+  --comp-playground-check-transition: var(--sys-momentum-transition-touch);
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--ref-frame-space-2);
+  align-items: center;
+  color: var(--sys-energy-text-primary);
+  cursor: pointer;
+}
+
+.playground-controls .playground-check input {
+  position: absolute;
+  inset: 0 auto auto 0;
+  inline-size: var(--comp-playground-check-size);
+  block-size: var(--comp-playground-check-size);
+  min-block-size: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.playground-check__box {
+  display: inline-grid;
+  place-items: center;
+  inline-size: var(--comp-playground-check-size);
+  block-size: var(--comp-playground-check-size);
+  border: var(--sys-frame-border-medium) solid var(--comp-playground-check-border);
+  border-radius: var(--comp-playground-check-radius);
+  background: var(--comp-playground-check-bg);
+  color: var(--comp-playground-check-icon);
+  transition:
+    border-color var(--comp-playground-check-transition),
+    background var(--comp-playground-check-transition),
+    box-shadow var(--comp-playground-check-transition);
+}
+
+.playground-check__box .material-symbol {
+  --icon-color: currentColor;
+  opacity: 0;
+}
+
+.playground-check input:checked + .playground-check__box {
+  border-color: var(--comp-playground-check-border-active);
+  background: var(--comp-playground-check-bg-active);
+}
+
+.playground-check input:checked + .playground-check__box .material-symbol {
+  opacity: 1;
+  animation: checkbox-indicator-in var(--sys-momentum-transition-touch);
+}
+
+.playground-check:hover .playground-check__box {
+  transform: scale(var(--sys-momentum-scale-hover));
+}
+
+.playground-check:active .playground-check__box {
+  transform: scale(var(--sys-momentum-scale-press));
+}
+
+.playground-check input:focus-visible + .playground-check__box {
+  outline: var(--comp-playground-check-focus);
+  outline-offset: var(--comp-playground-check-offset);
+}
+
+@media (max-width: 52rem) {
+  .checkbox-scenario {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes checkbox-indicator-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--sys-momentum-scale-press));
+  }
+
+  to {
+    opacity: 1;
+    transform: var(--component-transform-scale-rest);
+  }
+}

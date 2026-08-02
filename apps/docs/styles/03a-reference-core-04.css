@@ -1,0 +1,42 @@
+.voice-token-card {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+  padding: var(--ref-frame-space-4);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--ref-frame-radius-2);
+  background: var(--sys-energy-surface-primary);
+}
+
+.voice-token-card header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--ref-frame-space-3);
+  align-items: baseline;
+}
+
+.voice-token-card header strong {
+  font-family: var(--ref-voice-family-brand);
+}
+
+.voice-token-card header span {
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--ref-voice-size-3);
+}
+
+.voice-token-list {
+  display: grid;
+  gap: var(--ref-frame-space-2);
+}
+
+.voice-token-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ref-frame-space-3);
+  padding-block: var(--ref-frame-space-2);
+  border-top: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+}
+
+.voice-token-list span {
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--ref-voice-size-3);
+}

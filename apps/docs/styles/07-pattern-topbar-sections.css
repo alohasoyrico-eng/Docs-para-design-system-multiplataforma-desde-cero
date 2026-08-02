@@ -1,0 +1,70 @@
+.pattern-design-shell-demo .pattern-topbar-sections {
+  display: flex;
+  align-items: center;
+  gap: var(--ref-frame-space-1);
+  min-inline-size: 0;
+}
+
+.pattern-design-shell-demo .pattern-topbar-section {
+  position: relative;
+}
+
+.pattern-design-shell-demo .pattern-topbar-section > summary {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--sys-frame-height-control-sm);
+  padding: var(--ref-frame-space-2) var(--ref-frame-space-3);
+  border-radius: var(--sys-frame-radius-control);
+  color: var(--sys-energy-text-primary);
+  font-size: var(--sys-voice-size-3);
+  font-weight: var(--sys-voice-weight-bold);
+  list-style: none;
+  cursor: pointer;
+}
+
+.pattern-design-shell-demo .pattern-topbar-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.pattern-design-shell-demo .pattern-topbar-section > summary::after {
+  content: "expand_more";
+  font-family: var(--sys-symbol-family);
+  font-size: var(--sys-symbol-size-sm);
+}
+
+.pattern-design-shell-demo .pattern-topbar-section[open] > summary::after {
+  content: "expand_less";
+}
+
+.pattern-design-shell-demo .pattern-topbar-section > div {
+  position: absolute;
+  inset-block-start: calc(100% + var(--ref-frame-space-2));
+  inset-inline-start: 0;
+  z-index: var(--sys-depth-z-dropdown);
+  display: grid;
+  gap: var(--ref-frame-space-1);
+  min-inline-size: var(--sys-frame-doc-panel-min-sm);
+  padding: var(--ref-frame-space-2);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+  box-shadow: var(--sys-depth-elevation-3);
+}
+
+.pattern-design-shell-demo .pattern-topbar-section:not([open]) > div {
+  display: none;
+}
+
+.pattern-design-shell-demo .pattern-topbar-section a {
+  display: block;
+  padding: var(--ref-frame-space-2) var(--ref-frame-space-3);
+  border-radius: var(--sys-frame-radius-control);
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--sys-voice-size-3);
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.pattern-design-shell-demo .pattern-topbar-section :is(summary, a):is(:hover, :focus-visible) {
+  background: var(--sys-state-hover-overlay);
+  color: var(--sys-energy-text-primary);
+}

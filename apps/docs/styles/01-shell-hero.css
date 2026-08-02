@@ -1,0 +1,65 @@
+.hero {
+  --hero-copy-width: min(100%, var(--sys-frame-content-hero-copy));
+  --hero-visual-width: min(100%, var(--sys-frame-content-hero-visual));
+  --hero-x-breath: clamp(var(--frame-page-x), 4vw, var(--density-section-gap));
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, var(--hero-copy-width)) minmax(0, var(--hero-visual-width));
+  gap: clamp(var(--density-page-gap), 10vw, calc(var(--density-page-gap) + var(--density-component-gap-lg)));
+  align-items: stretch;
+  justify-content: space-between;
+  inline-size: min(100%, calc(var(--frame-page-shell) + var(--density-page-gap) + var(--density-section-gap)));
+  margin-inline: auto;
+  min-block-size: calc(100svh - var(--sys-frame-height-shell-topbar));
+  padding-block: clamp(var(--density-section-gap), 10vw, var(--density-page-gap)) var(--density-section-gap);
+  padding-inline: var(--hero-x-breath);
+  overflow: visible;
+}
+
+.hero-copy {
+  align-self: end;
+  max-inline-size: var(--hero-copy-width);
+  padding-block-end: var(--density-component-gap-lg);
+  padding-inline-start: 0;
+}
+
+.hero-visual {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: start center;
+  min-inline-size: 0;
+  justify-self: end;
+  align-self: start;
+  padding-block-start: var(--density-component-gap-lg);
+  padding-inline-end: 0;
+}
+
+.hero-visual__image {
+  position: relative;
+  z-index: var(--sys-depth-z-raised);
+  display: block;
+  inline-size: var(--hero-visual-width);
+  block-size: auto;
+  object-fit: contain;
+  transform: translate(0, -5%);
+}
+
+.hero-visual__image--dark {
+  display: none;
+}
+
+body[data-contrast="quiet"] .hero-visual__image--light {
+  display: none;
+}
+
+body[data-contrast="quiet"] .hero-visual__image--dark {
+  display: block;
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    --hero-copy-width: min(100%, calc(var(--sys-frame-content-hero-copy) + var(--sys-frame-gap-section)));
+    gap: clamp(var(--density-page-gap), 12vw, calc(var(--density-page-gap) + var(--density-section-gap)));
+  }
+}

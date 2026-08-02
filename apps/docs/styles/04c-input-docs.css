@@ -1,0 +1,21 @@
+.input-scenario {
+  display: grid;
+  grid-template-columns: minmax(18rem, 1fr) minmax(15rem, 0.8fr);
+  gap: var(--sys-frame-gap-component-lg);
+  margin-block-start: var(--sys-frame-gap-component-lg);
+}
+
+.input-stack {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+}
+
+.input-stack label {
+  inline-size: 100%;
+}
+
+@media (max-width: 767px) {
+  .input-scenario {
+    grid-template-columns: 1fr;
+  }
+}

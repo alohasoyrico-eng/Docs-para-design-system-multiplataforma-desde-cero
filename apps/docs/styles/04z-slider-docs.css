@@ -1,0 +1,18 @@
+body[data-contrast="quiet"] .slider.docs-package-demo .slider__value,
+body[data-contrast="quiet"] .slider.docs-package-demo[data-state="focus"] .slider__value,
+body[data-contrast="quiet"] .slider.docs-package-demo[data-state="dragging"] .slider__value,
+body[data-contrast="quiet"] .slider.docs-package-demo[data-state="complete"] .slider__value {
+  color: var(--sys-color-text);
+}
+
+.docs-demo-layout--slider.simple-demo-row {
+  --docs-slider-demo-edge-padding: calc(var(--component-control-min-size) / 3);
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: minmax(min(100%, 28rem), 42rem);
+  padding-inline: var(--docs-slider-demo-edge-padding);
+}
+
+.docs-demo-layout--slider.simple-demo-row .slider.docs-package-demo {
+  inline-size: 100%;
+}

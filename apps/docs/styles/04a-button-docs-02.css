@@ -1,0 +1,194 @@
+.checklist-grid,
+.foundation-compact-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.checklist-grid article {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.checklist-grid .material-symbol {
+  color: var(--sys-energy-status-success);
+}
+
+.button-decision-list {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.button-decision-list article {
+  grid-template-columns: minmax(5.5rem, 0.45fr) minmax(5.5rem, 0.45fr) minmax(0, 1fr);
+  padding: var(--sys-frame-padding-control);
+}
+
+.foundation-compact-list article header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sys-frame-gap-component);
+}
+
+.foundation-compact-list article header span {
+  padding: var(--ref-frame-space-1) var(--ref-frame-space-2);
+  border-radius: var(--sys-frame-radius-full);
+  background: color-mix(in srgb, var(--sys-energy-status-success) 12%, var(--sys-energy-surface-primary));
+  color: var(--sys-energy-status-success);
+  font-size: var(--sys-voice-size-2);
+  font-weight: var(--sys-voice-weight-bold);
+  text-transform: uppercase;
+}
+
+.viewport-doc-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.button-density-scale {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.button-density-scale article {
+  background: var(--sys-energy-surface-primary);
+}
+
+.button-density-scale article header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sys-frame-gap-component);
+}
+
+.density-sample-row {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+  margin-block-start: var(--sys-frame-gap-component);
+}
+
+.density-sample-row span {
+  display: block;
+  block-size: var(--density-row-height);
+  border-radius: var(--sys-frame-radius-control);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.viewport-doc-grid article header {
+  display: flex;
+  align-items: center;
+  gap: var(--sys-frame-gap-component);
+}
+
+.viewport-doc-grid article header .material-symbol {
+  color: var(--sys-energy-action-primary);
+}
+
+.viewport-doc-grid article code {
+  white-space: normal;
+}
+
+.viewport-phone-demo,
+.viewport-laptop-demo,
+.viewport-tv-demo {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+  margin-block-start: var(--sys-frame-gap-component);
+  padding: var(--sys-frame-padding-container);
+  border-radius: var(--sys-frame-radius-surface);
+  background: var(--sys-energy-surface-primary);
+}
+
+.viewport-phone-demo {
+  max-inline-size: var(--sys-frame-doc-panel-min-xl);
+}
+
+.viewport-laptop-demo header,
+.viewport-tv-demo {
+  align-items: center;
+}
+
+.viewport-laptop-demo header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sys-frame-gap-component);
+}
+
+.viewport-tv-demo {
+  min-block-size: var(--density-doc-example-min-block);
+}
+
+.playground-layout {
+  grid-template-columns: minmax(var(--sys-frame-doc-panel-min-sm), 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+}
+
+.button-playground {
+  scroll-margin-block-start: var(--ref-frame-space-8);
+}
+
+.playground-controls {
+  display: grid;
+  gap: var(--sys-frame-gap-component);
+}
+
+.playground-controls label {
+  display: grid;
+  gap: var(--ref-frame-space-2);
+  color: var(--sys-energy-text-secondary);
+  font-size: var(--sys-voice-size-3);
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.playground-controls input,
+.playground-controls select {
+  min-block-size: var(--sys-frame-height-control-sm);
+  padding-inline: var(--sys-frame-button-padding-x-sm);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-control);
+  background: var(--sys-energy-surface-primary);
+  color: var(--sys-energy-text-primary);
+  font: inherit;
+}
+
+.playground-preview pre {
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.playground-warning {
+  border-inline-start: var(--sys-frame-border-indicator) solid var(--sys-energy-status-warning);
+  padding-inline-start: var(--sys-frame-gap-component);
+  color: var(--sys-energy-text-secondary);
+}
+
+.density-contract-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.density-contract-grid dl {
+  display: grid;
+  gap: var(--ref-frame-space-2);
+  margin: 0;
+}
+
+.density-contract-grid dl div {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.55fr) minmax(0, 1fr);
+  gap: var(--sys-frame-gap-component);
+}
+
+.density-contract-grid dt {
+  color: var(--sys-energy-text-secondary);
+  font-weight: var(--sys-voice-weight-bold);
+}
+
+.density-contract-grid dd {
+  margin: 0;
+}
+
+.two-column-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Button component anatomy is owned by packages/components/styles/components.css. */

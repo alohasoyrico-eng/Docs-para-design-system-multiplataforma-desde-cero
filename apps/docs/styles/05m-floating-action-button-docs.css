@@ -1,0 +1,56 @@
+:is(.detail-page, .reference-doc) {
+  --comp-floating-action-button-size: 3.5rem;
+  --comp-floating-action-button-mini-size: 3rem;
+  --comp-floating-action-button-extended-width: auto;
+  --comp-floating-action-button-gap: var(--ref-frame-space-2);
+  --comp-floating-action-button-padding-x: var(--ref-frame-space-4);
+  --comp-floating-action-button-radius: var(--sys-frame-radius-full);
+  --comp-floating-action-button-bg: var(--sys-energy-action-primary);
+  --comp-floating-action-button-accent-bg: var(--sys-energy-status-success);
+  --comp-floating-action-button-text: var(--sys-energy-text-on-action);
+  --comp-floating-action-button-border: transparent;
+  --comp-floating-action-button-shadow: var(--sys-depth-elevation-2);
+  --comp-floating-action-button-hover-shadow: var(--sys-depth-elevation-3);
+  --comp-floating-action-button-focus-ring: var(--sys-a11y-focus-ring);
+  --comp-floating-action-button-motion: var(--sys-momentum-transition-fast);
+  --comp-floating-action-button-font-size: var(--sys-voice-size-label);
+  --comp-floating-action-button-line-height: var(--sys-voice-line-height-snug);
+  --comp-floating-action-button-offset: var(--ref-frame-space-4);
+  --comp-floating-action-button-z: var(--sys-depth-z-sticky);
+  --comp-floating-action-button-pressed-scale: 0.96;
+}
+
+.floating-action-button-demo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--comp-floating-action-button-gap);
+  min-inline-size: var(--comp-floating-action-button-size);
+  min-block-size: var(--comp-floating-action-button-size);
+  padding-inline: 0;
+  border: var(--sys-frame-border-thin) solid var(--comp-floating-action-button-border);
+  border-radius: var(--comp-floating-action-button-radius);
+  background: var(--comp-floating-action-button-bg);
+  color: var(--comp-floating-action-button-text);
+  box-shadow: var(--comp-floating-action-button-shadow);
+  font-size: var(--comp-floating-action-button-font-size);
+  font-weight: var(--sys-voice-weight-semibold);
+  line-height: var(--comp-floating-action-button-line-height);
+  transition: transform var(--comp-floating-action-button-motion), box-shadow var(--comp-floating-action-button-motion), background var(--comp-floating-action-button-motion);
+}
+
+.floating-action-button-demo[data-extended="true"] {
+  inline-size: var(--comp-floating-action-button-extended-width);
+  padding-inline: var(--comp-floating-action-button-padding-x);
+}
+
+.floating-action-button-demo[data-variant="accent"] { --comp-floating-action-button-bg: var(--comp-floating-action-button-accent-bg); }
+.floating-action-button-demo[data-variant="mini"] { --comp-floating-action-button-size: var(--comp-floating-action-button-mini-size); }
+.floating-action-button-demo[data-state="hover"] { transform: translateY(calc(var(--ref-frame-space-1) * -1)); box-shadow: var(--comp-floating-action-button-hover-shadow); }
+.floating-action-button-demo[data-state="focus"] { outline: var(--comp-floating-action-button-focus-ring); outline-offset: var(--sys-a11y-focus-offset); }
+.floating-action-button-demo[data-state="pressed"] { transform: scale(var(--comp-floating-action-button-pressed-scale)); }
+.floating-action-button-demo[data-state="disabled"] { opacity: var(--sys-state-disabled-opacity); box-shadow: none; }
+
+@media (max-width: 520px) {
+  .floating-action-button-demo[data-extended="true"] { max-inline-size: 100%; }
+}

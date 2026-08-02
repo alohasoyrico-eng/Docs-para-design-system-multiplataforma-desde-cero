@@ -1,0 +1,94 @@
+.pattern-bulk-demo-panel {
+  overflow: visible;
+}
+
+.pattern-bulk-demo {
+  position: relative;
+  display: grid;
+  gap: var(--ref-frame-space-4);
+  margin-block-start: var(--ref-frame-space-4);
+}
+
+.pattern-bulk-demo__toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--ref-frame-space-3);
+  align-items: center;
+  padding: var(--ref-frame-space-3);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-primary);
+  box-shadow: var(--sys-depth-elevation-2);
+}
+
+.pattern-bulk-demo__toolbar[hidden],
+.pattern-bulk-demo [data-bulk-dialog][hidden],
+.pattern-bulk-demo [data-bulk-toast][hidden] {
+  display: none;
+}
+
+.pattern-bulk-demo__toolbar > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ref-frame-space-2);
+  justify-content: flex-end;
+}
+
+.pattern-bulk-demo__toolbar strong {
+  color: var(--sys-energy-text-primary);
+  font-family: var(--sys-growth-event-font);
+}
+
+.pattern-bulk-demo__toolbar strong {
+  font-size: var(--sys-voice-size-3);
+}
+
+.pattern-bulk-demo__selection {
+  display: grid;
+  gap: var(--ref-frame-space-3);
+  padding: var(--ref-frame-space-3);
+  border: var(--sys-frame-border-thin) solid var(--sys-energy-border-default);
+  border-radius: var(--sys-frame-radius-container);
+  background: var(--sys-energy-surface-secondary);
+}
+
+.pattern-bulk-demo__selection-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ref-frame-space-2);
+}
+
+.pattern-bulk-demo [data-bulk-table] {
+  overflow: auto;
+}
+
+.pattern-bulk-demo [data-bulk-table] table {
+  min-inline-size: var(--sys-frame-doc-device-min-block);
+}
+
+.pattern-bulk-demo [data-bulk-table] tr[data-selected="true"] {
+  background: var(--sys-state-selected-overlay);
+  box-shadow: inset var(--ref-frame-space-1) 0 0 var(--sys-energy-action-primary);
+}
+
+.pattern-bulk-demo [data-bulk-dialog],
+.pattern-bulk-demo [data-bulk-toast] {
+  justify-self: stretch;
+}
+
+@media (max-width: 640px) {
+  .pattern-bulk-demo__toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pattern-bulk-demo__toolbar > div,
+  .pattern-bulk-demo [data-pattern-component="dialog"] footer {
+    justify-content: stretch;
+  }
+
+  .pattern-bulk-demo__selection-list {
+    grid-template-columns: 1fr;
+  }
+
+}

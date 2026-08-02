@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design System OS</title>
+    <meta
+      name="description"
+      content="A human and agent-readable design system for fleet, driver, card, route, station, dashboard, authentication, and configuration product work."
+    />
+    <link rel="icon" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./styles.css?v=608" />
+    <script type="importmap">
+      {
+        "imports": {
+          "#design-system/components": "./generated/components/index.js?v=124"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#/home">Skip to content</a>
+    <header class="topbar" aria-label="Primary">
+      <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span class="material-symbol" data-icon="menu" aria-hidden="true">menu</span>
+      </button>
+      <a class="brand" href="#/home" aria-label="Design System OS home">
+        <img src="./assets/logo.svg" data-quiet-src="./assets/logo-dark.svg" alt="Design System" />
+      </a>
+      <div id="topbarSearch" class="topbar__search"></div>
+      <div class="top-actions">
+        <button class="icon-button language-toggle" id="languageToggle" type="button" aria-label="Switch language" aria-live="polite">
+          <span class="material-symbol" data-icon="language" aria-hidden="true">language</span>
+          <span class="language-toggle__code">EN</span>
+        </button>
+        <button class="icon-button" id="gridToggle" type="button" aria-label="Show column grid" aria-pressed="false">
+          <span class="material-symbol" data-icon="grid_off" aria-hidden="true">grid_off</span>
+        </button>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle contrast" aria-pressed="false">
+          <span class="material-symbol" data-icon="contrast" aria-hidden="true">contrast</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+    <div class="layout-grid-overlay" id="layoutGridOverlay" aria-hidden="true" hidden>
+      <div class="layout-grid-overlay__columns"></div>
+      <div class="layout-grid-overlay__info"></div>
+    </div>
+    <script src="./app.js?v=466" type="module"></script>
+  </body>
+</html>

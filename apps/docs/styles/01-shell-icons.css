@@ -1,0 +1,65 @@
+.material-symbol {
+  --icon-size: var(--sys-symbol-size-md);
+  --icon-color: currentColor;
+  --icon-fill: 0;
+  --icon-weight: 500;
+  direction: ltr;
+  display: inline-block;
+  min-inline-size: var(--sys-symbol-size-md);
+  font-family: var(--sys-symbol-family);
+  font-size: var(--icon-size);
+  font-style: normal;
+  font-weight: var(--sys-voice-weight-regular);
+  line-height: var(--sys-voice-line-height-none);
+  color: var(--icon-color);
+  letter-spacing: var(--sys-voice-letter-spacing-normal);
+  text-transform: none;
+  text-align: center;
+  white-space: nowrap;
+  word-wrap: normal;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  font-variation-settings:
+    "FILL" var(--icon-fill),
+    "wght" var(--icon-weight),
+    "GRAD" 0,
+    "opsz" 24;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbol[data-icon-size="sm"] {
+  --icon-size: var(--sys-symbol-size-sm);
+}
+
+.material-symbol[data-icon-size="lg"] {
+  --icon-size: var(--sys-symbol-size-lg);
+}
+
+.material-symbol[data-icon-fill="true"] {
+  --icon-fill: 1;
+  --icon-weight: 600;
+}
+
+.material-symbol[data-icon-tone="muted"] {
+  --icon-color: var(--sys-symbol-color-muted);
+}
+
+.material-symbol[data-icon-tone="action"] {
+  --icon-color: var(--sys-symbol-color-action);
+}
+
+.material-symbol[data-icon-tone="success"] {
+  --icon-color: var(--sys-symbol-color-status);
+}
+
+.material-symbol[data-icon-tone="warning"] {
+  --icon-color: var(--sys-symbol-color-warning);
+}
+
+.material-symbol[data-icon-tone="danger"] {
+  --icon-color: var(--sys-symbol-color-danger);
+}
+
+.material-symbol[data-icon-tone="current"] {
+  --icon-color: currentColor;
+}

@@ -1,0 +1,32 @@
+.pattern-stage--docs-sidebar .pattern-doc-sidebar a[aria-current="page"] {
+  position: relative;
+  padding-inline-start: var(--ref-frame-space-4);
+}
+
+.pattern-stage--docs-sidebar .pattern-doc-sidebar a[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  inset-block: var(--ref-frame-space-2);
+  inset-inline-start: var(--ref-frame-space-2);
+  inline-size: var(--sys-frame-border-thin);
+  border-radius: var(--ref-frame-radius-full);
+  background: var(--sys-energy-action-primary);
+}
+
+@media (max-width: 1180px) {
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar a {
+    justify-content: start;
+    min-inline-size: 0;
+    padding-inline: var(--ref-frame-space-2);
+  }
+
+  .pattern-stage--docs-sidebar .pattern-doc-sidebar a > span:not(.material-symbol) {
+    position: static;
+    inline-size: auto;
+    block-size: auto;
+    overflow: hidden;
+    clip: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,72 @@
+:is(.detail-page, .reference-doc) {
+  --comp-movement-row-width: min(100%, 32rem);
+  --comp-movement-row-gap: var(--ref-frame-space-3);
+  --comp-movement-row-padding: var(--ref-frame-space-3);
+  --comp-movement-row-radius: var(--sys-frame-radius-container);
+  --comp-movement-row-icon-size: var(--ref-frame-space-10);
+  --comp-movement-row-bg: var(--sys-energy-surface-primary);
+  --comp-movement-row-bg-hover: var(--sys-energy-surface-secondary);
+  --comp-movement-row-text: var(--sys-energy-text-primary);
+  --comp-movement-row-muted: var(--sys-energy-text-secondary);
+  --comp-movement-row-border: var(--sys-energy-border-default);
+  --comp-movement-row-action: var(--sys-energy-action-primary);
+  --comp-movement-row-warning: var(--sys-energy-status-warning);
+  --comp-movement-row-danger: var(--sys-energy-status-error);
+  --comp-movement-row-success: var(--sys-energy-status-success);
+  --comp-movement-row-focus-ring: var(--sys-a11y-focus-ring);
+  --comp-movement-row-motion: var(--sys-momentum-transition-fast);
+  --comp-movement-row-title-size: var(--sys-voice-size-label);
+  --comp-movement-row-caption-size: var(--sys-voice-size-4);
+  --comp-movement-row-amount-size: var(--sys-voice-size-label);
+  --comp-movement-row-min-block-size: 4.75rem;
+}
+
+.movement-row-demo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--comp-movement-row-gap);
+  inline-size: var(--comp-movement-row-width);
+  max-inline-size: 100%;
+  min-block-size: var(--comp-movement-row-min-block-size);
+  padding: var(--comp-movement-row-padding);
+  border: var(--sys-frame-border-thin) solid var(--comp-movement-row-border);
+  border-radius: var(--comp-movement-row-radius);
+  background: var(--comp-movement-row-bg);
+  color: var(--comp-movement-row-text);
+  text-align: start;
+  transition: background var(--comp-movement-row-motion), border-color var(--comp-movement-row-motion), transform var(--comp-movement-row-motion);
+}
+
+.movement-row-demo__icon {
+  display: grid;
+  place-items: center;
+  inline-size: var(--comp-movement-row-icon-size);
+  block-size: var(--comp-movement-row-icon-size);
+  border-radius: var(--sys-frame-radius-full);
+  background: color-mix(in srgb, var(--comp-movement-row-action) 12%, var(--comp-movement-row-bg-hover));
+  color: var(--comp-movement-row-action);
+}
+
+.movement-row-demo__content,
+.movement-row-demo__amount { display: grid; gap: var(--ref-frame-space-1); min-inline-size: 0; }
+.movement-row-demo__content strong { overflow-wrap: anywhere; font-size: var(--comp-movement-row-title-size); }
+.movement-row-demo__content small,
+.movement-row-demo__amount small { color: var(--comp-movement-row-muted); font-size: var(--comp-movement-row-caption-size); }
+.movement-row-demo__amount { justify-items: end; }
+.movement-row-demo__amount strong { font-size: var(--comp-movement-row-amount-size); font-variant-numeric: tabular-nums; }
+.movement-row-demo[data-state="hover"] { background: var(--comp-movement-row-bg-hover); transform: translateY(calc(var(--ref-frame-space-1) * -1)); }
+.movement-row-demo[data-state="focus"] { outline: var(--comp-movement-row-focus-ring); outline-offset: var(--sys-a11y-focus-offset); }
+.movement-row-demo[data-state="pending"] .movement-row-demo__amount small { color: var(--comp-movement-row-warning); }
+.movement-row-demo[data-state="error"] .movement-row-demo__amount small { color: var(--comp-movement-row-danger); }
+.movement-row-demo[data-state="approved"] .movement-row-demo__amount small { color: var(--comp-movement-row-success); }
+.movement-row-demo[data-state="disabled"] { opacity: var(--sys-state-disabled-opacity); }
+.movement-row-demo[data-variant="refund"] { --comp-movement-row-action: var(--sys-energy-status-success); }
+.movement-row-demo[data-variant="declined"] { --comp-movement-row-action: var(--sys-energy-status-error); }
+.movement-row-demo[data-variant="compact"] { --comp-movement-row-min-block-size: 3.75rem; --comp-movement-row-padding: var(--ref-frame-space-2); }
+.movement-row-demo[data-full-width="true"] { --comp-movement-row-width: 100%; }
+
+@media (max-width: 520px) {
+  .movement-row-demo { --comp-movement-row-width: 100%; grid-template-columns: auto minmax(0, 1fr); }
+  .movement-row-demo__amount { grid-column: 2; justify-items: start; }
+}
