@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { Reference } from "./Reference";
 import {
   Stack,
   Inline,
@@ -190,6 +191,7 @@ export function App() {
   const [pageNum, setPageNum] = useState(4);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [passcode, setPasscode] = useState("");
+  const [view, setView] = useState<"showcase" | "reference">("showcase");
   const toast = useToast();
 
   return (
@@ -204,6 +206,22 @@ export function App() {
             Flow Design System
           </Text>
           <FlowBadge tone="neutral">ref → sys → comp</FlowBadge>
+          <Inline gap="1" align="center">
+            <FlowButton
+              size="sm"
+              variant={view === "showcase" ? "primary" : "ghost"}
+              onClick={() => setView("showcase")}
+            >
+              Showcase
+            </FlowButton>
+            <FlowButton
+              size="sm"
+              variant={view === "reference" ? "primary" : "ghost"}
+              onClick={() => setView("reference")}
+            >
+              Referencia
+            </FlowButton>
+          </Inline>
           <span className="docs-spacer" />
           <Inline gap="1" align="center">
             <Text variant="overline" color="muted" as="span">
@@ -239,7 +257,10 @@ export function App() {
       </header>
 
       <main className="docs-main">
-        <Stack gap="6">
+        {view === "reference" ? (
+          <Reference />
+        ) : (
+          <Stack gap="6">
           <Section title="Actions — Button">
             <Stack gap="4">
               <Inline gap="3" align="center" wrap>
@@ -835,6 +856,7 @@ export function App() {
             </div>
           </Section>
         </Stack>
+        )}
       </main>
     </div>
   );

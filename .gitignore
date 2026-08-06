@@ -3,3 +3,6 @@ dist/
 .turbo/
 *.log
 .DS_Store
+
+# generado desde los paquetes publicados (regenera con prebuild)
+src/generated/

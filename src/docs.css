@@ -44,3 +44,62 @@
 .docs-frame--phone .flow-wallet {
   min-height: 100%;
 }
+
+/* ── Referencia auto-generada (tokens + props) ───────────────────────── */
+.ref-chip {
+  font: inherit;
+  font-size: var(--sys-type-caption-size);
+  padding: var(--sys-space-2) var(--sys-space-4);
+  border-radius: var(--sys-radius-pill);
+  border: var(--sys-border-width-thin) solid var(--sys-border-subtle);
+  background: var(--sys-surface-card);
+  color: var(--sys-text-secondary);
+  cursor: pointer;
+  transition: all var(--sys-motion-dur-fast) var(--sys-motion-ease-out);
+}
+.ref-chip:hover {
+  border-color: var(--sys-border-strong);
+}
+.ref-chip.is-active {
+  background: var(--sys-action-primary-bg);
+  color: var(--sys-action-primary-fg);
+  border-color: var(--sys-action-primary-bg);
+}
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--sys-type-caption-size);
+}
+.ref-table th {
+  text-align: left;
+  padding: var(--sys-space-2) var(--sys-space-3);
+  color: var(--sys-text-muted);
+  font-size: var(--sys-type-overline-size);
+  text-transform: uppercase;
+  letter-spacing: var(--sys-type-overline-tracking);
+  border-bottom: var(--sys-border-width-thin) solid var(--sys-border-subtle);
+}
+.ref-row td {
+  padding: var(--sys-space-2) var(--sys-space-3);
+  border-bottom: var(--sys-border-width-thin) solid var(--sys-border-subtle);
+  vertical-align: top;
+}
+.ref-mono {
+  font-family: var(--sys-font-mono);
+  font-size: var(--sys-type-caption-size);
+  color: var(--sys-text-primary);
+}
+.ref-muted {
+  color: var(--sys-text-secondary);
+}
+.ref-swatch {
+  width: var(--sys-icon-md);
+  height: var(--sys-icon-md);
+  border-radius: var(--sys-radius-xs);
+  border: var(--sys-border-width-thin) solid var(--sys-border-subtle);
+  display: inline-block;
+  flex: none;
+}
+.ref-search {
+  max-width: var(--sys-container-sm);
+}

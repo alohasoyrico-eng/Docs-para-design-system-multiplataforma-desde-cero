@@ -5,7 +5,10 @@
   "type": "module",
   "description": "Documentación pública del Flow Design System — consume @flowds/* publicados desde npm.",
   "scripts": {
+    "gen": "node scripts/gen-tokens.mjs && node scripts/gen-props.mjs",
+    "predev": "npm run gen",
     "dev": "vite",
+    "prebuild": "npm run gen",
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
