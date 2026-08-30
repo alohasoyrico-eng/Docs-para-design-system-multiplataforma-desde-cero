@@ -1,0 +1,46 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float);
+  min-width: 280px;
+  max-width: 440px;
+  animation: flowIn var(--dur-base) var(--ease-spring);
+}
+
+.icon {
+  font-size: var(--icon-default);
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  font: var(--type-body-md);
+  color: var(--text-primary);
+}
+
+.dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--hit-target-min);
+  height: var(--hit-target-min);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.stack {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}

@@ -1,0 +1,14 @@
+.root {
+  display: inline-block;
+  flex: none;
+  border-style: solid;
+  border-color: var(--border-subtle);
+  border-radius: 50%;
+  animation: flowSpin 0.7s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    animation: none;
+  }
+}

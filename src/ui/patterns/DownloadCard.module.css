@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.icon {
+  font-size: 28px;
+  color: var(--text-accent);
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.filename {
+  font: var(--type-body-md-strong);
+  color: var(--text-primary);
+  display: block;
+}
+
+.desc {
+  font: var(--type-body-sm);
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 2px;
+}
+
+.action {
+  color: var(--text-accent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.action:hover {
+  opacity: 0.8;
+}

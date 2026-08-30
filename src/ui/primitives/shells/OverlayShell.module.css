@@ -1,0 +1,56 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+}
+
+.root[data-alignment='center'] {
+  align-items: center;
+  justify-content: center;
+}
+
+.root[data-alignment='end'] {
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.root[data-alignment='start'] {
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.root[data-alignment='bottom'] {
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--surface-backdrop);
+  backdrop-filter: blur(4px);
+  animation: flowOvFade var(--dur-base) var(--ease-out);
+}
+
+.panel {
+  position: relative;
+  z-index: 1;
+}
+
+.root[data-alignment='center'] > .panel {
+  animation: flowOvCenter var(--dur-base) var(--ease-out);
+}
+
+.root[data-alignment='end'] > .panel {
+  animation: flowOvEnd var(--dur-base) var(--ease-out);
+}
+
+.root[data-alignment='start'] > .panel {
+  animation: flowOvStart var(--dur-base) var(--ease-out);
+}
+
+.root[data-alignment='bottom'] > .panel {
+  width: 100%;
+  animation: flowOvBottom var(--dur-base) var(--ease-out);
+}

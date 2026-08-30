@@ -1,0 +1,25 @@
+/* Flow · Sys · Shape — semantic radius aliases + density overrides */
+:root {
+  --radius-xs: var(--ref-radius-100);
+  --radius-sm: var(--ref-radius-200);
+  --radius-md: var(--ref-radius-300);
+  --radius-lg: var(--ref-radius-400);
+  --radius-xl: var(--ref-radius-500);
+  --radius-pill: var(--ref-radius-pill);
+
+  --border-width: 1px;
+  --border-width-strong: 1.5px;
+}
+
+[data-density="compact"] {
+  --radius-sm: var(--ref-radius-100);
+  --radius-md: var(--ref-radius-200);
+  --radius-lg: var(--ref-radius-300);
+  --radius-xl: var(--ref-radius-400);
+}
+
+[data-density="comfortable"] {
+  --radius-md: var(--ref-radius-400);
+  --radius-lg: var(--ref-radius-500);
+  --radius-xl: 32px;
+}

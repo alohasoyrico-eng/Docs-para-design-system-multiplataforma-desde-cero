@@ -1,0 +1,178 @@
+/* Flow · Colors — Edenred Foundation Core + Flow semantic layer.
+   El modo oscuro vive en tokens/dark.css */
+:root {
+  /* ---- Base palette: Grey (Edenred cool slate) ---- */
+  --flow-grey-900: #0F172A;
+  --flow-grey-800: #1E293B;
+  --flow-grey-700: #334155;
+  --flow-grey-600: #475569;
+  --flow-grey-500: #64748B;
+  --flow-grey-400: #94A3B8;
+  --flow-grey-300: #CBD5E1;
+  --flow-grey-200: #E2E8F0;
+  --flow-grey-100: #F1F5F9;
+  --flow-grey-50:  #F8FAFC;
+
+  /* ---- Base palette: Red (Edenred brand #F72717) ---- */
+  --flow-red-900: #400402;
+  --flow-red-700: #780D06;
+  --flow-red-600: #B61A0E;
+  --flow-red-500: #F72717;
+  --flow-red-200: #FC7F7C;
+  --flow-red-100: #FDBBBA;
+  --flow-red-50:  #FEEDEC;
+
+  /* ---- Base palette: Blue (action accent #0060df) ---- */
+  --flow-blue-900: #00142e;
+  --flow-blue-800: #002557;
+  --flow-blue-700: #003985;
+  --flow-blue-600: #004db3;
+  --flow-blue-500: #0060df;
+  --flow-blue-400: #1a7cff;
+  --flow-blue-300: #529cff;
+  --flow-blue-200: #8abcff;
+  --flow-blue-100: #c7dfff;
+  --flow-blue-50:  #e0eeff;
+
+  /* ---- Base palette: Green (success) ---- */
+  --flow-green-900: #05140d;
+  --flow-green-800: #072718;
+  --flow-green-700: #084026;
+  --flow-green-600: #065b33;
+  --flow-green-500: #007840;
+  --flow-green-400: #0dba69;
+  --flow-green-300: #2ee590;
+  --flow-green-200: #79e6b4;
+  --flow-green-100: #c3efda;
+  --flow-green-50:  #e1f4eb;
+
+  /* ---- Base palette: Orange (warning) ---- */
+  --flow-orange-900: #260d03;
+  --flow-orange-800: #4c1a06;
+  --flow-orange-700: #712709;
+  --flow-orange-600: #97330c;
+  --flow-orange-500: #bf410f;
+  --flow-orange-400: #ed571c;
+  --flow-orange-300: #f28155;
+  --flow-orange-200: #f6ab8e;
+  --flow-orange-100: #fbd5c6;
+  --flow-orange-50:  #FDEAE3;
+
+  /* ---- Base palette: Danger (functional red, not brand) ---- */
+  --flow-danger-700: #7a0800;
+  --flow-danger-600: #a30b00;
+  --flow-danger-500: #ca0e00;
+  --flow-danger-400: #ff1b0a;
+  --flow-danger-300: #ff5447;
+  --flow-danger-200: #ff8d85;
+  --flow-danger-50:  #ffe3e0;
+
+  /* ---- Semantic: surfaces ---- */
+  --surface-canvas: #F1F7FF;
+  --surface-card: #FFFFFF;
+  --surface-sunken: var(--flow-grey-100);
+  --surface-inverse: var(--flow-grey-900);
+  --surface-accent-subtle: var(--flow-blue-50);
+
+  /* ---- Semantic: text ---- */
+  --text-primary: var(--flow-grey-900);
+  --text-secondary: var(--flow-grey-600);
+  --text-muted: var(--flow-grey-500);
+  --text-on-accent: #FFFFFF;
+  --text-on-inverse: var(--flow-grey-50);
+  --text-accent: var(--flow-blue-600);
+  --text-link: var(--flow-blue-500);
+
+  /* ---- Semantic: borders ---- */
+  --border-subtle: var(--flow-grey-200);
+  --border-default: var(--flow-grey-300);
+  --border-strong: var(--flow-grey-400);
+  --border-focus: var(--flow-blue-500);
+
+  /* ---- Semantic: actions ---- */
+  --action-primary: var(--flow-grey-900);
+  --action-primary-hover: #000000;
+  --action-accent: var(--flow-blue-500);
+  --action-accent-hover: var(--flow-blue-600);
+
+  /* ---- Semantic: status ---- */
+  --status-success: var(--flow-green-500);
+  --status-success-text: var(--flow-green-600);
+  --status-success-bg: var(--flow-green-50);
+  --status-warning: var(--flow-orange-500);
+  --status-warning-text: var(--flow-orange-600);
+  --status-warning-bg: var(--flow-orange-50);
+  --status-danger: var(--flow-danger-500);
+  --status-danger-text: var(--flow-danger-600);
+  --status-danger-bg: var(--flow-danger-50);
+  --status-info: var(--flow-blue-500);
+  --status-info-text: var(--flow-blue-600);
+  --status-info-bg: var(--flow-blue-50);
+  --status-live: var(--flow-red-500);
+
+  /* ---- Overlay ---- */
+  --surface-backdrop: rgba(15, 23, 42, 0.4);
+
+  /* ---- Focus ring ---- */
+  --focus-ring: 0 0 0 3px rgba(0, 96, 223, 0.28);
+
+  /* ---- Alpha overlay scale ---- */
+  --alpha-white-5:  rgba(255, 255, 255, 0.06);
+  --alpha-white-10: rgba(255, 255, 255, 0.10);
+  --alpha-white-12: rgba(255, 255, 255, 0.12);
+  --alpha-white-15: rgba(255, 255, 255, 0.15);
+  --alpha-white-20: rgba(255, 255, 255, 0.20);
+  --alpha-white-25: rgba(255, 255, 255, 0.25);
+  --alpha-white-30: rgba(255, 255, 255, 0.30);
+  --alpha-white-35: rgba(255, 255, 255, 0.35);
+  --alpha-white-50: rgba(255, 255, 255, 0.50);
+  --alpha-white-70: rgba(255, 255, 255, 0.70);
+  --alpha-black-5:  rgba(0, 0, 0, 0.06);
+  --alpha-black-8:  rgba(0, 0, 0, 0.08);
+  --alpha-black-12: rgba(0, 0, 0, 0.12);
+  --alpha-black-15: rgba(0, 0, 0, 0.15);
+  --alpha-black-50: rgba(0, 0, 0, 0.50);
+
+  color-scheme: light;
+}
+
+/* ---- Identidad de avatar ----
+   Color determinista por nombre. Los seis pasan 4.5:1 con iniciales en blanco. */
+:root {
+  --avatar-1: #DF2F14;
+  --avatar-2: #0D864D;
+  --avatar-3: #2A71E0;
+  --avatar-4: #A46808;
+  --avatar-5: #7859F4;
+  --avatar-6: #0D8476;
+  --avatar-offline: var(--flow-grey-400);
+}
+
+/* ---- Ilustracion ---- */
+:root {
+  --illustration-1: var(--flow-red-500);
+  --illustration-2: #2A71E0;
+  --illustration-3: #0D864D;
+  --illustration-4: #7859F4;
+  --illustration-5: #A46808;
+  --illustration-6: #0D8476;
+}
+
+/* ---- Code syntax (sys — semantic over base palette) ---- */
+:root {
+  --code-keyword: var(--flow-blue-600);
+  --code-string: var(--flow-green-700);
+  --code-tag: var(--flow-danger-600);
+  --code-comment: var(--flow-grey-500);
+  --code-default: var(--flow-grey-100);
+}
+
+/* ---- Tarjeta fisica (PaymentCard) ----
+   Color de artefacto, no de interfaz: una tarjeta roja sigue siendo roja en modo
+   oscuro. No tienen contrapartida en dark.css. */
+:root {
+  --card-fg-on-ink: var(--flow-grey-50);
+  --card-fg-on-accent: #FFFFFF;
+  --card-dim-on-ink: rgba(248, 250, 252, 0.55);
+  --card-dim-on-accent: rgba(255, 255, 255, 0.65);
+}

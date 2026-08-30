@@ -1,0 +1,8 @@
+.root {
+  display: inline;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-xs);
+  padding: 1px 6px;
+}

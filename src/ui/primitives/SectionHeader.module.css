@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.title {
+  font: var(--type-title-lg);
+  color: var(--text-primary);
+}
+
+.root[data-size='sm'] .title {
+  font: var(--type-title-md);
+  padding: var(--space-2) 0 var(--space-1);
+}
+
+.root[data-size='display'] .title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--action-primary);
+}
+
+.trailing {
+  font: var(--type-body-sm);
+  color: var(--text-accent);
+}

@@ -1,0 +1,9 @@
+/* Flow · Ref · Sizing — raw height/target scale, platform-agnostic */
+:root {
+  --ref-size-target: 44px;
+  --ref-size-control: 52px;
+  --ref-size-bar: 56px;
+  --ref-size-sidebar: 240px;
+  --ref-size-sidebar-collapsed: 64px;
+  --ref-size-content-max: 1440px;
+}

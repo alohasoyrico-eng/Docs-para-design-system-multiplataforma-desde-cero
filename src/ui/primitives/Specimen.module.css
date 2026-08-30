@@ -1,0 +1,18 @@
+.root {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  min-height: 80px;
+  padding: var(--space-8) var(--space-6);
+  box-sizing: border-box;
+}
+
+.root[data-centered] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root[data-grid] {
+  background-image: radial-gradient(var(--alpha-black-5) 1px, transparent 1px);
+  background-size: 16px 16px;
+}

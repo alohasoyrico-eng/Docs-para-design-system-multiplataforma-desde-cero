@@ -1,0 +1,12 @@
+/* Flow · Iconography — Material Symbols sizing scale */
+:root {
+  --icon-xs: 14px;
+  --icon-sm: 16px;
+  --icon-md: 18px;
+  --icon-default: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 28px;
+  --icon-2xl: 36px;
+  --icon-3xl: 40px;
+  --icon-4xl: 48px;
+}

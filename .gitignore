@@ -1,8 +1,4 @@
-node_modules/
-dist/
-.turbo/
-*.log
-.DS_Store
-
-# generado desde los paquetes publicados (regenera con prebuild)
-src/generated/
+node_modules
+dist
+*.local
+.vite

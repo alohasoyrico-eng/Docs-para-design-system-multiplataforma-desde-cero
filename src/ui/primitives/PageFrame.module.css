@@ -1,0 +1,11 @@
+.root {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--pad-section) var(--space-10);
+}
+
+@media (max-width: 576px) {
+  .root {
+    padding: var(--space-6) var(--space-4);
+  }
+}

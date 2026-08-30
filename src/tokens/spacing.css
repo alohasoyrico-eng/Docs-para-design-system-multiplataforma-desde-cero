@@ -1,0 +1,74 @@
+/* Flow · Sys · Spacing — semantic aliases + density overrides */
+:root {
+  /* Scale — aliases to ref */
+  --space-1: var(--ref-space-100);
+  --space-2: var(--ref-space-200);
+  --space-3: var(--ref-space-300);
+  --space-4: var(--ref-space-400);
+  --space-5: var(--ref-space-500);
+  --space-6: var(--ref-space-600);
+  --space-7: var(--ref-space-700);
+  --space-8: var(--ref-space-800);
+  --space-10: var(--ref-space-1000);
+  --space-12: var(--ref-space-1200);
+  --space-16: var(--ref-space-1600);
+
+  /* Sizing */
+  --height-control-lg: var(--ref-size-control);
+  --height-bar: var(--ref-size-bar);
+
+  /* Component-level */
+  --pad-control-y: var(--ref-space-300);
+  --pad-control-x: var(--ref-space-500);
+  --pad-card: var(--ref-space-600);
+  --pad-section: var(--ref-space-800);
+  --gap-inline: var(--ref-space-200);
+  --gap-stack: var(--ref-space-400);
+  --hit-target-min: var(--ref-size-target);
+
+  /* Layout */
+  --content-max: var(--ref-size-content-max);
+  --sidebar-width: var(--ref-size-sidebar);
+  --sidebar-collapsed: var(--ref-size-sidebar-collapsed);
+  --bp-sm: 576px;
+  --bp-md: 982px;
+
+  /* Density — default values (comfortable default) */
+  --density-control-y: var(--pad-control-y);
+  --density-control-x: var(--pad-control-x);
+  --density-item-y: var(--ref-space-300);
+  --density-item-x: var(--space-4);
+  --density-cell-y: 14px;
+  --density-cell-x: var(--ref-space-400);
+  --density-head-y: var(--ref-space-300);
+}
+
+[data-density="compact"] {
+  --pad-card: var(--ref-space-400);
+  --pad-section: var(--ref-space-600);
+  --gap-stack: var(--ref-space-300);
+  --height-control-lg: var(--ref-size-target);
+  --height-bar: 48px;
+
+  --density-control-y: var(--ref-space-200);
+  --density-control-x: var(--ref-space-400);
+  --density-item-y: var(--ref-space-200);
+  --density-item-x: var(--space-3);
+  --density-cell-y: 10px;
+  --density-head-y: var(--ref-space-200);
+}
+
+[data-density="comfortable"] {
+  --pad-card: var(--ref-space-800);
+  --pad-section: var(--ref-space-1000);
+  --gap-stack: var(--ref-space-500);
+  --height-control-lg: 56px;
+  --height-bar: 60px;
+
+  --density-control-y: var(--ref-space-400);
+  --density-control-x: var(--ref-space-600);
+  --density-item-y: var(--ref-space-400);
+  --density-item-x: var(--space-5);
+  --density-cell-y: 16px;
+  --density-head-y: var(--ref-space-400);
+}

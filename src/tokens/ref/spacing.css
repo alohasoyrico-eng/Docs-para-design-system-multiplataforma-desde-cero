@@ -1,0 +1,14 @@
+/* Flow · Ref · Spacing — raw scale, platform-agnostic */
+:root {
+  --ref-space-100: 4px;
+  --ref-space-200: 8px;
+  --ref-space-300: 12px;
+  --ref-space-400: 16px;
+  --ref-space-500: 20px;
+  --ref-space-600: 24px;
+  --ref-space-700: 28px;
+  --ref-space-800: 32px;
+  --ref-space-1000: 40px;
+  --ref-space-1200: 48px;
+  --ref-space-1600: 64px;
+}

@@ -1,0 +1,35 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.inner[data-direction='next'] {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}

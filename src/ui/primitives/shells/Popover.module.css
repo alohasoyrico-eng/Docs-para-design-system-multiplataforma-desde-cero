@@ -1,0 +1,30 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  display: inline-flex;
+}
+
+.drop {
+  position: absolute;
+  top: 100%;
+  margin-top: var(--space-2);
+  z-index: 999;
+  min-width: 180px;
+  background: var(--surface-card);
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-float);
+  padding: var(--space-2);
+  animation: flowScaleIn var(--dur-fast) var(--ease-out);
+}
+
+.drop[data-align='left'] {
+  left: 0;
+}
+
+.drop[data-align='right'] {
+  right: 0;
+}

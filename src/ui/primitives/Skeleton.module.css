@@ -1,0 +1,28 @@
+.root {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--surface-sunken) 30%,
+    var(--border-subtle) 50%,
+    var(--surface-sunken) 70%
+  );
+  background-size: 200% 100%;
+  animation: flowShimmer 1.8s ease infinite;
+}
+
+.root[data-variant='text'] {
+  height: 14px;
+  border-radius: var(--radius-xs);
+}
+.root[data-variant='title'] {
+  height: 22px;
+  border-radius: var(--radius-xs);
+}
+.root[data-variant='card'] {
+  height: 120px;
+  border-radius: var(--radius-lg);
+}
+.root[data-variant='circle'] {
+  height: 40px;
+  border-radius: var(--radius-pill);
+}

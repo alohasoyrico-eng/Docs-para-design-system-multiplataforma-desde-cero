@@ -1,0 +1,27 @@
+/* Flow · Accesibilidad — la unica regla con selectores de todo foundations.
+   Existe porque a11y-1 es un criterio "must" sobre TODO elemento operable, y
+   dejarlo a que cada componente se acuerde es como se llega a un calendario con
+   teclado de rejilla cuyo dia enfocado no se distingue del resto. Los controles
+   que viven dentro de ControlShell no repiten el anillo: la carcasa ya lo pinta
+   por el control completo. */
+
+:where(button, a[href], input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* El campo interior de una carcasa no dobla el anillo; los adornos de la zona
+   trailing (limpiar, por ejemplo) si lo llevan, porque son objetivos aparte. */
+[data-control-shell] > div > :where(input, textarea, button):focus-visible {
+  box-shadow: none;
+}
+
+/* Rejillas, menus y listas que el sistema recorre moviendo el foco por codigo.
+   Ahi el anillo se pinta con :focus y no con :focus-visible, porque el navegador
+   no considera "visible" un foco que movio un handler en vez de una tecla suya.
+   Es justo donde mas hace falta: el teclado de rejilla del calendario existe para
+   mover el foco entre dias, y un dia enfocado sin anillo es indistinguible. */
+:where([role="grid"], [role="menu"], [role="listbox"]) :where(button, [role="option"], [role="menuitem"]):focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

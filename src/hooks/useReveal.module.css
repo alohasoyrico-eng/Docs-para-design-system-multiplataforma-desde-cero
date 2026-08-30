@@ -1,0 +1,21 @@
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hidden {
+    transform: none;
+  }
+
+  .visible {
+    transition: none;
+  }
+}

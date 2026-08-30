@@ -1,0 +1,85 @@
+.root {
+  position: relative;
+  display: flex;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-pill);
+  padding: var(--space-1);
+  font-family: var(--font-body);
+}
+
+.indicator {
+  position: absolute;
+  top: var(--space-1);
+  bottom: var(--space-1);
+  border-radius: var(--radius-pill);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-raised);
+  transition: left var(--dur-base) var(--ease-spring),
+    width var(--dur-base) var(--ease-spring);
+  z-index: 0;
+}
+
+.segment {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: var(--hit-target-min);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font: var(--type-body-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: color var(--dur-fast) var(--ease-out);
+  padding: 0 var(--space-2);
+}
+
+.segment[data-active] {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.segment:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.segmentIcon {
+  font-size: var(--icon-md);
+}
+
+/* ── sm variant ── */
+
+.root[data-size='sm'] {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  padding: 2px;
+  gap: 1px;
+}
+
+.root[data-size='sm'] .indicator {
+  top: 2px;
+  bottom: 2px;
+  background: var(--surface-inverse);
+  box-shadow: none;
+}
+
+.root[data-size='sm'] .segment {
+  min-height: 24px;
+  padding: 0 var(--space-2);
+  font: var(--type-label-sm);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.root[data-size='sm'] .segment[data-active] {
+  color: var(--text-on-inverse);
+  font-weight: 700;
+}

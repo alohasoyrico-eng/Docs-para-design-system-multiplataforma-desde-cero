@@ -1,0 +1,9 @@
+/* Flow · Ref · Radius — raw shape scale, platform-agnostic */
+:root {
+  --ref-radius-100: 8px;
+  --ref-radius-200: 12px;
+  --ref-radius-300: 16px;
+  --ref-radius-400: 20px;
+  --ref-radius-500: 28px;
+  --ref-radius-pill: 999px;
+}

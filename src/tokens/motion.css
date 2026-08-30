@@ -1,0 +1,47 @@
+/* Flow · Motion — springy, joyful, never in the way.
+   Rule: springs for things you touch; ease-out for things that appear. */
+:root {
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);  /* touch feedback, hover lift */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);        /* enter, expand */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);     /* move, morph */
+
+  --dur-instant: 100ms;   /* press */
+  --dur-fast: 160ms;      /* hover, toggle */
+  --dur-base: 240ms;      /* expand, reveal */
+  --dur-slow: 400ms;      /* overlays, page-level */
+
+  --lift-hover: translateY(-3px);
+  --press-scale: scale(0.96);
+  --hover-scale: scale(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-instant: 1ms; --dur-fast: 1ms; --dur-base: 1ms; --dur-slow: 1ms;
+    --lift-hover: none; --press-scale: none; --hover-scale: none;
+  }
+}
+
+/* Keyframes del sistema. Viven aqui, con el resto de motion, porque un keyframe
+   es una decision de movimiento y no de componente: es lo que hace verificable
+   el criterio mot-5 (ningun archivo fuera de tokens/ declara @keyframes). Los
+   componentes eligen cual aplicar; no lo declaran. */
+@keyframes flowSpin { to { transform: rotate(360deg) } }
+@keyframes flowPulse { 0%, 100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.4); opacity: .5 } }
+@keyframes flowShimmer { 0% { background-position: 200% 0 } 100% { background-position: -200% 0 } }
+@keyframes flowIn { from { transform: translateY(10px) scale(.97); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes flowScaleIn { from { transform: scale(.94); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes flowShake { 0%, 100% { transform: none } 20%, 60% { transform: translateX(-6px) } 40%, 80% { transform: translateX(6px) } }
+@keyframes flowPop { 0% { transform: scale(.6); opacity: 0 } 100% { transform: scale(1); opacity: 1 } }
+@keyframes flowDotPulse { 0%, 80%, 100% { opacity: .25; transform: scale(.8) } 40% { opacity: 1; transform: scale(1) } }
+@keyframes flowBlink { 50% { opacity: 0 } }
+
+/* Familia del overlay: una alineacion por keyframe (ov-5). */
+@keyframes flowOvFade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes flowOvCenter { from { transform: translateY(16px) scale(.96); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes flowOvEnd { from { transform: translateX(40px); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes flowOvStart { from { transform: translateX(-40px); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes flowOvBottom { from { transform: translateY(48px); opacity: 0 } to { transform: none; opacity: 1 } }
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-ov-back, .flow-ov-panel { animation: none !important }
+}

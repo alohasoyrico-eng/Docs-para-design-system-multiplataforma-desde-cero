@@ -1,0 +1,300 @@
+/* ── Component Detail Template ── */
+
+/* Full-bleed hero zone */
+.heroZone {
+  background: var(--surface-card);
+  padding: var(--space-12) 0 var(--space-10);
+}
+
+.heroInner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Constrained content below SectionBar */
+.content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-10);
+  padding-bottom: var(--space-16);
+}
+
+.section {
+  padding-top: var(--space-12);
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-6);
+  margin: var(--space-5) 0 var(--space-6);
+}
+
+.platformRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.headingSub {
+  display: block;
+  color: var(--text-muted);
+}
+
+.notFound {
+  padding: var(--space-16) 0;
+  font: var(--type-body-md);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ── Guidance when/notWhen columns ── */
+
+.guidanceColumns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--gap-stack) var(--space-12);
+}
+
+.ruleHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.ruleDot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-pill);
+  flex: none;
+}
+
+.ruleDot[data-tone='success'] {
+  background: var(--status-success);
+}
+
+.ruleDot[data-tone='danger'] {
+  background: var(--status-danger);
+}
+
+.ruleLabel {
+  font: var(--type-label-sm);
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.ruleLabel[data-tone='success'] {
+  color: var(--status-success-text);
+}
+
+.ruleLabel[data-tone='danger'] {
+  color: var(--status-danger-text);
+}
+
+.ruleSource {
+  margin-left: auto;
+  font: var(--type-body-sm);
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.ruleItemRow {
+  display: flex;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ruleItem {
+  flex: 1;
+  min-width: 0;
+  font: var(--type-body-md);
+  color: var(--text-secondary);
+}
+
+.ruleInstead {
+  flex: none;
+  font: var(--type-body-md-strong);
+  font-family: var(--font-mono);
+  font-size: var(--ref-type-size-12);
+  color: var(--text-accent);
+}
+
+/* ── Usage code pair ── */
+
+.usagePair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-stack);
+}
+
+.usagePane {
+  flex: 1 1 340px;
+  min-width: 0;
+}
+
+/* ── Accessibility list ── */
+
+.a11yItem {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font: var(--type-body-md);
+  color: var(--text-secondary);
+}
+
+/* ── MIEL tab ── */
+
+.mielColumns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--gap-stack) var(--space-12);
+  align-items: start;
+}
+
+.mielDesc {
+  margin: 0 0 var(--space-5);
+  font: var(--type-body-md);
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.mielDownloads {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.syncStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.syncDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--status-success);
+}
+
+/* ── API table required marker ── */
+
+.required {
+  color: var(--status-danger-text);
+}
+
+/* ── Platform Support variant name ── */
+
+.variantName {
+  font: var(--type-title-lg);
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  color: var(--text-accent);
+}
+
+/* ── Specimen placeholder ── */
+
+.specimenPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.specimenName {
+  font: var(--type-title-lg);
+}
+
+.specimenMeta {
+  font: var(--type-label-sm);
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Proposal + changelog ── */
+
+.proposalDesc {
+  flex: 1 1 240px;
+  min-width: 0;
+  font: var(--type-body-sm);
+  color: var(--text-muted);
+}
+
+.changelogStatus {
+  font: var(--type-label-sm);
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--status-success-text);
+}
+
+/* ── Nav footer ── */
+
+.navFooter {
+  margin-top: var(--space-12);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gap-stack);
+}
+
+/* ── SectionBar trailing ── */
+
+.barTrailing {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ── Scroll arc ── */
+
+.scrollArc {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+  background: var(--surface-inverse);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--alpha-white-5);
+  border-radius: var(--radius-pill);
+}
+
+.arcSvg {
+  color: var(--text-on-inverse);
+  flex: none;
+  overflow: visible;
+}
+
+.arcPct {
+  font: var(--type-label-sm);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  color: var(--alpha-white-70);
+  min-width: 28px;
+}
+
+@media (max-width: 576px) {
+  .heroInner {
+    padding: 0 var(--space-4);
+  }
+
+  .content {
+    padding: 0 var(--space-4);
+    padding-bottom: var(--space-16);
+  }
+}

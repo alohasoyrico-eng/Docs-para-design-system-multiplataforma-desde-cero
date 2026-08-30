@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.label {
+  font: var(--type-body-md);
+  color: var(--text-secondary);
+}
+
+.value {
+  font: var(--type-body-md);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.value[data-mono='true'] {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}

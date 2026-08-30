@@ -1,0 +1,20 @@
+.visual {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-xs);
+  display: grid;
+  place-items: center;
+  color: var(--text-on-inverse);
+  transition: background var(--dur-fast) var(--ease-spring);
+  border: 1.5px solid var(--border-default);
+  background: transparent;
+}
+
+.visual[data-checked] {
+  background: var(--action-primary);
+  border-color: transparent;
+}
+
+.icon {
+  font-size: var(--icon-sm);
+}

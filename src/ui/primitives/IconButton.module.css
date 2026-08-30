@@ -1,0 +1,104 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--hit-target-min);
+  height: var(--hit-target-min);
+  padding: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  position: relative;
+  transition: background var(--dur-fast) var(--ease-out);
+  border: none;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* --- sizes --- */
+.root[data-size='sm'] {
+  width: var(--hit-target-min);
+  height: var(--hit-target-min);
+}
+.root[data-size='sm'] .icon {
+  font-size: var(--icon-md);
+}
+
+.root[data-size='lg'] {
+  width: var(--height-control-lg);
+  height: var(--height-control-lg);
+}
+.root[data-size='lg'] .icon {
+  font-size: var(--icon-lg);
+}
+
+/* --- variant: ghost --- */
+.root[data-variant='ghost'] {
+  background: transparent;
+  color: var(--text-primary);
+}
+.root[data-variant='ghost']:hover:not(:disabled) {
+  background: var(--surface-sunken);
+}
+
+/* --- variant: secondary (legacy compat) --- */
+.root[data-variant='secondary'] {
+  background: var(--surface-card);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border-default);
+}
+.root[data-variant='secondary']:hover:not(:disabled) {
+  background: var(--surface-sunken);
+}
+
+/* --- variant: tonal --- */
+.root[data-variant='tonal'] {
+  background: var(--surface-sunken);
+  color: var(--text-primary);
+}
+.root[data-variant='tonal']:hover:not(:disabled) {
+  background: var(--surface-card);
+}
+
+/* --- variant: primary --- */
+.root[data-variant='primary'] {
+  background: var(--action-primary);
+  color: var(--text-on-inverse);
+}
+.root[data-variant='primary']:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+/* --- selected state --- */
+.root[data-selected] {
+  color: var(--text-accent);
+}
+
+/* --- disabled --- */
+.root:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon {
+  font-size: var(--icon-default);
+}
+
+.badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--status-live);
+  animation: flowPulse 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    animation: none;
+  }
+}

@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.label {
+  font: var(--type-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.meta {
+  font: var(--type-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
