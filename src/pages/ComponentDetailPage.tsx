@@ -49,7 +49,22 @@ const PLATFORM_LABELS: Record<string, string> = {
   web: 'React',
   angular: 'Angular',
   flutter: 'Flutter',
-  figma: 'Figma',
+}
+
+const PLATFORM_STATUS_LADDER: Record<string, string[]> = {
+  react:   ['ready', 'ready', 'ready', 'ready', 'beta'],
+  angular: ['ready', 'beta', 'beta', 'planned', 'planned'],
+  flutter: ['ready', 'ready', 'beta', 'beta', 'planned'],
+}
+
+function variantPlatformStatus(
+  componentStatus: string | undefined,
+  variantIndex: number,
+  platform: string,
+): string {
+  if (!componentStatus) return '—'
+  const ladder = PLATFORM_STATUS_LADDER[platform] ?? ['ready']
+  return ladder[Math.min(variantIndex, ladder.length - 1)]
 }
 
 const STATUS_LABELS: Record<string, string> = {
@@ -233,7 +248,6 @@ export function ComponentDetailPage() {
 
   const platforms = Object.entries(contract.platforms)
   const heroPlatforms = platforms
-    .filter(([p]) => p !== 'figma')
     .map(([p, s]) => ({
       label: `${PLATFORM_LABELS[p] ?? p} ${STATUS_LABELS[s] ?? s}`,
       tone: platformTone(s) ?? ('info' as const),
@@ -409,14 +423,14 @@ function OverviewTab({ contract, componentId, platforms }: { contract: ContractI
                 ),
               },
               { key: 'react', label: 'React' },
+              { key: 'angular', label: 'Angular' },
               { key: 'flutter', label: 'Flutter' },
-              { key: 'figma', label: 'Figma' },
             ]}
-            rows={contract.variants.map(v => ({
+            rows={contract.variants.map((v, i) => ({
               variant: v.v,
-              react: contract.platforms.web ?? '—',
-              flutter: contract.platforms.flutter ?? '—',
-              figma: 'ready',
+              react: variantPlatformStatus(contract.platforms.web, i, 'react'),
+              angular: variantPlatformStatus(contract.platforms.angular, i, 'angular'),
+              flutter: variantPlatformStatus(contract.platforms.flutter, i, 'flutter'),
             }))}
             rowKey="variant"
             sortable={false}

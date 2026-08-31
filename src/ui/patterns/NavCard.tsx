@@ -1,5 +1,4 @@
 import type { CSSProperties } from 'react'
-import { Card } from '../components/Card'
 import css from './NavCard.module.css'
 
 export interface NavCardProps {
@@ -13,7 +12,7 @@ export interface NavCardProps {
 export function NavCard({ label, name, href, direction = 'next', style }: NavCardProps) {
   return (
     <a href={href} className={css.link} style={style}>
-      <Card surface="outlined" hover="fill" interactive>
+      <div className={css.card}>
         <div className={css.inner} data-direction={direction}>
           <span className={css.label}>{label}</span>
           <span className={css.name}>
@@ -22,7 +21,7 @@ export function NavCard({ label, name, href, direction = 'next', style }: NavCar
             {direction === 'next' && <span className="flow-icon" aria-hidden="true">arrow_forward</span>}
           </span>
         </div>
-      </Card>
+      </div>
     </a>
   )
 }

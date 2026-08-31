@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { Outlet, useNavigate } from '@tanstack/react-router'
 import { TopBar } from '../ui/patterns/TopBar'
 import { GlobalSearch, type SearchResult } from '../ui/patterns/GlobalSearch'
@@ -9,68 +9,87 @@ import css from './DocsLayout.module.css'
 
 const DOCS_NAV = [
   { id: 'foundations', label: 'Foundations' },
+  { id: 'primitives', label: 'Primitives' },
   { id: 'components', label: 'Components', active: true },
   { id: 'patterns', label: 'Patterns' },
   { id: 'templates', label: 'Templates' },
-  { id: 'registry', label: 'Registry' },
-  { id: 'doc-primitives', label: 'Doc primitives' },
-  { id: 'miel', label: 'MIEL' },
 ]
+
+const LAYER_ICONS: Record<string, string> = {
+  primitives: 'category',
+  components: 'widgets',
+  patterns: 'dashboard',
+}
 
 export function DocsLayout() {
   const navigate = useNavigate()
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
 
-  const allContracts = getAllContracts()
-  const searchResults: SearchResult[] = searchValue.length >= 1
-    ? Object.entries(allContracts)
-        .filter(([, c]) => c.name.toLowerCase().includes(searchValue.toLowerCase()))
-        .slice(0, 12)
-        .map(([id, c]) => ({
-          id,
-          label: c.name,
-          group: c.layer,
-          icon: 'widgets',
-          meta: c.summary.slice(0, 60),
-        }))
-    : []
+  const allItems = useMemo(() => {
+    const contracts = getAllContracts()
+    return Object.entries(contracts).map(([id, item]) => ({
+      id,
+      label: item.name,
+      group: item.layer,
+      icon: LAYER_ICONS[item.layer] || 'article',
+      meta: item.summary,
+    }))
+  }, [])
+
+  const results: SearchResult[] = useMemo(() => {
+    if (searchValue.length < 1) return []
+    const q = searchValue.toLowerCase()
+    return allItems
+      .filter(item => item.label.toLowerCase().includes(q) || item.meta?.toLowerCase().includes(q))
+      .slice(0, 20)
+  }, [searchValue, allItems])
 
   const handleSelect = useCallback((item: SearchResult) => {
     navigate({ to: '/docs/$componentId', params: { componentId: item.id } })
+    setSearchOpen(false)
     setSearchValue('')
   }, [navigate])
+
+  const searchTrigger = (
+    <div className={css.searchWrap}>
+      <IconButton
+        icon="search"
+        ariaLabel="Search components (⌘K)"
+        variant="ghost"
+        size="lg"
+        onClick={() => setSearchOpen(true)}
+      />
+      <kbd className={css.searchKbd}>⌘K</kbd>
+    </div>
+  )
 
   return (
     <div className={css.layout}>
       <TopBar
-        surface="inverse"
-        logo={<FlowLogo />}
+        surface="glass"
+        logo={<FlowLogo height={44} />}
         navItems={DOCS_NAV}
-        navSize="sm"
-        trailing={
-          <IconButton
-            icon="search"
-            ariaLabel="Search components (⌘K)"
-            variant="ghost"
-            onClick={() => setSearchOpen(true)}
-          />
-        }
+        sticky
+        trailing={searchTrigger}
       />
+      <main className={css.main}>
+        <Outlet />
+      </main>
       <GlobalSearch
         mode="palette"
         open={searchOpen}
         onOpenChange={setSearchOpen}
         value={searchValue}
         onValueChange={setSearchValue}
-        results={searchResults}
+        results={results}
         groupOrder={['primitives', 'components', 'patterns']}
+        placeholder="Search components, patterns, tokens…"
+        emptyTitle="Search the design system"
+        emptyDescription="Find components, patterns, and tokens by name."
+        noResultsTitle={(q) => `No results for "${q}"`}
         onSelect={handleSelect}
-        placeholder="Search components…"
       />
-      <main className={css.main}>
-        <Outlet />
-      </main>
     </div>
   )
 }

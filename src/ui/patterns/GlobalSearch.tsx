@@ -34,6 +34,9 @@ export interface GlobalSearchProps {
   onSelect?: (item: SearchResult) => void
   onClearRecents?: () => void
   placeholder?: string
+  emptyTitle?: string
+  emptyDescription?: string
+  noResultsTitle?: (query: string) => string
   style?: CSSProperties
 }
 
@@ -51,6 +54,9 @@ export function GlobalSearch({
   onSelect,
   onClearRecents,
   placeholder,
+  emptyTitle,
+  emptyDescription,
+  noResultsTitle,
   style,
 }: GlobalSearchProps) {
   const intl = useIntl()
@@ -207,8 +213,10 @@ export function GlobalSearch({
     body = (
       <EmptyState
         icon={value.length >= minChars ? 'search_off' : 'search'}
-        title={value.length >= minChars ? `Sin resultados para "${value}"` : 'Busca en toda la plataforma'}
-        description="Prueba con una placa, un nombre o un ID de viaje."
+        title={value.length >= minChars
+          ? (noResultsTitle ? noResultsTitle(value) : `Sin resultados para "${value}"`)
+          : (emptyTitle ?? 'Busca en toda la plataforma')}
+        description={emptyDescription ?? 'Prueba con una placa, un nombre o un ID de viaje.'}
       />
     )
   } else {

@@ -1,5 +1,5 @@
 export { AnatomyView, type AnatomyViewProps, type AnatomyPart } from './AnatomyView'
-export { DocFooter, type DocFooterProps } from './DocFooter'
+export { DocFooter, type DocFooterProps, type DocFooterLink } from './DocFooter'
 export { DocHero, type DocHeroProps, type DocHeroPlatform } from './DocHero'
 export { DownloadCard, type DownloadCardProps } from './DownloadCard'
 export { GlobalSearch, type GlobalSearchProps, type SearchResult } from './GlobalSearch'

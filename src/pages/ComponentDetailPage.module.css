@@ -2,8 +2,8 @@
 
 /* Full-bleed hero zone */
 .heroZone {
-  background: var(--surface-card);
-  padding: var(--space-12) 0 var(--space-10);
+  position: relative;
+  padding: var(--space-16) 0 var(--space-10);
 }
 
 .heroInner {

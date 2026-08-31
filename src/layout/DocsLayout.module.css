@@ -1,10 +1,54 @@
 .layout {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--surface-canvas);
+  background:
+    radial-gradient(circle at 5% 75%, color-mix(in srgb, var(--flow-red-100) 50%, transparent), transparent 15rem) no-repeat,
+    radial-gradient(circle at 96% 8%, color-mix(in srgb, var(--flow-blue-100) 60%, transparent), transparent 17rem) no-repeat,
+    linear-gradient(to bottom, #fff 280px, var(--surface-canvas) 420px);
+  background-size: 100% 380px, 100% 380px, 100% 100%;
+}
+
+.layout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 380px;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--border-default) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-default) 1px, transparent 1px);
+  background-position: center top;
+  background-size: 42px 42px;
+  opacity: 0.5;
 }
 
 .main {
   flex: 1;
+}
+
+/* ── Search trigger ── */
+
+.searchWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.searchKbd {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font: var(--type-label-sm);
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  white-space: nowrap;
 }

@@ -39,8 +39,10 @@ export interface TopBarProps {
   onToggleSidebar?: () => void
   leading?: ReactNode
   trailing?: ReactNode
-  surface?: 'card' | 'inverse'
+  surface?: 'card' | 'inverse' | 'glass'
   navSize?: 'md' | 'sm'
+  sticky?: boolean
+  version?: string
   style?: CSSProperties
 }
 
@@ -62,6 +64,8 @@ export function TopBar({
   trailing,
   surface = 'card',
   navSize = 'md',
+  sticky,
+  version,
   style,
 }: TopBarProps) {
   const intl = useIntl()
@@ -93,7 +97,10 @@ export function TopBar({
           </a>
         ))}
       </nav>
-      {tail}
+      <div className={css.trailingWrap}>
+        {tail}
+        {version && <span className={css.versionBadge}>{version}</span>}
+      </div>
     </>
   )
 
@@ -204,8 +211,15 @@ export function TopBar({
   }
 
   return (
-    <header className={css.root} data-surface={surface} style={style}>
-      {(variants[variant] || renderStandard)()}
+    <header
+      className={css.root}
+      data-surface={surface}
+      data-sticky={sticky || undefined}
+      style={style}
+    >
+      <div className={css.inner}>
+        {(variants[variant] || renderStandard)()}
+      </div>
     </header>
   )
 }
