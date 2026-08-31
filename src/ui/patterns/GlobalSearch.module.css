@@ -54,7 +54,17 @@
   font-family: inherit;
   color: var(--text-primary);
   min-height: 44px;
-  padding: var(--space-2) 0;
+  padding: var(--space-2);
+  box-shadow: none;
+}
+
+.input:focus-visible {
+  box-shadow: none;
+}
+
+.searchBar[data-mode='inline']:focus-within {
+  border-radius: var(--radius-md);
+  box-shadow: var(--focus-ring);
 }
 
 .input[data-mode='palette'] {
@@ -228,6 +238,11 @@
   background: var(--surface-sunken);
   border: var(--border-width) solid var(--border-subtle);
   border-radius: var(--radius-md);
+}
+
+.inlineField:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: var(--focus-ring);
 }
 
 .inlineDrop {

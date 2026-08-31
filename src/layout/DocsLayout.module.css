@@ -6,7 +6,7 @@
   flex-direction: column;
   background:
     radial-gradient(circle at 5% 75%, color-mix(in srgb, var(--flow-red-100) 50%, transparent), transparent 15rem) no-repeat,
-    radial-gradient(circle at 96% 8%, color-mix(in srgb, var(--flow-blue-100) 60%, transparent), transparent 17rem) no-repeat,
+    radial-gradient(circle at 82% 8%, color-mix(in srgb, var(--flow-blue-100) 60%, transparent), transparent 12rem) no-repeat,
     linear-gradient(to bottom, #fff 280px, var(--surface-canvas) 420px);
   background-size: 100% 380px, 100% 380px, 100% 100%;
 }
