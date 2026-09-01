@@ -5172,10 +5172,6 @@
         "use": "Tinta. Accion por defecto"
       },
       {
-        "v": "accent",
-        "use": "Rojo marca. Maximo 1 por vista — la accion que define la pantalla"
-      },
-      {
         "v": "secondary",
         "use": "Outline. Acciones alternativas"
       },
