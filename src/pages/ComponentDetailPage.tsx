@@ -108,9 +108,9 @@ function generateSpecLabels({ variant, size, density }: { variant: string; size:
   }
 }
 
-function generateReactUsage(name: string, layer: string): string {
+function generateReactUsage(name: string, _layer: string): string {
   return [
-    `import { ${name} } from 'src/ui/${layer}';`,
+    `import { ${name} } from '@alohasoyrico-eng/flow-react';`,
     '',
     `<${name}`,
     `  variant="primary"`,
@@ -545,9 +545,9 @@ function BuildTab({ contract }: { contract: ContractItem }) {
               platform={platform}
               command={
                 platform === 'flutter'
-                  ? 'flutter pub add flow_ds --path ./flutter'
+                  ? 'flutter pub add flow_ds --git-url=https://github.com/alohasoyrico-eng/Design-system-multiplataforma-desde-cero.git --git-path=flutter'
                   : platform === 'web'
-                    ? `import { ${contract.name} } from 'src/ui/${contract.layer}'`
+                    ? 'npm install @alohasoyrico-eng/flow-react'
                     : 'sin paquete todavía'
               }
               status={STATUS_LABELS[status] ?? status}
