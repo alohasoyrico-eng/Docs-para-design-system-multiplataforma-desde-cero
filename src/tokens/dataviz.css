@@ -1,22 +1,21 @@
-/* Flow · Data-viz — categorical series palette + chart chrome.
+/* Flow · Sys · Data-viz — categorical series palette + chart chrome.
    El rojo de marca NO es un color de serie: es --viz-accent, para la serie enfatizada. */
 :root {
-  --viz-1: #2E7CF6;
-  --viz-2: #12B76A;
-  --viz-3: #E8930C;
-  --viz-4: #7A5AF8;
-  --viz-5: #0E9BA8;
-  --viz-6: #CA8A04;
-  --viz-7: #6B6A6E;
-  --viz-8: #B26A00;
+  --viz-1: var(--ref-viz-1);
+  --viz-2: var(--ref-viz-2);
+  --viz-3: var(--ref-viz-3);
+  --viz-4: var(--ref-viz-4);
+  --viz-5: var(--ref-viz-5);
+  --viz-6: var(--ref-viz-6);
+  --viz-7: var(--ref-viz-7);
+  --viz-8: var(--ref-viz-8);
 
   --viz-accent: var(--flow-red-500);
   --viz-positive: var(--status-success);
   --viz-negative: var(--status-danger);
   --viz-neutral: var(--flow-grey-400);
 
-  /* Domain aliases — each maps to a categorical position.
-     Mnemonic: fuel=warm orange, toll=purple, maint=teal, EV=green */
+  /* Domain aliases — each maps to a categorical position */
   --viz-combustible: var(--viz-3);
   --viz-peaje: var(--viz-4);
   --viz-mantenimiento: var(--viz-5);
@@ -24,12 +23,12 @@
   --viz-viajes: var(--viz-6);
 
   /* Rampa secuencial para heatmaps y treemaps (claro → oscuro) */
-  --viz-ramp-1: #F1F5F9;
-  --viz-ramp-2: #CBD5E1;
-  --viz-ramp-3: #94A3B8;
-  --viz-ramp-4: #64748B;
-  --viz-ramp-5: #334155;
-  --viz-ramp-6: #0F172A;
+  --viz-ramp-1: var(--ref-grey-50);
+  --viz-ramp-2: var(--ref-grey-300);
+  --viz-ramp-3: var(--ref-grey-400);
+  --viz-ramp-4: var(--ref-grey-500);
+  --viz-ramp-5: var(--ref-grey-700);
+  --viz-ramp-6: var(--ref-grey-900);
 
   /* Cromo del chart */
   --viz-grid: var(--border-subtle);

@@ -1,0 +1,12 @@
+/* Flow · Ref · Iconography — raw icon size scale, platform-agnostic */
+:root {
+  --ref-icon-14: 14px;
+  --ref-icon-16: 16px;
+  --ref-icon-18: 18px;
+  --ref-icon-20: 20px;
+  --ref-icon-24: 24px;
+  --ref-icon-28: 28px;
+  --ref-icon-36: 36px;
+  --ref-icon-40: 40px;
+  --ref-icon-48: 48px;
+}

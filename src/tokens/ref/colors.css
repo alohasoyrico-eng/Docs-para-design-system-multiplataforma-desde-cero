@@ -1,0 +1,110 @@
+/* Flow · Ref · Colors — raw palette scale, platform-agnostic.
+   Cada ramp define la escala cruda de hex. Los sys files (colors.css, dark.css,
+   dataviz.css, products.css) crean aliases semánticos sobre estos refs. */
+:root {
+  /* Grey (Edenred cool slate) */
+  --ref-grey-900: #0F172A;
+  --ref-grey-800: #1E293B;
+  --ref-grey-700: #334155;
+  --ref-grey-600: #475569;
+  --ref-grey-500: #64748B;
+  --ref-grey-400: #94A3B8;
+  --ref-grey-300: #CBD5E1;
+  --ref-grey-200: #E2E8F0;
+  --ref-grey-100: #F1F5F9;
+  --ref-grey-50:  #F8FAFC;
+
+  /* Red (Edenred brand #F72717) */
+  --ref-red-900: #400402;
+  --ref-red-700: #780D06;
+  --ref-red-600: #B61A0E;
+  --ref-red-500: #F72717;
+  --ref-red-200: #FC7F7C;
+  --ref-red-100: #FDBBBA;
+  --ref-red-50:  #FEEDEC;
+
+  /* Blue (action accent #0060df) */
+  --ref-blue-900: #00142e;
+  --ref-blue-800: #002557;
+  --ref-blue-700: #003985;
+  --ref-blue-600: #004db3;
+  --ref-blue-500: #0060df;
+  --ref-blue-400: #1a7cff;
+  --ref-blue-300: #529cff;
+  --ref-blue-200: #8abcff;
+  --ref-blue-100: #c7dfff;
+  --ref-blue-50:  #e0eeff;
+
+  /* Green (success) */
+  --ref-green-900: #05140d;
+  --ref-green-800: #072718;
+  --ref-green-700: #084026;
+  --ref-green-600: #065b33;
+  --ref-green-500: #007840;
+  --ref-green-400: #0dba69;
+  --ref-green-300: #2ee590;
+  --ref-green-200: #79e6b4;
+  --ref-green-100: #c3efda;
+  --ref-green-50:  #e1f4eb;
+
+  /* Orange (warning) */
+  --ref-orange-900: #260d03;
+  --ref-orange-800: #4c1a06;
+  --ref-orange-700: #712709;
+  --ref-orange-600: #97330c;
+  --ref-orange-500: #bf410f;
+  --ref-orange-400: #ed571c;
+  --ref-orange-300: #f28155;
+  --ref-orange-200: #f6ab8e;
+  --ref-orange-100: #fbd5c6;
+  --ref-orange-50:  #FDEAE3;
+
+  /* Danger (functional red, not brand) */
+  --ref-danger-700: #7a0800;
+  --ref-danger-600: #a30b00;
+  --ref-danger-500: #ca0e00;
+  --ref-danger-400: #ff1b0a;
+  --ref-danger-300: #ff5447;
+  --ref-danger-200: #ff8d85;
+  --ref-danger-50:  #ffe3e0;
+
+  /* Standalone values */
+  --ref-white: #FFFFFF;
+  --ref-black: #000000;
+  --ref-canvas-light: #F1F7FF;
+
+  /* Avatar identity (deterministic by name, 4.5:1 on white) */
+  --ref-avatar-1: #DF2F14;
+  --ref-avatar-2: #0D864D;
+  --ref-avatar-3: #2A71E0;
+  --ref-avatar-4: #A46808;
+  --ref-avatar-5: #7859F4;
+  --ref-avatar-6: #0D8476;
+
+  /* Data-viz categorical series */
+  --ref-viz-1: #2E7CF6;
+  --ref-viz-2: #12B76A;
+  --ref-viz-3: #E8930C;
+  --ref-viz-4: #7A5AF8;
+  --ref-viz-5: #0E9BA8;
+  --ref-viz-6: #CA8A04;
+  --ref-viz-7: #6B6A6E;
+  --ref-viz-8: #B26A00;
+
+  /* Product verticals — light */
+  --ref-product-fuel-accent: #D4A017;
+  --ref-product-fuel-hero: #FCD63E;
+  --ref-product-ev-accent: #2B8A3E;
+  --ref-product-ev-hero: #0E4220;
+  --ref-product-maint-accent: #862E9C;
+  --ref-product-maint-hero: #2E0E40;
+  --ref-product-toll-accent: #1864AB;
+  --ref-product-toll-hero: #071E3E;
+  --ref-product-add-hero: #2C1A30;
+
+  /* Product verticals — dark overrides */
+  --ref-product-fuel-accent-dark: #FCD63E;
+  --ref-product-ev-accent-dark: #51CF66;
+  --ref-product-maint-accent-dark: #CC5DE8;
+  --ref-product-toll-accent-dark: #4DABF7;
+}

@@ -1,75 +1,75 @@
-/* Flow · Colors — Edenred Foundation Core + Flow semantic layer.
+/* Flow · Sys · Colors — semantic aliases over ref/colors.css.
    El modo oscuro vive en tokens/dark.css */
 :root {
   /* ---- Base palette: Grey (Edenred cool slate) ---- */
-  --flow-grey-900: #0F172A;
-  --flow-grey-800: #1E293B;
-  --flow-grey-700: #334155;
-  --flow-grey-600: #475569;
-  --flow-grey-500: #64748B;
-  --flow-grey-400: #94A3B8;
-  --flow-grey-300: #CBD5E1;
-  --flow-grey-200: #E2E8F0;
-  --flow-grey-100: #F1F5F9;
-  --flow-grey-50:  #F8FAFC;
+  --flow-grey-900: var(--ref-grey-900);
+  --flow-grey-800: var(--ref-grey-800);
+  --flow-grey-700: var(--ref-grey-700);
+  --flow-grey-600: var(--ref-grey-600);
+  --flow-grey-500: var(--ref-grey-500);
+  --flow-grey-400: var(--ref-grey-400);
+  --flow-grey-300: var(--ref-grey-300);
+  --flow-grey-200: var(--ref-grey-200);
+  --flow-grey-100: var(--ref-grey-100);
+  --flow-grey-50:  var(--ref-grey-50);
 
   /* ---- Base palette: Red (Edenred brand #F72717) ---- */
-  --flow-red-900: #400402;
-  --flow-red-700: #780D06;
-  --flow-red-600: #B61A0E;
-  --flow-red-500: #F72717;
-  --flow-red-200: #FC7F7C;
-  --flow-red-100: #FDBBBA;
-  --flow-red-50:  #FEEDEC;
+  --flow-red-900: var(--ref-red-900);
+  --flow-red-700: var(--ref-red-700);
+  --flow-red-600: var(--ref-red-600);
+  --flow-red-500: var(--ref-red-500);
+  --flow-red-200: var(--ref-red-200);
+  --flow-red-100: var(--ref-red-100);
+  --flow-red-50:  var(--ref-red-50);
 
   /* ---- Base palette: Blue (action accent #0060df) ---- */
-  --flow-blue-900: #00142e;
-  --flow-blue-800: #002557;
-  --flow-blue-700: #003985;
-  --flow-blue-600: #004db3;
-  --flow-blue-500: #0060df;
-  --flow-blue-400: #1a7cff;
-  --flow-blue-300: #529cff;
-  --flow-blue-200: #8abcff;
-  --flow-blue-100: #c7dfff;
-  --flow-blue-50:  #e0eeff;
+  --flow-blue-900: var(--ref-blue-900);
+  --flow-blue-800: var(--ref-blue-800);
+  --flow-blue-700: var(--ref-blue-700);
+  --flow-blue-600: var(--ref-blue-600);
+  --flow-blue-500: var(--ref-blue-500);
+  --flow-blue-400: var(--ref-blue-400);
+  --flow-blue-300: var(--ref-blue-300);
+  --flow-blue-200: var(--ref-blue-200);
+  --flow-blue-100: var(--ref-blue-100);
+  --flow-blue-50:  var(--ref-blue-50);
 
   /* ---- Base palette: Green (success) ---- */
-  --flow-green-900: #05140d;
-  --flow-green-800: #072718;
-  --flow-green-700: #084026;
-  --flow-green-600: #065b33;
-  --flow-green-500: #007840;
-  --flow-green-400: #0dba69;
-  --flow-green-300: #2ee590;
-  --flow-green-200: #79e6b4;
-  --flow-green-100: #c3efda;
-  --flow-green-50:  #e1f4eb;
+  --flow-green-900: var(--ref-green-900);
+  --flow-green-800: var(--ref-green-800);
+  --flow-green-700: var(--ref-green-700);
+  --flow-green-600: var(--ref-green-600);
+  --flow-green-500: var(--ref-green-500);
+  --flow-green-400: var(--ref-green-400);
+  --flow-green-300: var(--ref-green-300);
+  --flow-green-200: var(--ref-green-200);
+  --flow-green-100: var(--ref-green-100);
+  --flow-green-50:  var(--ref-green-50);
 
   /* ---- Base palette: Orange (warning) ---- */
-  --flow-orange-900: #260d03;
-  --flow-orange-800: #4c1a06;
-  --flow-orange-700: #712709;
-  --flow-orange-600: #97330c;
-  --flow-orange-500: #bf410f;
-  --flow-orange-400: #ed571c;
-  --flow-orange-300: #f28155;
-  --flow-orange-200: #f6ab8e;
-  --flow-orange-100: #fbd5c6;
-  --flow-orange-50:  #FDEAE3;
+  --flow-orange-900: var(--ref-orange-900);
+  --flow-orange-800: var(--ref-orange-800);
+  --flow-orange-700: var(--ref-orange-700);
+  --flow-orange-600: var(--ref-orange-600);
+  --flow-orange-500: var(--ref-orange-500);
+  --flow-orange-400: var(--ref-orange-400);
+  --flow-orange-300: var(--ref-orange-300);
+  --flow-orange-200: var(--ref-orange-200);
+  --flow-orange-100: var(--ref-orange-100);
+  --flow-orange-50:  var(--ref-orange-50);
 
   /* ---- Base palette: Danger (functional red, not brand) ---- */
-  --flow-danger-700: #7a0800;
-  --flow-danger-600: #a30b00;
-  --flow-danger-500: #ca0e00;
-  --flow-danger-400: #ff1b0a;
-  --flow-danger-300: #ff5447;
-  --flow-danger-200: #ff8d85;
-  --flow-danger-50:  #ffe3e0;
+  --flow-danger-700: var(--ref-danger-700);
+  --flow-danger-600: var(--ref-danger-600);
+  --flow-danger-500: var(--ref-danger-500);
+  --flow-danger-400: var(--ref-danger-400);
+  --flow-danger-300: var(--ref-danger-300);
+  --flow-danger-200: var(--ref-danger-200);
+  --flow-danger-50:  var(--ref-danger-50);
 
   /* ---- Semantic: surfaces ---- */
-  --surface-canvas: #F1F7FF;
-  --surface-card: #FFFFFF;
+  --surface-canvas: var(--ref-canvas-light);
+  --surface-card: var(--ref-white);
   --surface-sunken: var(--flow-grey-100);
   --surface-inverse: var(--flow-grey-900);
   --surface-accent-subtle: var(--flow-blue-50);
@@ -78,7 +78,7 @@
   --text-primary: var(--flow-grey-900);
   --text-secondary: var(--flow-grey-600);
   --text-muted: var(--flow-grey-500);
-  --text-on-accent: #FFFFFF;
+  --text-on-accent: var(--ref-white);
   --text-on-inverse: var(--flow-grey-50);
   --text-accent: var(--flow-blue-600);
   --text-link: var(--flow-blue-500);
@@ -91,7 +91,7 @@
 
   /* ---- Semantic: actions ---- */
   --action-primary: var(--flow-grey-900);
-  --action-primary-hover: #000000;
+  --action-primary-hover: var(--ref-black);
   --action-accent: var(--flow-blue-500);
   --action-accent-hover: var(--flow-blue-600);
 
@@ -136,26 +136,25 @@
   color-scheme: light;
 }
 
-/* ---- Identidad de avatar ----
-   Color determinista por nombre. Los seis pasan 4.5:1 con iniciales en blanco. */
+/* ---- Identidad de avatar ---- */
 :root {
-  --avatar-1: #DF2F14;
-  --avatar-2: #0D864D;
-  --avatar-3: #2A71E0;
-  --avatar-4: #A46808;
-  --avatar-5: #7859F4;
-  --avatar-6: #0D8476;
+  --avatar-1: var(--ref-avatar-1);
+  --avatar-2: var(--ref-avatar-2);
+  --avatar-3: var(--ref-avatar-3);
+  --avatar-4: var(--ref-avatar-4);
+  --avatar-5: var(--ref-avatar-5);
+  --avatar-6: var(--ref-avatar-6);
   --avatar-offline: var(--flow-grey-400);
 }
 
 /* ---- Ilustracion ---- */
 :root {
   --illustration-1: var(--flow-red-500);
-  --illustration-2: #2A71E0;
-  --illustration-3: #0D864D;
-  --illustration-4: #7859F4;
-  --illustration-5: #A46808;
-  --illustration-6: #0D8476;
+  --illustration-2: var(--ref-avatar-3);
+  --illustration-3: var(--ref-avatar-2);
+  --illustration-4: var(--ref-avatar-5);
+  --illustration-5: var(--ref-avatar-4);
+  --illustration-6: var(--ref-avatar-6);
 }
 
 /* ---- Code syntax (sys — semantic over base palette) ---- */
@@ -172,7 +171,7 @@
    oscuro. No tienen contrapartida en dark.css. */
 :root {
   --card-fg-on-ink: var(--flow-grey-50);
-  --card-fg-on-accent: #FFFFFF;
+  --card-fg-on-accent: var(--ref-white);
   --card-dim-on-ink: rgba(248, 250, 252, 0.55);
   --card-dim-on-accent: rgba(255, 255, 255, 0.65);
 }

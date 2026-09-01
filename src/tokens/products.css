@@ -1,65 +1,65 @@
-/* Flow · Product palettes — branding de cada vertical Edenred.
+/* Flow · Sys · Product palettes — branding de cada vertical Edenred.
    Cada producto define accent, accent-soft, gradient y hero-bg.
    Los blobs del hero son decorativos y viven inline en el componente. */
 
 /* ---- Fuel (gold) ---- */
 [data-product="fuel"] {
-  --product-accent: #D4A017;
+  --product-accent: var(--ref-product-fuel-accent);
   --product-accent-soft: rgba(252, 214, 62, 0.18);
-  --product-gradient: linear-gradient(135deg, #E8A500, #FCD63E);
-  --product-hero-bg: #FCD63E;
+  --product-gradient: linear-gradient(135deg, #E8A500, var(--ref-product-fuel-hero));
+  --product-hero-bg: var(--ref-product-fuel-hero);
 }
 
 /* ---- EV (green) ---- */
 [data-product="ev"] {
-  --product-accent: #2B8A3E;
+  --product-accent: var(--ref-product-ev-accent);
   --product-accent-soft: rgba(43, 138, 62, 0.14);
   --product-gradient: linear-gradient(135deg, #1B6A2E, #37B24D);
-  --product-hero-bg: #0E4220;
+  --product-hero-bg: var(--ref-product-ev-hero);
 }
 
 /* ---- Maintenance (purple) ---- */
 [data-product="maintenance"] {
-  --product-accent: #862E9C;
+  --product-accent: var(--ref-product-maint-accent);
   --product-accent-soft: rgba(134, 46, 156, 0.14);
   --product-gradient: linear-gradient(135deg, #6A1E80, #AE3EC9);
-  --product-hero-bg: #2E0E40;
+  --product-hero-bg: var(--ref-product-maint-hero);
 }
 
 /* ---- Toll (blue) ---- */
 [data-product="toll"] {
-  --product-accent: #1864AB;
+  --product-accent: var(--ref-product-toll-accent);
   --product-accent-soft: rgba(24, 100, 171, 0.14);
   --product-gradient: linear-gradient(135deg, #0E4A80, #228BE6);
-  --product-hero-bg: #071E3E;
+  --product-hero-bg: var(--ref-product-toll-hero);
 }
 
 /* ---- Add card (neutral) ---- */
 [data-product="_add"] {
-  --product-hero-bg: #2C1A30;
+  --product-hero-bg: var(--ref-product-add-hero);
 }
 
 /* ---- Dark overrides ---- */
 [data-mode="dark"] [data-product="fuel"],
 [data-product="fuel"][data-mode="dark"] {
-  --product-accent: #FCD63E;
+  --product-accent: var(--ref-product-fuel-accent-dark);
   --product-accent-soft: rgba(252, 214, 62, 0.22);
 }
 
 [data-mode="dark"] [data-product="ev"],
 [data-product="ev"][data-mode="dark"] {
-  --product-accent: #51CF66;
+  --product-accent: var(--ref-product-ev-accent-dark);
   --product-accent-soft: rgba(43, 138, 62, 0.20);
 }
 
 [data-mode="dark"] [data-product="maintenance"],
 [data-product="maintenance"][data-mode="dark"] {
-  --product-accent: #CC5DE8;
+  --product-accent: var(--ref-product-maint-accent-dark);
   --product-accent-soft: rgba(134, 46, 156, 0.20);
 }
 
 [data-mode="dark"] [data-product="toll"],
 [data-product="toll"][data-mode="dark"] {
-  --product-accent: #4DABF7;
+  --product-accent: var(--ref-product-toll-accent-dark);
   --product-accent-soft: rgba(24, 100, 171, 0.20);
 }

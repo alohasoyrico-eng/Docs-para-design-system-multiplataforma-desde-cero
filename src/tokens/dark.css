@@ -1,4 +1,4 @@
-/* Flow · Modo oscuro — mismos tokens semánticos, valores recalculados para
+/* Flow · Sys · Modo oscuro — mismos tokens semánticos, valores recalculados para
    cool slate + blue accent. Se activa con [data-mode="dark"]. */
 
 /* ---- Color ---- */
@@ -12,7 +12,7 @@
   --text-primary: var(--flow-grey-100);
   --text-secondary: var(--flow-grey-400);
   --text-muted: var(--flow-grey-500);
-  --text-on-accent: #FFFFFF;
+  --text-on-accent: var(--ref-white);
   --text-on-inverse: var(--flow-grey-900);
   --text-accent: var(--flow-blue-300);
   --text-link: var(--flow-blue-300);
@@ -22,7 +22,7 @@
   --border-strong: var(--flow-grey-700);
 
   --action-primary: var(--flow-grey-100);
-  --action-primary-hover: #FFFFFF;
+  --action-primary-hover: var(--ref-white);
   --action-accent: var(--flow-blue-400);
   --action-accent-hover: var(--flow-blue-300);
 
@@ -79,10 +79,10 @@
   --code-comment: var(--flow-grey-500);
   --code-default: var(--flow-grey-200);
 
-  --viz-ramp-1: #0E1526;
-  --viz-ramp-2: #1E293B;
-  --viz-ramp-3: #334155;
-  --viz-ramp-4: #475569;
-  --viz-ramp-5: #94A3B8;
-  --viz-ramp-6: #CBD5E1;
+  --viz-ramp-1: var(--ref-grey-900);
+  --viz-ramp-2: var(--ref-grey-800);
+  --viz-ramp-3: var(--ref-grey-700);
+  --viz-ramp-4: var(--ref-grey-600);
+  --viz-ramp-5: var(--ref-grey-400);
+  --viz-ramp-6: var(--ref-grey-300);
 }
