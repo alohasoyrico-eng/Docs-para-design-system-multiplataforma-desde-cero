@@ -15,6 +15,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      # El lockfile resuelve la dependencia del DS como git+ssh; en CI no hay
+      # llaves SSH, así que git la reescribe a https (el repo es público).
+      - run: git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
       - run: npm ci
       - run: npm run typecheck
       - run: npm run build
