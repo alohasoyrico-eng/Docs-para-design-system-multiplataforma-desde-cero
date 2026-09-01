@@ -38,7 +38,8 @@ const TABS = [
 
 const INTERACTION_STATES = ['default', 'hover', 'focus', 'active', 'disabled', 'loading']
 
-const CHANGELOG = [
+/* Ejemplo ilustrativo del flujo MIEL — no es el historial real del componente. */
+const DEMO_CHANGELOG = [
   { version: '1.112', note: 'Tighten compact padding from 16px to 14px', by: 'agent', status: 'signed' },
   { version: '1.108', note: 'Add danger variant with accessible contrast on light and dark', by: 'agent', status: 'signed' },
   { version: '1.96', note: 'Fix focus ring in forced-colors mode', by: 'human', status: 'signed' },
@@ -51,35 +52,22 @@ const PLATFORM_LABELS: Record<string, string> = {
   flutter: 'Flutter',
 }
 
-const PLATFORM_STATUS_LADDER: Record<string, string[]> = {
-  react:   ['ready', 'ready', 'ready', 'ready', 'beta'],
-  angular: ['ready', 'beta', 'beta', 'planned', 'planned'],
-  flutter: ['ready', 'ready', 'beta', 'beta', 'planned'],
-}
-
-function variantPlatformStatus(
-  componentStatus: string | undefined,
-  variantIndex: number,
-  platform: string,
-): string {
-  if (!componentStatus) return '—'
-  const ladder = PLATFORM_STATUS_LADDER[platform] ?? ['ready']
-  return ladder[Math.min(variantIndex, ladder.length - 1)]
-}
-
+/* El estado por plataforma sale tal cual del contrato — nunca se infiere ni se escala. */
 const STATUS_LABELS: Record<string, string> = {
-  reference: 'stable',
+  reference: 'reference',
   stable: 'stable',
   beta: 'beta',
   alpha: 'alpha',
   planned: 'planned',
+  proposed: 'proposed',
   ready: 'ready',
+  'n/a': 'n/a',
 }
 
 function platformTone(status: string): 'success' | 'warning' | 'danger' | 'info' | undefined {
-  if (status === 'reference' || status === 'stable' || status === 'ready') return 'success' as const
+  if (status === 'stable' || status === 'ready') return 'success' as const
   if (status === 'beta') return 'warning' as const
-  if (status === 'planned' || status === 'alpha') return 'info' as const
+  if (status === 'reference' || status === 'planned' || status === 'alpha' || status === 'proposed') return 'info' as const
   return undefined
 }
 
@@ -98,9 +86,11 @@ function parseNotWhen(rule: string): { body: string; instead?: string } {
   return { body: rule }
 }
 
-function generateSnippet(name: string) {
+function generateSnippet(name: string, hasSpecimen: boolean) {
   return ({ variant, size }: { variant: string; size: string }) =>
-    `<${name} variant="${variant}" size="${size}">${name === 'Button' ? 'Confirmar carga' : ''}</${name}>`
+    hasSpecimen
+      ? `<${name} variant="${variant}" size="${size}">${name === 'Button' ? 'Confirmar carga' : ''}</${name}>`
+      : `// ${name}: contrato sin implementación web todavía`
 }
 
 const SIZE_SPECS: Record<string, Record<string, { h: string; pad: string }>> = {
@@ -138,9 +128,9 @@ function generateSpecLabels({ variant, size, density }: { variant: string; size:
   }
 }
 
-function generateReactUsage(name: string): string {
+function generateReactUsage(name: string, layer: string): string {
   return [
-    `import { ${name} } from '@flow/react';`,
+    `import { ${name} } from 'src/ui/${layer}';`,
     '',
     `<${name}`,
     `  variant="primary"`,
@@ -154,7 +144,7 @@ function generateReactUsage(name: string): string {
 
 function generateFlutterUsage(name: string): string {
   return [
-    `import 'package:flow_ui/flow_ui.dart';`,
+    `import 'package:flow_ds/flow_ds.dart';`,
     '',
     `Flow${name}(`,
     `  variant: Flow${name}Variant.primary,`,
@@ -304,7 +294,7 @@ export function ComponentDetailPage() {
           )}
         </nav>
 
-        <DocFooter lastUpdated="26 Aug 2026" version="React ^1.112.0" />
+        <DocFooter version={contract.src ? `src/ui/${contract.src}` : `${contract.layer} · sin implementación`} />
       </div>
 
       <ScrollArc />
@@ -332,17 +322,23 @@ function OverviewTab({ contract, componentId, platforms }: { contract: ContractI
             <span className={css.headingSub}>in every size</span>
           </SectionHeader>
           <div className={css.platformRow}>
+            {contract.status && (
+              <StatusPill
+                label={STATUS_LABELS[contract.status] ?? contract.status}
+                tone={platformTone(contract.status) ?? 'info'}
+              />
+            )}
             {platforms.map(p => (
               <StatusPill key={p.label} label={p.label} tone={p.tone} />
             ))}
-            {contract.a11y.length > 0 && <Badge tone="info">WCAG 2.2 AA</Badge>}
+            {contract.a11y.length > 0 && <Badge tone="info">{contract.a11y.length} reglas a11y</Badge>}
           </div>
         </div>
         <PlaygroundCanvas
           variants={variants}
           sizes={sizes}
           densities={['compact', 'default', 'comfortable']}
-          snippet={generateSnippet(contract.name)}
+          snippet={generateSnippet(contract.name, Boolean(specimenFn))}
           specLabels={generateSpecLabels}
         >
           {({ variant, size }) =>
@@ -351,7 +347,9 @@ function OverviewTab({ contract, componentId, platforms }: { contract: ContractI
             ) : (
               <div className={css.specimenPlaceholder}>
                 <span className={css.specimenName}>{contract.name}</span>
-                <span className={css.specimenMeta}>{variant} · {size}</span>
+                <span className={css.specimenMeta}>
+                  {contract.status || 'contrato'} · sin implementación web todavía
+                </span>
               </div>
             )
           }
@@ -411,7 +409,7 @@ function OverviewTab({ contract, componentId, platforms }: { contract: ContractI
         <RevealSection className={css.section}>
           <SectionRule
             label="Platform support"
-            meta="Per variant, not per component"
+            meta="Directo del contrato"
           />
           <Table
             columns={[
@@ -426,11 +424,11 @@ function OverviewTab({ contract, componentId, platforms }: { contract: ContractI
               { key: 'angular', label: 'Angular' },
               { key: 'flutter', label: 'Flutter' },
             ]}
-            rows={contract.variants.map((v, i) => ({
+            rows={contract.variants.map(v => ({
               variant: v.v,
-              react: variantPlatformStatus(contract.platforms.web, i, 'react'),
-              angular: variantPlatformStatus(contract.platforms.angular, i, 'angular'),
-              flutter: variantPlatformStatus(contract.platforms.flutter, i, 'flutter'),
+              react: STATUS_LABELS[contract.platforms.web ?? ''] ?? contract.platforms.web ?? '—',
+              angular: STATUS_LABELS[contract.platforms.angular ?? ''] ?? contract.platforms.angular ?? '—',
+              flutter: STATUS_LABELS[contract.platforms.flutter ?? ''] ?? contract.platforms.flutter ?? '—',
             }))}
             rowKey="variant"
             sortable={false}
@@ -565,10 +563,12 @@ function BuildTab({ contract }: { contract: ContractItem }) {
               platform={platform}
               command={
                 platform === 'flutter'
-                  ? 'flutter pub add flow_ui'
-                  : `npm i @flow/${platform === 'web' ? 'react' : platform}`
+                  ? 'flutter pub add flow_ds --path ./flutter'
+                  : platform === 'web'
+                    ? `import { ${contract.name} } from 'src/ui/${contract.layer}'`
+                    : 'sin paquete todavía'
               }
-              status={status}
+              status={STATUS_LABELS[status] ?? status}
               statusTone={platformTone(status)}
             />
           ))}
@@ -586,7 +586,7 @@ function BuildTab({ contract }: { contract: ContractItem }) {
         <div className={css.usagePair}>
           <div className={css.usagePane}>
             <CodeBlock
-              code={generateReactUsage(contract.name)}
+              code={generateReactUsage(contract.name, contract.layer)}
               filename={`${contract.name.toLowerCase()}.tsx`}
             />
           </div>
@@ -615,7 +615,7 @@ function BuildTab({ contract }: { contract: ContractItem }) {
 
       {contract.a11y.length > 0 && (
         <RevealSection className={css.section}>
-          <SectionRule label="Accessibility" meta="WCAG 2.2 AA" />
+          <SectionRule label="Accessibility" meta={`${contract.a11y.length} reglas del contrato`} />
           {contract.a11y.map((rule, i) => (
             <div key={i} className={css.a11yItem}>
               {rule}
@@ -639,8 +639,7 @@ function MielTab({ contract }: { contract: ContractItem }) {
           label="Context for agents"
           meta={
             <span className={css.syncStatus}>
-              <span className={css.syncDot} />
-              In sync
+              Vista previa del flujo MIEL — contenido de ejemplo
             </span>
           }
         />
@@ -653,8 +652,8 @@ function MielTab({ contract }: { contract: ContractItem }) {
         <div className={css.mielColumns}>
           <div>
             <p className={css.mielDesc}>
-              Everything an agent needs to use {contract.name} correctly,
-              in one file and one endpoint. Regenerated on every release.
+              Así se verá el contexto de {contract.name} para agentes:
+              un archivo y un endpoint por componente. Este flujo aún no está en producción.
             </p>
             <div className={css.mielDownloads}>
               <DownloadCard
@@ -695,7 +694,7 @@ function MielTab({ contract }: { contract: ContractItem }) {
       </RevealSection>
 
       <RevealSection className={css.section}>
-        <SectionRule label="Proposal #418" meta="Needs 1 human" />
+        <SectionRule label="Proposal — ejemplo" meta="Demo del flujo de firmas" />
         <div className={css.sectionHeading}>
           <SectionHeader size="display">
             <span>Tighten compact padding</span>
@@ -718,7 +717,7 @@ function MielTab({ contract }: { contract: ContractItem }) {
       </RevealSection>
 
       <RevealSection className={css.section}>
-        <SectionRule label="Change log" meta="Agent-drafted, human signed" />
+        <SectionRule label="Change log — ejemplo" meta="Ilustrativo; no es el historial real" />
         <Table
           columns={[
             { key: 'version', label: 'Version', mono: true },
@@ -733,7 +732,7 @@ function MielTab({ contract }: { contract: ContractItem }) {
               ),
             },
           ]}
-          rows={CHANGELOG}
+          rows={DEMO_CHANGELOG}
           rowKey="version"
           sortable={false}
         />

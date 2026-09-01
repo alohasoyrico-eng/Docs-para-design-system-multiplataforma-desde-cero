@@ -7639,9 +7639,9 @@
     "nonGoals": []
   },
   "auth-pattern": {
-    "name": "Autenticación básica",
+    "name": "AuthForm",
     "layer": "patterns",
-    "status": "",
+    "status": "beta",
     "summary": "Ingreso, registro y recuperación: un campo por línea, errores por campo y estado de carga en el botón.",
     "fn": [],
     "domain": "",
@@ -7649,12 +7649,92 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
-    "platforms": {},
+    "src": "patterns/AuthForm.tsx",
+    "platforms": {
+      "web": "beta",
+      "angular": "planned",
+      "flutter": "beta"
+    },
     "anatomy": "Un campo por línea con <b>Field</b>, error por campo, estado de carga en el botón y enlaces secundarios abajo. Ingreso, registro y recuperación comparten la misma caja.",
-    "tokens": [],
+    "tokens": [
+      "--space-4 (gap de stack)",
+      "--status-danger-text (error de formulario)"
+    ],
     "variants": [],
-    "members": [],
+    "members": [
+      {
+        "n": "mode",
+        "k": "prop",
+        "t": "'login'|'signup'|'recover'",
+        "d": "",
+        "r": true,
+        "rw": "",
+        "note": "Las tres cajas comparten campos y validación"
+      },
+      {
+        "n": "onSubmit",
+        "k": "event",
+        "t": "(data: AuthSubmitData)=>void",
+        "d": "",
+        "r": true,
+        "rw": "",
+        "note": "Solo dispara con validación local aprobada"
+      },
+      {
+        "n": "loading",
+        "k": "prop",
+        "t": "boolean",
+        "d": "false",
+        "r": false,
+        "rw": "",
+        "note": "El botón muestra la carga"
+      },
+      {
+        "n": "title",
+        "k": "prop",
+        "t": "ReactNode",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": ""
+      },
+      {
+        "n": "subtitle",
+        "k": "prop",
+        "t": "ReactNode",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": ""
+      },
+      {
+        "n": "submitLabel",
+        "k": "prop",
+        "t": "string",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Default según mode"
+      },
+      {
+        "n": "footer",
+        "k": "prop",
+        "t": "ReactNode",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Enlaces secundarios abajo"
+      },
+      {
+        "n": "children",
+        "k": "prop",
+        "t": "ReactNode",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Campos extra entre password y submit"
+      }
+    ],
     "dos": [
       "Error por campo, no un banner genérico",
       "El botón muestra la carga: sin eso la gente lo presiona dos veces",
@@ -12187,6 +12267,150 @@
     ],
     "nonGoals": [
       "No hace fetch de transacciones: recibe los datos ya agrupados."
+    ]
+  },
+  "sheet-body": {
+    "name": "SheetBody",
+    "layer": "primitives",
+    "status": "beta",
+    "summary": "Cuerpo scrolleable de un sheet u overlay: padding estandar y modo centrado.",
+    "fn": [
+      "layout"
+    ],
+    "domain": "",
+    "shell": false,
+    "stub": false,
+    "stubNote": "",
+    "shellOf": [],
+    "src": "primitives/SheetBody.tsx",
+    "platforms": {
+      "web": "beta",
+      "angular": "planned",
+      "flutter": "beta"
+    },
+    "anatomy": "Contenedor unico con padding de card y scroll vertical propio. <b>center</b> centra el contenido para estados vacios o confirmaciones.",
+    "tokens": [
+      "--pad-card",
+      "--space-4"
+    ],
+    "variants": [],
+    "members": [
+      {
+        "n": "children",
+        "k": "prop",
+        "t": "ReactNode",
+        "d": "",
+        "r": true,
+        "rw": "",
+        "note": ""
+      },
+      {
+        "n": "center",
+        "k": "prop",
+        "t": "boolean",
+        "d": "false",
+        "r": false,
+        "rw": "",
+        "note": "Centra vertical y horizontal"
+      },
+      {
+        "n": "style",
+        "k": "prop",
+        "t": "CSSProperties",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Override inline"
+      }
+    ],
+    "dos": [
+      "Usarlo como unico scroll interno del sheet"
+    ],
+    "donts": [
+      "Anidar otro scroll vertical adentro"
+    ],
+    "when": [
+      "Cuerpo de BottomSheet, Drawer o PeekSheet"
+    ],
+    "notWhen": [
+      "Contenido de página completa — PageFrame"
+    ],
+    "a11y": [
+      "El scroll interno mantiene el foco visible al navegar con teclado"
+    ],
+    "nonGoals": []
+  },
+  "date-range-picker": {
+    "name": "DateRangePicker",
+    "layer": "components",
+    "status": "beta",
+    "summary": "Rango de fechas en un solo control: dos toques en el mismo Calendar, valor \"inicio|fin\" en ISO.",
+    "fn": [
+      "input"
+    ],
+    "domain": "",
+    "shell": false,
+    "stub": false,
+    "stubNote": "",
+    "shellOf": [],
+    "src": "components/DateRangePicker.tsx",
+    "platforms": {
+      "web": "beta",
+      "angular": "planned",
+      "flutter": "planned"
+    },
+    "anatomy": "ControlShell como disparador, Popover anclado y un <b>Calendar</b> en modo rango. El primer toque fija inicio pendiente; el segundo ordena, emite y cierra.",
+    "tokens": [
+      "--radius-md",
+      "--border-focus"
+    ],
+    "variants": [],
+    "members": [
+      {
+        "n": "value",
+        "k": "prop",
+        "t": "string",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Formato \"YYYY-MM-DD|YYYY-MM-DD\""
+      },
+      {
+        "n": "onChange",
+        "k": "event",
+        "t": "(value: string)=>void",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Emite al completar el segundo extremo"
+      },
+      {
+        "n": "placeholder",
+        "k": "prop",
+        "t": "string",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Default localizado"
+      }
+    ],
+    "dos": [
+      "Rangos de reporte y filtrado de tablas"
+    ],
+    "donts": [
+      "Fecha unica — DatePicker mode=\"single\""
+    ],
+    "when": [
+      "Filtros de rango en dashboards y reportes"
+    ],
+    "notWhen": [
+      "Seleccion de una sola fecha — DatePicker"
+    ],
+    "a11y": [
+      "El disparador es un control con foco visible; el calendario navega con teclado"
+    ],
+    "nonGoals": [
+      "No valida rangos maximos: eso es del formulario"
     ]
   }
 }
