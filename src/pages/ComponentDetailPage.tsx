@@ -86,11 +86,14 @@ function parseNotWhen(rule: string): { body: string; instead?: string } {
   return { body: rule }
 }
 
-function generateSnippet(name: string, hasSpecimen: boolean) {
-  return ({ variant, size }: { variant: string; size: string }) =>
-    hasSpecimen
-      ? `<${name} variant="${variant}" size="${size}">${name === 'Button' ? 'Confirmar carga' : ''}</${name}>`
-      : `// ${name}: contrato sin implementación web todavía`
+function generateSnippet(name: string, hasSpecimen: boolean, layer: string) {
+  return ({ variant, size }: { variant: string; size: string }) => {
+    if (hasSpecimen)
+      return `<${name} variant="${variant}" size="${size}">${name === 'Button' ? 'Confirmar carga' : ''}</${name}>`
+    if (layer === 'foundations')
+      return `// ${name} es un foundation — no renderiza UI. Ver el tab Build.`
+    return `// ${name}: contrato sin implementación web todavía`
+  }
 }
 
 const SIZE_SPECS: Record<string, Record<string, { h: string; pad: string }>> = {
@@ -338,7 +341,7 @@ function OverviewTab({ contract, componentId, platforms }: { contract: ContractI
           variants={variants}
           sizes={sizes}
           densities={['compact', 'default', 'comfortable']}
-          snippet={generateSnippet(contract.name, Boolean(specimenFn))}
+          snippet={generateSnippet(contract.name, Boolean(specimenFn), contract.layer)}
           specLabels={generateSpecLabels}
         >
           {({ variant, size }) =>
@@ -348,7 +351,9 @@ function OverviewTab({ contract, componentId, platforms }: { contract: ContractI
               <div className={css.specimenPlaceholder}>
                 <span className={css.specimenName}>{contract.name}</span>
                 <span className={css.specimenMeta}>
-                  {contract.status || 'contrato'} · sin implementación web todavía
+                  {contract.layer === 'foundations'
+                    ? `${contract.status || 'foundation'} · foundation sin specimen visual`
+                    : `${contract.status || 'contrato'} · sin implementación web todavía`}
                 </span>
               </div>
             )

@@ -12412,5 +12412,84 @@
     "nonGoals": [
       "No valida rangos maximos: eso es del formulario"
     ]
+  },
+  "growth": {
+    "name": "Growth",
+    "layer": "foundations",
+    "status": "beta",
+    "summary": "Medición y experimentos agnósticos de proveedor: adapter, diccionario de eventos governado por research, y hooks de tracking/variantes.",
+    "fn": [],
+    "domain": "",
+    "shell": false,
+    "stub": false,
+    "stubNote": "",
+    "shellOf": [],
+    "src": "growth/",
+    "platforms": {
+      "web": "beta",
+      "angular": "planned",
+      "flutter": "planned"
+    },
+    "anatomy": "<b>GrowthAdapter</b> (track/identify/variant) + <b>events.json</b> (diccionario governado) + <b>FlowGrowthProvider</b> con hooks useTrack/useExperiment. Mixpanel, Amplitude o PostHog son adapters — Flow no depende de ninguno.",
+    "tokens": [],
+    "variants": [],
+    "members": [
+      {
+        "n": "FlowGrowthProvider",
+        "k": "prop",
+        "t": "{ adapter: GrowthAdapter }",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Se monta una vez en la raíz del producto. Sin él, todo es no-op."
+      },
+      {
+        "n": "useTrack",
+        "k": "event",
+        "t": "() => (event, props?) => void",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "En dev avisa si el evento no está aprobado en el diccionario"
+      },
+      {
+        "n": "useExperiment",
+        "k": "prop",
+        "t": "(experiment, fallback) => string",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Devuelve la variante y reporta experiment_exposed"
+      },
+      {
+        "n": "useGrowth",
+        "k": "prop",
+        "t": "() => GrowthAdapter",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Adapter completo para identify y casos avanzados"
+      }
+    ],
+    "dos": [
+      "Todo evento vive en src/growth/events.json antes de dispararse: nombre objeto_accion en snake_case, props snake_case",
+      "Research aprueba: proposed → approved. Un evento proposed avisa en consola en dev",
+      "El tracking se cablea en templates y productos, con las piezas de la cascada como fuente de interacción"
+    ],
+    "donts": [
+      "Un primitive, component o pattern nunca llama useTrack por dentro — la cascada no trackea sola (hay compliance test)",
+      "Nombres de evento ad-hoc que no pasaron por el diccionario",
+      "Acoplar la cascada a un SDK de analytics: Mixpanel es un adapter, no una dependencia"
+    ],
+    "when": [
+      "Instrumentar un producto construido con Flow, correr experimentos A/B sobre variantes de pieza"
+    ],
+    "notWhen": [
+      "Telemetría de errores o performance: eso es observabilidad, otro contrato"
+    ],
+    "a11y": [],
+    "nonGoals": [
+      "No define funnels ni dashboards: define el vocabulario y el conducto. El análisis vive en la herramienta del proveedor"
+    ]
   }
 }

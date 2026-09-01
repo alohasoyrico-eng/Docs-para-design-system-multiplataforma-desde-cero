@@ -1,0 +1,41 @@
+{
+  "owner": "research",
+  "events": {
+    "experiment_exposed": {
+      "description": "El usuario vio la variante de un experimento. Lo dispara useExperiment automaticamente.",
+      "props": ["experiment", "variant"],
+      "status": "approved",
+      "surfaces": ["growth foundation"]
+    },
+    "auth_completed": {
+      "description": "Ingreso exitoso, cualquier metodo.",
+      "props": ["method"],
+      "status": "approved",
+      "surfaces": ["Auth", "Auth OTP"]
+    },
+    "unit_added": {
+      "description": "Se dio de alta una unidad en la flota.",
+      "props": ["source"],
+      "status": "approved",
+      "surfaces": ["Units", "Fleet import wizard"]
+    },
+    "report_exported": {
+      "description": "Se exporto un reporte.",
+      "props": ["format", "range_days"],
+      "status": "approved",
+      "surfaces": ["Reports", "Dashboard"]
+    },
+    "onboarding_step_completed": {
+      "description": "El usuario completo un paso del onboarding.",
+      "props": ["step", "total_steps"],
+      "status": "proposed",
+      "surfaces": ["Onboarding", "Onboarding driver"]
+    },
+    "search_performed": {
+      "description": "Busqueda global ejecutada con al menos un caracter.",
+      "props": ["query_length", "results_count"],
+      "status": "proposed",
+      "surfaces": ["GlobalSearch"]
+    }
+  }
+}
