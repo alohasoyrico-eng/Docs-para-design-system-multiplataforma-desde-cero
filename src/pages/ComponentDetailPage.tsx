@@ -1,32 +1,9 @@
+import { Button, Breadcrumb, Tabs, SectionBar, SectionRule, CodeBlock, Table, StatusPill, Badge, SectionHeader, InlineCode, AutoGrid, DocHero, DocFooter, PlaygroundCanvas, GuidanceCard, InstallCard, NavCard, AnatomyView, type AnatomyPart, StateGrid, DownloadCard, ProposalCard, type GridColumn, useReveal } from '@alohasoyrico-eng/flow-react'
 import { useState, useEffect, useRef, type ReactNode } from 'react'
 import { useParams } from '@tanstack/react-router'
-import { Button } from '../ui/primitives/Button'
-import { Breadcrumb } from '../ui/components/Breadcrumb'
-import { Tabs } from '../ui/components/Tabs'
-import { SectionBar } from '../ui/components/SectionBar'
-import { SectionRule } from '../ui/components/SectionRule'
-import { CodeBlock } from '../ui/components/CodeBlock'
-import { Table } from '../ui/components/Table'
-import { StatusPill } from '../ui/primitives/StatusPill'
-import { Badge } from '../ui/primitives/Badge'
-import { SectionHeader } from '../ui/primitives/SectionHeader'
-import { InlineCode } from '../ui/primitives/InlineCode'
-import { AutoGrid } from '../ui/primitives/AutoGrid'
-import { DocHero } from '../ui/patterns/DocHero'
-import { DocFooter } from '../ui/patterns/DocFooter'
-import { PlaygroundCanvas } from '../ui/patterns/PlaygroundCanvas'
-import { GuidanceCard } from '../ui/patterns/GuidanceCard'
-import { InstallCard } from '../ui/patterns/InstallCard'
-import { NavCard } from '../ui/patterns/NavCard'
-import { AnatomyView, type AnatomyPart } from '../ui/patterns/AnatomyView'
-import { StateGrid } from '../ui/patterns/StateGrid'
-import { DownloadCard } from '../ui/patterns/DownloadCard'
-import { ProposalCard } from '../ui/patterns/ProposalCard'
 import { getContract, getContractNeighbors } from '../data/contracts'
 import type { ContractItem } from '../data/contracts'
 import { getSpecimen } from '../data/specimens'
-import type { GridColumn } from '../ui/primitives/shells/DataGrid'
-import { useReveal } from '../hooks/useReveal'
 import css from './ComponentDetailPage.module.css'
 
 const TABS = [
@@ -268,7 +245,7 @@ export function ComponentDetailPage() {
         </div>
       </div>
 
-      <SectionBar sticky>
+      <SectionBar sticky contained>
         <Tabs value={tab} onChange={setTab} items={TABS} variant="bar" />
       </SectionBar>
 

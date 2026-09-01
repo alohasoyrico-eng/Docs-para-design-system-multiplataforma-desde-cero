@@ -1,9 +1,6 @@
+import { TopBar, GlobalSearch, type SearchResult, IconButton, FlowLogo } from '@alohasoyrico-eng/flow-react'
 import { useState, useMemo, useCallback } from 'react'
 import { Outlet, useNavigate } from '@tanstack/react-router'
-import { TopBar } from '../ui/patterns/TopBar'
-import { GlobalSearch, type SearchResult } from '../ui/patterns/GlobalSearch'
-import { IconButton } from '../ui/primitives/IconButton'
-import { FlowLogo } from '../ui/primitives/FlowLogo'
 import { getAllContracts } from '../data/contracts'
 import css from './DocsLayout.module.css'
 

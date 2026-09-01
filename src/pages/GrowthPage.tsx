@@ -1,12 +1,4 @@
-import { Breadcrumb } from '../ui/components/Breadcrumb'
-import { SectionRule } from '../ui/components/SectionRule'
-import { Table } from '../ui/components/Table'
-import { CodeBlock } from '../ui/components/CodeBlock'
-import { StatusPill } from '../ui/primitives/StatusPill'
-import { InlineCode } from '../ui/primitives/InlineCode'
-import { SectionHeader } from '../ui/primitives/SectionHeader'
-import { DocHero } from '../ui/patterns/DocHero'
-import { DocFooter } from '../ui/patterns/DocFooter'
+import { Breadcrumb, SectionRule, Table, CodeBlock, StatusPill, InlineCode, SectionHeader, DocHero, DocFooter } from '@alohasoyrico-eng/flow-react'
 import dictionary from '../data/growth-events.json'
 import css from './GrowthPage.module.css'
 

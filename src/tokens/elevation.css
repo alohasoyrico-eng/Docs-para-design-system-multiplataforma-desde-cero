@@ -1,8 +1,0 @@
-/* Flow · Sys · Elevation — semantic shadow aliases over ref/elevation.css */
-:root {
-  --shadow-rest: var(--ref-shadow-rest);
-  --shadow-raised: var(--ref-shadow-raised);
-  --shadow-float: var(--ref-shadow-float);
-  --shadow-overlay: var(--ref-shadow-overlay);
-  --shadow-accent-glow: var(--ref-shadow-accent-glow);
-}

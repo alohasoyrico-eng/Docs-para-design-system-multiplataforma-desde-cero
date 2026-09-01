@@ -1,43 +1,4 @@
-/* Ref layer — raw platform-agnostic values */
-@import "tokens/ref/spacing.css";
-@import "tokens/ref/radius.css";
-@import "tokens/ref/sizing.css";
-@import "tokens/ref/typography.css";
-@import "tokens/ref/colors.css";
-@import "tokens/ref/elevation.css";
-@import "tokens/ref/motion.css";
-@import "tokens/ref/iconography.css";
-
-/* Sys layer — semantic tokens, density overrides */
-@import "tokens/fonts.css";
-@import "tokens/colors.css";
-@import "tokens/typography.css";
-@import "tokens/iconography.css";
-@import "tokens/spacing.css";
-@import "tokens/shape.css";
-@import "tokens/elevation.css";
-@import "tokens/motion.css";
-@import "tokens/dataviz.css";
-@import "tokens/products.css";
-@import "tokens/a11y.css";
-@import "tokens/dark.css";
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-body {
-  font: var(--type-body-md);
-  color: var(--text-primary);
-  background: var(--surface-canvas);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-button, input, select, textarea {
-  font: inherit;
-  color: inherit;
-}
+/* Flow completo desde el paquete: tokens (ref→sys), reset, fuentes
+   y el CSS de todos los componentes. Este repo no mantiene tokens
+   propios — la fuente de verdad es el DS. */
+@import "@alohasoyrico-eng/flow-react/styles.css";

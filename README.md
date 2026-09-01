@@ -13,23 +13,29 @@ Abre `localhost:5174`. La home es el catálogo completo (foundations, primitives
 
 ## De dónde salen los datos
 
-Este repo **no inventa nada**: cada página se genera desde los contratos y tokens del repo del DS.
+Este repo **no inventa nada — y ya no forkea nada**: es el primer consumidor real del paquete del DS.
 
-| Qué | Archivo aquí | Fuente de verdad |
-|---|---|---|
-| Contratos (180) | `src/data/items.json` | `Flow/src/data/items.json` |
-| Tokens ref | `src/tokens/ref/*.css` | `Flow/src/tokens/ref/` |
-| Tokens sys | `src/tokens/*.css` | `Flow/src/tokens/` (salvo `fonts.css` y `a11y.css`, propios de este repo) |
+| Qué | De dónde viene |
+|---|---|
+| Componentes, tokens, estilos, hooks | `@alohasoyrico-eng/flow-react` (git dependency del DS) — no hay cascada paralela aquí |
+| Contratos (181) | `src/data/items.json`, sincronizado desde el DS |
+| Diccionario de eventos | `src/data/growth-events.json`, sincronizado desde el DS |
 
-La sincronización corre **desde el repo del DS**, nunca a mano:
+Para traer una versión nueva del DS:
+
+```bash
+npm update @alohasoyrico-eng/flow-react
+```
+
+Los datos se sincronizan **desde el repo del DS**, nunca a mano:
 
 ```bash
 # en el repo de Flow
-npm run sync:docs          # copia contratos + tokens hacia este repo
+npm run sync:docs          # copia contratos + diccionario hacia este repo
 npm run sync:docs:check    # detecta drift sin copiar
 ```
 
-Si editas `items.json` o los tokens directamente aquí, el próximo sync los va a pisar. Los cambios de contrato se hacen en el DS.
+Si editas `items.json` directamente aquí, el próximo sync lo va a pisar. Los cambios de contrato, componentes y tokens se hacen en el DS. Si una pieza de documentación de este repo necesita algo que el DS no tiene, la mejora **se sube al DS** (así se hizo con `specLabels` de PlaygroundCanvas, el `variant="inline"` de CodeBlock y el `contained` de SectionBar) — nunca se reintroduce un fork local.
 
 ## Honestidad de la documentación
 
@@ -53,10 +59,10 @@ CI (GitHub Actions) corre ambos en cada push y PR.
 
 ```
 src/
-  data/         contratos + getters (sincronizado desde el DS)
-  tokens/       ref → sys (sincronizado desde el DS)
-  ui/           cascada propia del sitio: primitives, components, patterns
-  pages/        ComponentDetailPage (template parametrizado) + catálogo
+  data/         contratos, diccionario de eventos y specimens
+  layout/       DocsLayout (TopBar + GlobalSearch del paquete)
+  pages/        ComponentDetailPage (template parametrizado), GrowthPage, catálogo
+  styles.css    un solo import: los estilos completos del paquete
 ```
 
-La cascada de este repo sigue las mismas reglas de arquitectura que el DS (`CLAUDE.md` del repo de Flow).
+Este repo solo contiene templates de documentación; toda la cascada (primitives → patterns) vive en el DS y llega por el paquete.

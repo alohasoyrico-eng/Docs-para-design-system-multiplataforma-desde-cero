@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@alohasoyrico-eng/flow-react": "github:alohasoyrico-eng/Design-system-multiplataforma-desde-cero",
     "@tanstack/react-router": "^1.170.29",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

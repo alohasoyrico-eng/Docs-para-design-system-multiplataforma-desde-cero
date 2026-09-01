@@ -1,22 +1,5 @@
+import { Button, Badge, Avatar, Checkbox, Switch, Input, IconButton, Progress, Spinner, StatusPill, Radio, Slider, Divider, Skeleton, Tabs, Accordion, Tooltip, SegmentedControl } from '@alohasoyrico-eng/flow-react'
 import type { ReactNode } from 'react'
-import { Button } from '../ui/primitives/Button'
-import { Badge } from '../ui/primitives/Badge'
-import { Avatar } from '../ui/primitives/Avatar'
-import { Checkbox } from '../ui/primitives/Checkbox'
-import { Switch } from '../ui/primitives/Switch'
-import { Input } from '../ui/primitives/Input'
-import { IconButton } from '../ui/primitives/IconButton'
-import { Progress } from '../ui/primitives/Progress'
-import { Spinner } from '../ui/primitives/Spinner'
-import { StatusPill } from '../ui/primitives/StatusPill'
-import { Radio } from '../ui/primitives/Radio'
-import { Slider } from '../ui/primitives/Slider'
-import { Divider } from '../ui/primitives/Divider'
-import { Skeleton } from '../ui/primitives/Skeleton'
-import { Tabs } from '../ui/components/Tabs'
-import { Accordion } from '../ui/components/Accordion'
-import { Tooltip } from '../ui/components/Tooltip'
-import { SegmentedControl } from '../ui/components/SegmentedControl'
 
 type SpecimenFn = (state: { variant: string; size: string }) => ReactNode
 

@@ -1,8 +1,6 @@
+import { SectionHeader, Badge, Card } from '@alohasoyrico-eng/flow-react'
 import { Link } from '@tanstack/react-router'
 import { getAllContracts } from '../data/contracts'
-import { SectionHeader } from '../ui/primitives/SectionHeader'
-import { Badge } from '../ui/primitives/Badge'
-import { Card } from '../ui/components/Card'
 import css from './IndexPage.module.css'
 
 export function IndexPage() {
@@ -17,13 +15,14 @@ export function IndexPage() {
   }
 
   const layers = ['primitives', 'components', 'patterns']
+  const codeCount = layers.reduce((n, l) => n + (byLayer[l]?.length ?? 0), 0)
 
   return (
     <div className={css.page}>
       <div className={css.hero}>
         <SectionHeader size="display">
           <span>Flow Components</span>
-          <span className={css.sub}>142 components across 3 layers</span>
+          <span className={css.sub}>{codeCount} components across {layers.length} layers</span>
         </SectionHeader>
       </div>
 
