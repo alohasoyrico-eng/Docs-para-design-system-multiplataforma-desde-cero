@@ -2,7 +2,9 @@
 
 El sitio de documentación de [Flow](https://github.com/alohasoyrico-eng/Design-system-multiplataforma-desde-cero), el design system multiplataforma. Aquí viven las páginas que consumen diseñadores, developers, PMs e investigadores: catálogo de piezas, playground vivo, guidance de uso, API por plataforma y el contexto para agentes.
 
-## Correrlo
+> **Governance:** este repo lo mantiene el equipo de diseño exclusivamente. Si construyes producto con Flow, tu punto de entrada es [el paquete](https://github.com/alohasoyrico-eng/Design-system-multiplataforma-desde-cero#empieza-aquí-tu-primera-pantalla-con-flow) — este sitio se consulta, no se clona.
+
+## Correrlo (equipo de diseño)
 
 ```bash
 npm install
