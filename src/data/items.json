@@ -1108,7 +1108,7 @@
   "datepicker": {
     "name": "DatePicker",
     "layer": "components",
-    "status": "",
+    "status": "beta",
     "summary": "El único calendario del sistema. mode=\"single\" habla en ISO; mode=\"range\" en {from,to} con atajos de 7/30/90 días. Lunes primero, teclado de rejilla.",
     "fn": [
       "forms"
@@ -1212,11 +1212,11 @@
       {
         "n": "presets",
         "k": "prop",
-        "t": "boolean",
+        "t": "DatePickerPreset[]",
         "d": "mode === 'range'",
         "r": false,
         "rw": "",
-        "note": "Atajos de rango. Por defecto activos en range"
+        "note": "[{label, value}] — value en el formato del mode"
       }
     ],
     "dos": [
@@ -8772,10 +8772,10 @@
         "n": "matchAnchorWidth",
         "k": "prop",
         "t": "boolean",
-        "d": "true",
+        "d": "false",
         "r": false,
         "rw": "",
-        "note": ""
+        "note": "true para dropdowns tipo Select"
       },
       {
         "n": "minWidth",
@@ -8830,6 +8830,15 @@
         "r": true,
         "rw": "",
         "note": ""
+      },
+      {
+        "n": "align",
+        "k": "prop",
+        "t": "'left'|'right'",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "Deprecado — usa placement"
       }
     ],
     "dos": [],
@@ -10704,6 +10713,24 @@
         "r": false,
         "rw": "",
         "note": ""
+      },
+      {
+        "n": "min",
+        "k": "prop",
+        "t": "string",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "ISO — días anteriores deshabilitados"
+      },
+      {
+        "n": "max",
+        "k": "prop",
+        "t": "string",
+        "d": "",
+        "r": false,
+        "rw": "",
+        "note": "ISO — días posteriores deshabilitados"
       }
     ],
     "dos": [],
@@ -12169,8 +12196,8 @@
   "date-range-picker": {
     "name": "DateRangePicker",
     "layer": "components",
-    "status": "beta",
-    "summary": "Rango de fechas en un solo control: dos toques en el mismo Calendar, valor \"inicio|fin\" en ISO.",
+    "status": "deprecated",
+    "summary": "Deprecado — usa DatePicker mode=\"range\". Queda como azúcar de compatibilidad una versión.",
     "fn": [
       "input"
     ],
@@ -12181,9 +12208,9 @@
     "shellOf": [],
     "src": "components/DateRangePicker.tsx",
     "platforms": {
-      "web": "beta",
-      "angular": "planned",
-      "flutter": "planned"
+      "web": "deprecated",
+      "angular": "n/a",
+      "flutter": "n/a"
     },
     "anatomy": "ControlShell como disparador, Popover anclado y un <b>Calendar</b> en modo rango. El primer toque fija inicio pendiente; el segundo ordena, emite y cierra.",
     "tokens": [
@@ -12230,7 +12257,7 @@
       "Filtros de rango en dashboards y reportes"
     ],
     "notWhen": [
-      "Seleccion de una sola fecha — DatePicker"
+      "Siempre: DatePicker mode=\"range\" es el camino"
     ],
     "a11y": [
       "El disparador es un control con foco visible; el calendario navega con teclado"
