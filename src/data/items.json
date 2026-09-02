@@ -5371,22 +5371,22 @@
         "note": "Glifo leading"
       },
       {
-        "n": "suffix",
+        "n": "trailing",
         "k": "prop",
-        "t": "string",
+        "t": "ReactNode",
         "d": "",
         "r": false,
         "rw": "",
-        "note": "Texto fijo al final (unidad)"
+        "note": "convención leading/trailing"
       },
       {
-        "n": "invalid",
+        "n": "error",
         "k": "prop",
         "t": "boolean",
         "d": "false",
         "r": false,
         "rw": "",
-        "note": "Borde danger + aria-invalid"
+        "note": "Borde danger + aria-invalid · renombrado de invalid: consistencia con Field"
       },
       {
         "n": "mono",
