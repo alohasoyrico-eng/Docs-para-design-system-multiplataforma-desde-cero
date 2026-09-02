@@ -1,7 +1,7 @@
 {
   "tabbar": {
     "name": "TabBar",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Nav inferior fija de movil con hasta 5 items, badges e icono relleno en el activo.",
     "fn": [
@@ -12,7 +12,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/TabBar.jsx",
+    "src": "primitives/TabBar.tsx",
     "platforms": {
       "web": "reference",
       "angular": "reference",
@@ -77,7 +77,7 @@
   },
   "circular-progress": {
     "name": "CircularProgress",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Ring de progreso determinado — alternativa compacta a Progress para tiles de dashboard.",
     "fn": [
@@ -88,7 +88,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/CircularProgress.jsx",
+    "src": "primitives/CircularProgress.tsx",
     "platforms": {
       "web": "reference",
       "angular": "reference",
@@ -180,7 +180,7 @@
   },
   "timeline": {
     "name": "Timeline",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Historial vertical de un registro. mode=\"steps\" con icono y conector; mode=\"events\" como cronología con el estado en texto. Absorbió TableTimeline.",
     "fn": [
@@ -191,7 +191,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Timeline.jsx",
+    "src": "primitives/Timeline.tsx",
     "platforms": {
       "web": "reference",
       "angular": "reference",
@@ -242,7 +242,7 @@
   },
   "status-view": {
     "name": "StatusView",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Pantalla de estado completa para conexiones a servicios: success, error, pending, loading, offline.",
     "fn": [
@@ -253,7 +253,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/StatusView.jsx",
+    "src": "primitives/StatusView.tsx",
     "platforms": {
       "web": "reference",
       "angular": "reference",
@@ -352,7 +352,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/GlobalSearch.jsx",
+    "src": "patterns/GlobalSearch.tsx",
     "platforms": {},
     "anatomy": "Input con icono search + limpiar/⌘K. Lista agrupada por tipo con overline por grupo, icono, label (mono para placas/IDs), meta de desambiguación y ↵ en la fila activa. Pie con ayudas de teclado en palette.",
     "tokens": [],
@@ -537,7 +537,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Sidebar.jsx",
+    "src": "components/Sidebar.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [],
@@ -654,7 +654,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/TopBar.jsx",
+    "src": "patterns/TopBar.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [],
@@ -816,7 +816,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/InputAmount.jsx",
+    "src": "patterns/InputAmount.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [],
@@ -930,7 +930,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/InputPhone.jsx",
+    "src": "patterns/InputPhone.tsx",
     "platforms": {},
     "anatomy": "Lada como prefijo fijo en mono a la izquierda de la carcasa; los dígitos se agrupan 2-4-4 sobre el input. El valor que sale son dígitos limpios, sin la máscara.",
     "tokens": [],
@@ -1042,7 +1042,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/CardMedia.jsx",
+    "src": "components/CardMedia.tsx",
     "platforms": {},
     "anatomy": "Portada de 200px de alto sobre <code>--surface-sunken</code>, título en 16/600 y descripción en cuerpo secundario. Con <code>interactive</code> gana lift y foco visible.",
     "tokens": [],
@@ -1127,7 +1127,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/DatePicker.jsx",
+    "src": "components/DatePicker.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -1259,7 +1259,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/FileUpload.jsx",
+    "src": "components/FileUpload.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -1364,7 +1364,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Card.jsx",
+    "src": "components/Card.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -1498,7 +1498,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Table.jsx",
+    "src": "components/Table.tsx",
     "platforms": {},
     "anatomy": "Card contenedora + thead sunken con overlines + filas con hover sunken y seleccion accent-subtle + inset 3px.",
     "tokens": [
@@ -1604,7 +1604,7 @@
   },
   "emptystate": {
     "name": "EmptyState",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "El cero-datos con guia: icono en circulo, que no hay, por que y que hacer.",
     "fn": [
@@ -1615,7 +1615,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/EmptyState.jsx",
+    "src": "primitives/EmptyState.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -1693,7 +1693,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Accordion.jsx",
+    "src": "components/Accordion.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -1762,7 +1762,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Tabs.jsx",
+    "src": "components/Tabs.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -1778,6 +1778,10 @@
       {
         "v": "underline",
         "use": "Barra accent — secciones de pagina/detalle"
+      },
+      {
+        "v": "bar",
+        "use": "Para vivir dentro de SectionBar: sin borde propio, inline"
       }
     ],
     "members": [
@@ -1840,7 +1844,7 @@
   },
   "stepper": {
     "name": "Stepper",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Progreso de wizard: hecho = check accent con resorte, activo = tinta con glow.",
     "fn": [
@@ -1851,7 +1855,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Stepper.jsx",
+    "src": "primitives/Stepper.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -1921,7 +1925,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Dialog.jsx",
+    "src": "components/Dialog.tsx",
     "platforms": {},
     "anatomy": "Scrim rgba(23,23,26,.4) + blur 4 · panel radio 28 con titulo, descripcion, icono tonal opcional (danger/success), body y acciones a la derecha.",
     "tokens": [
@@ -2027,7 +2031,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Drawer.jsx",
+    "src": "components/Drawer.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2112,7 +2116,7 @@
   },
   "toast": {
     "name": "Toast",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Aviso efimero en superficie tinta que entra con resorte desde abajo; accion opcional tipo Deshacer.",
     "fn": [
@@ -2123,7 +2127,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Toast.jsx",
+    "src": "primitives/Toast.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2212,7 +2216,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Tooltip.jsx",
+    "src": "components/Tooltip.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2281,7 +2285,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Menu.jsx",
+    "src": "components/Menu.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2339,7 +2343,7 @@
   },
   "breadcrumb": {
     "name": "Breadcrumb",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Ruta de navegacion jerarquica, item actual en negrita.",
     "fn": [
@@ -2350,7 +2354,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Breadcrumb.jsx",
+    "src": "primitives/Breadcrumb.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2390,7 +2394,7 @@
   },
   "pagination": {
     "name": "Pagination",
-    "layer": "components",
+    "layer": "primitives",
     "status": "",
     "summary": "Paginador con elipsis y pagina actual en pill tinta.",
     "fn": [
@@ -2401,7 +2405,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Pagination.jsx",
+    "src": "primitives/Pagination.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2470,7 +2474,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/BottomSheet.jsx",
+    "src": "components/BottomSheet.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2557,7 +2561,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/SegmentedControl.jsx",
+    "src": "components/SegmentedControl.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -2633,7 +2637,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/OnboardingCarousel.jsx",
+    "src": "patterns/OnboardingCarousel.tsx",
     "platforms": {},
     "anatomy": "Slides a pantalla completa con ilustración o glifo, título y descripción; paginación por dots abajo y swipe horizontal. «Omitir» siempre visible, «Empezar» en el último.",
     "tokens": [],
@@ -2737,7 +2741,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/TableTree.jsx",
+    "src": "components/TableTree.tsx",
     "platforms": {},
     "anatomy": "Piel de <b>DataGrid</b> con <code>tree</code>: chevron en la columna de utilidad, indentación de 24px por nivel en la primera columna, y expansión con <code>aria-expanded</code>.",
     "tokens": [],
@@ -2822,7 +2826,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/GanttChart.jsx",
+    "src": "components/GanttChart.tsx",
     "platforms": {},
     "anatomy": "Filas de tarea con barra posicionada por fecha de inicio y fin, progreso relleno dentro de la barra y color por estado.",
     "tokens": [],
@@ -2871,7 +2875,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/KanbanBoard.jsx",
+    "src": "components/KanbanBoard.tsx",
     "platforms": {},
     "anatomy": "Una fila de columnas con scroll horizontal. Cada columna es un <code>section role=\"group\"</code> con cabecera —punto de color, etiqueta en versalitas y <b>Badge</b> con la cuenta, <code>n/limite</code> si lo tiene— y una pila de tarjetas. La tarjeta es el hueco: el board pone la caja enfocable, el arrastre y el boton de avanzar; el contenido lo dibuja <code>renderCard</code>. Si hay <code>abandonColumn</code>, va al final con borde punteado y sin avanzar. El detalle se abre en un panel lateral sobre <b>OverlayShell</b>.",
     "tokens": [
@@ -3046,7 +3050,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Bars.jsx",
+    "src": "components/Bars.tsx",
     "platforms": {},
     "anatomy": "Barras verticales sobre <b>FlowChart</b> (<code>type=\"bar\"</code>) en forma de pill, radio igual a la mitad del ancho. Crecen desde la base al montar, escalonadas. Con <code>highlightMax</code> la barra mayor va en <code>--viz-accent</code> y el resto en tinta.",
     "tokens": [],
@@ -3122,7 +3126,7 @@
   },
   "biometric": {
     "name": "BiometricPrompt",
-    "layer": "components",
+    "layer": "patterns",
     "status": "",
     "summary": "Verificación con Face ID o huella: idle/scanning/success/error y fallback a passcode siempre presente.",
     "fn": [
@@ -3133,7 +3137,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/BiometricPrompt.jsx",
+    "src": "patterns/BiometricPrompt.tsx",
     "platforms": {},
     "anatomy": "Hoja centrada con círculo de 84px: glifo <code>ar_on_you</code> para rostro o <code>fingerprint</code> para huella. Cuatro estados —idle, scanning, success, error— que cambian fondo del círculo y color del glifo. El fallback a passcode va como acción secundaria, siempre presente.",
     "tokens": [],
@@ -3238,7 +3242,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/PaymentCard.jsx",
+    "src": "patterns/PaymentCard.tsx",
     "platforms": {},
     "anatomy": "Proporción real 1.586 en cualquier ancho. Tres variantes de superficie —ink, accent, sand— con el logo de Flow resuelto vía <code>window.FLOW_ASSET_BASE</code>. Número en <code>--type-data</code> agrupado, titular y expiración abajo. <code>frozen</code> pone un velo con blur y el texto «Congelada».",
     "tokens": [],
@@ -3353,7 +3357,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/TransactionRow.jsx",
+    "src": "patterns/TransactionRow.tsx",
     "platforms": {},
     "anatomy": "Icono de categoría en círculo, comercio y meta en dos líneas, y monto firmado en <code>--type-data</code> a la derecha. <code>pending</code> baja la opacidad y agrega la etiqueta.",
     "tokens": [],
@@ -3456,7 +3460,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/MapCanvas.jsx",
+    "src": "components/MapCanvas.tsx",
     "platforms": {},
     "anatomy": "Tiles de OpenStreetMap con pines de precio y ruta punteada en accent. La atribución «© OpenStreetMap» va abajo a la derecha y es <b>obligatoria por licencia</b>.",
     "tokens": [],
@@ -3579,7 +3583,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/RoleMatrix.jsx",
+    "src": "patterns/RoleMatrix.tsx",
     "platforms": {},
     "anatomy": "<b>DataGrid</b> en densidad compacta: permisos en filas, roles en columnas, y un toggle de 26px por celda. Los grupos de permisos son filas de grupo del propio grid. Los roles bloqueados llevan candado y quedan deshabilitados.",
     "tokens": [],
@@ -3655,7 +3659,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Treemap.jsx",
+    "src": "components/Treemap.tsx",
     "platforms": {},
     "anatomy": "Rectángulos proporcionales al valor sobre <b>FlowChart</b>. Su decisión propia: el color no es categórico sino de desvío contra presupuesto — verde por debajo, gris en línea, rojo por encima de 10%.",
     "tokens": [],
@@ -3741,7 +3745,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/ParetoChart.jsx",
+    "src": "components/ParetoChart.tsx",
     "platforms": {},
     "anatomy": "Barras ordenadas descendente más línea de acumulado sobre <b>FlowChart</b>. Su decisión propia: las barras que caen antes del umbral van en accent y el resto en neutral, así el 20% que concentra el gasto se ve sin leer la línea.",
     "tokens": [],
@@ -3817,7 +3821,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/ScatterPlot.jsx",
+    "src": "components/ScatterPlot.tsx",
     "platforms": {},
     "anatomy": "Dispersión sobre <b>FlowChart</b> con líneas de umbral en X e Y que parten el plano en cuadrantes. Su decisión propia: los umbrales son la lectura, no un adorno — el cuadrante superior derecho es el que se revisa primero.",
     "tokens": [],
@@ -3947,7 +3951,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/SmallMultiples.jsx",
+    "src": "components/SmallMultiples.tsx",
     "platforms": {},
     "anatomy": "Rejilla de mini-tendencias en SVG a mano, todas con la <b>misma escala Y</b> para que la forma sea comparable. El outlier va en accent. No monta ECharts a propósito: son decenas por pantalla.",
     "tokens": [],
@@ -4050,7 +4054,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/BulletChart.jsx",
+    "src": "components/BulletChart.tsx",
     "platforms": {},
     "anatomy": "Barra compacta por entidad con marca vertical de meta y franja gris del periodo anterior. Dibujo propio, sin ECharts: más denso que un gauge cuando hay muchas entidades que comparar.",
     "tokens": [],
@@ -4108,7 +4112,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/ChatMessage.jsx",
+    "src": "primitives/ChatMessage.tsx",
     "platforms": {},
     "anatomy": "Burbuja con rol: usuario a la derecha en superficie inversa, agente a la izquierda en card. Chip de tool-use arriba del texto del agente con estado <code>running</code> o <code>done</code>, y dots de streaming mientras escribe. <code>children</code> permite incrustar una tabla o una gráfica en la respuesta.",
     "tokens": [],
@@ -4203,7 +4207,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/ChatComposer.jsx",
+    "src": "components/ChatComposer.tsx",
     "platforms": {},
     "anatomy": "Textarea que crece hasta un tope, botón de enviar que se activa con contenido, y chips de sugerencia arriba que desaparecen al escribir.",
     "tokens": [],
@@ -4298,7 +4302,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/ChatThread.jsx",
+    "src": "components/ChatThread.tsx",
     "platforms": {},
     "anatomy": "Lista con scroll que baja al final cuando llega un mensaje nuevo. Compone <b>ChatMessage</b> adentro; el empty state es un slot.",
     "tokens": [],
@@ -4356,7 +4360,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/NotificationCenter.jsx",
+    "src": "components/NotificationCenter.tsx",
     "platforms": {},
     "anatomy": "Campana con badge de no leídos que abre un panel anclado. Filas con tono por tipo, título, descripción y hora; los no leídos llevan punto. Acción de marcar todo como leído en la cabecera.",
     "tokens": [],
@@ -4433,7 +4437,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/Donut.jsx",
+    "src": "components/Donut.tsx",
     "platforms": {},
     "anatomy": "Donut sobre <b>FlowChart</b> con etiqueta central absoluta —valor en <code>--type-data-lg</code> y rótulo en caption— y leyenda propia con porcentajes. El color se resuelve aquí, no en el chart, para que el swatch de la leyenda y la rebanada nunca discrepen: tinta + accent + neutral con 3 o menos categorías, paleta categórica a partir de 4.",
     "tokens": [],
@@ -4529,7 +4533,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/HelpCenter.jsx",
+    "src": "components/HelpCenter.tsx",
     "platforms": {},
     "anatomy": "Navegación lateral por categorías, contenido del artículo y búsqueda arriba. Filtra por título y cuerpo.",
     "tokens": [],
@@ -4578,7 +4582,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/OTPInput.jsx",
+    "src": "components/OTPInput.tsx",
     "platforms": {},
     "anatomy": "N casillas de dígito con la carcasa de control, auto-avance al escribir y retroceso al borrar. Pegar el código completo lo distribuye entre las casillas.",
     "tokens": [],
@@ -4686,7 +4690,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/PasscodeKeypad.jsx",
+    "src": "patterns/PasscodeKeypad.tsx",
     "platforms": {},
     "anatomy": "Teclado numérico de 3×4 con puntos de progreso arriba y acción biométrica opcional en la esquina. Los puntos se llenan al escribir y sacuden al fallar.",
     "tokens": [],
@@ -4789,7 +4793,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/StatTile.jsx",
+    "src": "components/StatTile.tsx",
     "platforms": {},
     "anatomy": "Overline en 11px con letterspacing sobre la etiqueta, cifra en <code>--font-mono</code> a 24/600, y delta con icono de tendencia. Sobre <code>--surface-card</code> con borde sutil y sombra de reposo. El icono opcional hereda <code>tone</code>; sin tone va en <code>--text-muted</code>.",
     "tokens": [],
@@ -4876,7 +4880,7 @@
   },
   "bulk-actions-pattern": {
     "name": "BulkActionsTable",
-    "layer": "components",
+    "layer": "patterns",
     "status": "beta",
     "summary": "Selección múltiple con toolbar de acciones sobre DataGrid.",
     "fn": [
@@ -4887,7 +4891,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/BulkActionsTable.jsx",
+    "src": "patterns/BulkActionsTable.tsx",
     "platforms": {},
     "anatomy": "Toolbar que aparece con la primera selección, pegada arriba de un <b>DataGrid</b> con columna de selección y zebra. La cuenta de seleccionados es <code>aria-live</code>; las acciones destructivas van al final.",
     "tokens": [],
@@ -4963,7 +4967,7 @@
   },
   "filters-inline-edit": {
     "name": "FilterableEditableTable",
-    "layer": "components",
+    "layer": "patterns",
     "status": "beta",
     "summary": "Filtros por columna y edición en celda sobre DataGrid.",
     "fn": [
@@ -4974,7 +4978,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/FilterableEditableTable.jsx",
+    "src": "patterns/FilterableEditableTable.tsx",
     "platforms": {},
     "anatomy": "Barra de filtros por columna sobre un <b>DataGrid</b> con celdas editables. Doble clic entra a edición; Enter guarda y Escape cancela sin perder el foco de la tabla.",
     "tokens": [],
@@ -5061,7 +5065,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Flag.jsx",
+    "src": "primitives/Flag.tsx",
     "platforms": {},
     "anatomy": "Variante cuadrada (1:1) de flag-icons + border-radius 50% + anillo interior de 1px. La proporción cuadrada es lo que hace que el recorte circular no se coma el centro del dibujo.",
     "tokens": [],
@@ -5151,7 +5155,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Button.jsx",
+    "src": "primitives/Button.tsx",
     "platforms": {
       "web": "reference",
       "angular": "reference",
@@ -5311,7 +5315,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/IconButton.jsx",
+    "src": "primitives/IconButton.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -5323,15 +5327,19 @@
     "variants": [
       {
         "v": "ghost",
-        "use": "Transparente, toolbar y headers"
+        "use": "Sin contenedor. Acciones terciarias en toolbars y cards"
       },
       {
         "v": "tonal",
-        "use": "Con superficie; selected lo tine de accent"
+        "use": "Fondo sunken. Accion secundaria con presencia"
       },
       {
-        "v": "primary / accent",
-        "use": "Enfasis alto, FABs"
+        "v": "primary",
+        "use": "Tinta. La accion del contexto"
+      },
+      {
+        "v": "secondary",
+        "use": "Outline. Alternativa con borde"
       }
     ],
     "members": [
@@ -5440,7 +5448,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Input.jsx",
+    "src": "primitives/Input.tsx",
     "platforms": {},
     "anatomy": "Contenedor radio 16 + icono opcional (se tine de accent al foco) + input + sufijo. El foco cambia borde a rojo y agrega --focus-ring.",
     "tokens": [
@@ -5595,14 +5603,13 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Switch.jsx",
+    "src": "primitives/Switch.tsx",
     "platforms": {},
     "anatomy": "Track pill 48x28 + pulgar blanco 22. Checked tine el track de accent.",
     "tokens": [
-      "--action-accent",
-      "--flow-ink-300",
-      "--radius-pill",
-      "--ease-spring"
+      "--action-primary (track activo)",
+      "--border-default",
+      "--radius-pill"
     ],
     "variants": [],
     "members": [
@@ -5675,7 +5682,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Slider.jsx",
+    "src": "primitives/Slider.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -5792,7 +5799,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Badge.jsx",
+    "src": "primitives/Badge.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -5888,7 +5895,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Chip.jsx",
+    "src": "primitives/Chip.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -5995,7 +6002,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Avatar.jsx",
+    "src": "primitives/Avatar.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -6082,7 +6089,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Skeleton.jsx",
+    "src": "primitives/Skeleton.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -6151,7 +6158,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Checkbox.jsx",
+    "src": "primitives/Checkbox.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -6250,7 +6257,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Radio.jsx",
+    "src": "primitives/Radio.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -6367,7 +6374,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Spinner.jsx",
+    "src": "primitives/Spinner.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -6445,7 +6452,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Progress.jsx",
+    "src": "primitives/Progress.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -6550,7 +6557,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Divider.jsx",
+    "src": "primitives/Divider.tsx",
     "platforms": {
       "web": "reference",
       "angular": "reference",
@@ -6607,7 +6614,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Field.jsx",
+    "src": "primitives/Field.tsx",
     "platforms": {},
     "anatomy": "Label (con asterisco accent si required) + control + linea de ayuda o error. El error sustituye a la ayuda y agrega icono + role=alert.",
     "tokens": [
@@ -6694,7 +6701,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Textarea.jsx",
+    "src": "primitives/Textarea.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [
@@ -6807,7 +6814,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Select.jsx",
+    "src": "primitives/Select.tsx",
     "platforms": {},
     "anatomy": "Trigger sobre <b>ControlShell</b> (borde, altura, foco, adornos) + panel en portal vía <b>Popover</b> (anclaje, colisión, click-outside, Escape) + filas y teclado vía <b>Listbox</b> (índice activo, ARIA, filtrado). El componente solo decide qué es una opción y cómo se ve el trigger.",
     "tokens": [
@@ -6992,7 +6999,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/Sparkline.jsx",
+    "src": "primitives/Sparkline.tsx",
     "platforms": {},
     "anatomy": "Una <code>path</code> de 60-90px de ancho y ~28 de alto, sin ejes, sin grilla y sin tooltip. El punto final marca el valor actual. Se dibuja en SVG inline a proposito: hay decenas por pantalla y montar ECharts en cada una no se paga.",
     "tokens": [
@@ -7082,7 +7089,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "primitives/FlowChart.jsx",
+    "src": "primitives/FlowChart.tsx",
     "platforms": {},
     "anatomy": "Un host que monta ECharts y lee --viz-* del DOM. Leyenda arriba-izquierda, ejes en --viz-label (mono en valores, body en categorías), grid punteado en --viz-grid, tooltip en superficie inversa. Re-pinta al cambiar data-mode.",
     "tokens": [],
@@ -7368,11 +7375,11 @@
     "stubNote": "",
     "shellOf": [],
     "src": [
-      "components/Treemap.jsx",
-      "components/ParetoChart.jsx",
-      "components/ScatterPlot.jsx",
-      "components/SmallMultiples.jsx",
-      "components/BulletChart.jsx"
+      "components/Treemap.tsx",
+      "components/ParetoChart.tsx",
+      "components/ScatterPlot.tsx",
+      "components/SmallMultiples.tsx",
+      "components/BulletChart.tsx"
     ],
     "platforms": {},
     "anatomy": "Guía de elección, no un componente. Cinco piezas de referencia: Treemap para tamaño con desvío, Pareto para la cola larga, Scatter para dos variables por unidad, SmallMultiples para forma comparable, BulletChart para real vs meta.",
@@ -7607,7 +7614,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "patterns/Settings.tsx",
     "platforms": {},
     "anatomy": "<b>Tabs</b> por sección, filas de <b>Switch</b> y <b>Select</b> con etiqueta y descripción, y zona peligrosa al final separada, con confirmación en <b>Dialog</b>.",
     "tokens": [],
@@ -7822,9 +7829,10 @@
       "--font-display",
       "--font-body",
       "--font-mono",
-      "--type-display",
+      "--type-display-lg",
+      "--type-display-md",
       "--type-title-lg",
-      "--type-body",
+      "--type-body-md",
       "--type-data-lg",
       "--tracking-tight",
       "--tracking-overline"
@@ -8136,7 +8144,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/agent-chat/index.html",
+    "src": "pages/AgentChatPage.tsx",
     "platforms": {},
     "anatomy": "ChatThread + ChatComposer con sugerencias iniciales. Cada respuesta del agente muestra primero un tool-use chip (\"Consultando datos de flota\") y luego el texto + el componente de datos.",
     "tokens": [],
@@ -8171,14 +8179,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": [
-      "ui_kits/mailings/base-layout.html",
-      "ui_kits/mailings/bienvenida.html",
-      "ui_kits/mailings/invitacion-equipo.html",
-      "ui_kits/mailings/resumen-semanal.html",
-      "ui_kits/mailings/transaccional-recibo.html",
-      "ui_kits/mailings/alerta-seguridad.html"
-    ],
+    "src": "pages/MailingsPage.tsx",
     "platforms": {},
     "anatomy": "Shell de 600px: logo de texto, tarjeta blanca con esquinas de 20px, footer legal con links de preferencias/baja. Preheader oculto al inicio del body.",
     "tokens": [
@@ -8238,7 +8239,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "pages/DashboardPage.tsx",
     "platforms": {},
     "anatomy": "Sidebar 220 fija (logo, nav con fill activo, perfil abajo) + main scrolleable con PageHeader por modulo.",
     "tokens": [],
@@ -8270,7 +8271,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "pages/mobile/DriversAppScreen.tsx",
     "platforms": {},
     "anatomy": "Header (logo + estado en linea + notificaciones) → Card de turno con Switch → RideRequest (superficie accent con countdown) → KPIs mono → tab bar con fill activo.",
     "tokens": [],
@@ -8302,7 +8303,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "pages/AuthPage.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [],
@@ -8321,7 +8322,7 @@
   },
   "settings-t": {
     "name": "Settings",
-    "layer": "templates",
+    "layer": "patterns",
     "status": "",
     "summary": "Ajustes con tabs, filas de switches/selects, toggle de tema funcional y zona peligrosa.",
     "fn": [],
@@ -8330,7 +8331,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "pages/SettingsPage.tsx",
     "platforms": {},
     "anatomy": "Shell de dashboard con Tabs por sección, filas de ajuste con label y descripción, toggle de tema funcional y zona peligrosa al final.",
     "tokens": [],
@@ -8354,7 +8355,7 @@
   },
   "wizard-t": {
     "name": "Wizard",
-    "layer": "templates",
+    "layer": "patterns",
     "status": "",
     "summary": "Alta de unidad en 3 pasos: vehiculo → conductor → confirmacion, con validacion por paso.",
     "fn": [],
@@ -8363,7 +8364,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "pages/WizardPage.tsx",
     "platforms": {},
     "anatomy": "Alta de unidad en tres pasos —vehículo, conductor, confirmación— con validación por paso y resumen final.",
     "tokens": [],
@@ -8396,7 +8397,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "pages/DashboardPage.tsx",
     "platforms": {},
     "anatomy": "Todos comparten: fila de 4 KPIs (valor mono + delta + sparkline) → chart principal (Bars/Line) → tabla o lista de detalle → filtro de rango temporal. Recomendacion por dashboard — Overview: unidades activas, viajes, ingreso, alertas + tendencia general. Combustible: gasto total, $/km, litros, precio promedio pagado + consumo por unidad (outliers accent) + transacciones. Mantenimiento: unidades en taller, costo mes, proximos servicios (DatePicker/tabla con vencimientos), tiempo medio de reparacion. Electromovilidad: kWh cargados, costo/kWh vs $/litro equivalente, CO2 evitado, autonomia media, sesiones de carga por estacion. Peaje: gasto por caseta, cruces, unidades con tag por vencer, disputas. Finanzas: ingreso vs costo (combustible+peaje+mantenimiento), margen por unidad, proyeccion, export.",
     "tokens": [],
@@ -8429,7 +8430,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "",
+    "src": "pages/OnboardingPage.tsx",
     "platforms": {},
     "anatomy": "Wizard de 4 pasos sobre el shell de auth: empresa → verifica correo (codigo) → invita a tu equipo (emails multiples) → agrega tu primera unidad (reusa wizard) → dashboard con empty states guiados.",
     "tokens": [],
@@ -8460,7 +8461,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/onboarding-driver/index.html",
+    "src": "pages/mobile/OnboardingDriverScreen.tsx",
     "platforms": {},
     "anatomy": "Dos journeys de alta en marco iPhone: datos personales, documentos y verificación, con OTP y biométricos al final.",
     "tokens": [],
@@ -8493,7 +8494,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/wallet/index.html",
+    "src": "pages/mobile/WalletAppScreen.tsx",
     "platforms": {},
     "anatomy": "Saldo arriba, carrusel de PaymentCard, y lista de TransactionRow agrupada por día.",
     "tokens": [],
@@ -8526,7 +8527,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/wallet/index.html",
+    "src": "pages/mobile/CardDetailScreen.tsx",
     "platforms": {},
     "anatomy": "PaymentCard grande con quick actions —congelar, límites, ver NIP— y movimientos de esa tarjeta abajo.",
     "tokens": [],
@@ -8559,7 +8560,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/rutas/index.html",
+    "src": "pages/mobile/RutasScreen.tsx",
     "platforms": {},
     "anatomy": "MapCanvas con pines de precio de estaciones y BottomSheet con el detalle de la estación seleccionada.",
     "tokens": [],
@@ -8592,7 +8593,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/config/index.html",
+    "src": "pages/ConfigRolesPage.tsx",
     "platforms": {},
     "anatomy": "RoleMatrix de permisos por rol más alta y baja de usuarios en tabla, con Drawer de invitación.",
     "tokens": [],
@@ -8625,7 +8626,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/auth-otp/index.html",
+    "src": "pages/mobile/AuthOTPScreen.tsx",
     "platforms": {},
     "anatomy": "Ingreso con OTPInput, PasscodeKeypad y BiometricPrompt, con fallback entre los tres.",
     "tokens": [],
@@ -8666,7 +8667,7 @@
       "input-amount",
       "input-phone"
     ],
-    "src": "",
+    "src": "primitives/ControlShell.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [],
@@ -8697,7 +8698,7 @@
       "menu",
       "chart-kanban"
     ],
-    "src": "",
+    "src": "primitives/OverlayShell.tsx",
     "platforms": {},
     "anatomy": "",
     "tokens": [],
@@ -8723,7 +8724,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/QuickAction.jsx",
+    "src": "components/QuickAction.tsx",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -8820,7 +8821,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "ui_kits/internal-tools/index.html",
+    "src": "pages/internal-tools/ITResumenPage.tsx",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -8860,7 +8861,7 @@
       "global-search",
       "notification-center"
     ],
-    "src": "primitives/shells/Popover.jsx",
+    "src": "primitives/Popover.tsx",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -8998,7 +8999,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "patterns/ChargeSession.jsx",
+    "src": "",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -9093,7 +9094,7 @@
   },
   "data-grid": {
     "name": "DataGrid",
-    "layer": "primitives",
+    "layer": "components",
     "status": "beta",
     "summary": "La mecanica de una tabla: columnas, header sticky, zebra por token, seleccion, orden y celda editable.",
     "fn": [
@@ -9111,7 +9112,7 @@
       "bulk-actions-pattern",
       "filters-inline-edit"
     ],
-    "src": "primitives/shells/DataGrid.jsx",
+    "src": "components/DataGrid.tsx",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -9174,7 +9175,7 @@
       "global-search",
       "country-select-pattern"
     ],
-    "src": "primitives/shells/Listbox.jsx",
+    "src": "primitives/Listbox.tsx",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -9244,7 +9245,7 @@
       "radio",
       "switch"
     ],
-    "src": "primitives/shells/ToggleControl.jsx",
+    "src": "primitives/ToggleControl.tsx",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -9306,7 +9307,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/List.jsx",
+    "src": "",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -9419,7 +9420,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/QrScanner.jsx",
+    "src": "",
     "platforms": {
       "web": "reference",
       "angular": "n/a",
@@ -11234,7 +11235,7 @@
   },
   "section-bar": {
     "name": "SectionBar",
-    "layer": "components",
+    "layer": "primitives",
     "status": "stable",
     "summary": "Barra sticky de 52px para tabs y controles debajo del hero. Blur y opacidad parcial.",
     "fn": [
@@ -11245,7 +11246,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/SectionBar.tsx",
+    "src": "primitives/SectionBar.tsx",
     "platforms": {
       "web": "adopted"
     },
@@ -11425,7 +11426,7 @@
   },
   "limit-bar": {
     "name": "LimitBar",
-    "layer": "components",
+    "layer": "primitives",
     "status": "stable",
     "summary": "Barra de progreso con label y valores current/max. Para limites de gasto o cuotas.",
     "fn": [
@@ -11436,7 +11437,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/LimitBar.tsx",
+    "src": "primitives/LimitBar.tsx",
     "platforms": {
       "web": "adopted"
     },
@@ -11638,7 +11639,7 @@
   },
   "route-banner": {
     "name": "RouteBanner",
-    "layer": "components",
+    "layer": "patterns",
     "status": "stable",
     "summary": "Banner de ruta activa con icono, titulo, subtitulo y cierre. Flota sobre el mapa.",
     "fn": [
@@ -11649,7 +11650,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "components/RouteBanner.tsx",
+    "src": "patterns/RouteBanner.tsx",
     "platforms": {
       "web": "adopted"
     },
@@ -11783,7 +11784,7 @@
   },
   "card-carousel": {
     "name": "CardCarousel",
-    "layer": "patterns",
+    "layer": "components",
     "status": "stable",
     "summary": "Carrusel horizontal de cards con scroll snap, dots de navegacion y control de indice.",
     "fn": [
@@ -11794,7 +11795,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "patterns/CardCarousel.tsx",
+    "src": "components/CardCarousel.tsx",
     "platforms": {
       "web": "adopted"
     },
@@ -12171,7 +12172,7 @@
   },
   "quick-action-bar": {
     "name": "QuickActionBar",
-    "layer": "patterns",
+    "layer": "components",
     "status": "stable",
     "summary": "Barra horizontal de acciones rapidas (QuickAction). Contenedor flex con scroll horizontal.",
     "fn": [
@@ -12182,7 +12183,7 @@
     "stub": false,
     "stubNote": "",
     "shellOf": [],
-    "src": "patterns/QuickActionBar.tsx",
+    "src": "components/QuickActionBar.tsx",
     "platforms": {
       "web": "adopted"
     },
