@@ -29,22 +29,24 @@ const PLATFORM_LABELS: Record<string, string> = {
   flutter: 'Flutter',
 }
 
-/* El estado por plataforma sale tal cual del contrato — nunca se infiere ni se escala. */
+/* Escala oficial de madurez (contract-truth la valida en CI):
+   stable | beta | planned | spec | n/a | deprecated.
+   spec = receta aplicable sin implementación propia. */
 const STATUS_LABELS: Record<string, string> = {
-  reference: 'reference',
   stable: 'stable',
   beta: 'beta',
-  alpha: 'alpha',
   planned: 'planned',
+  spec: 'spec',
   proposed: 'proposed',
-  ready: 'ready',
+  deprecated: 'deprecated',
   'n/a': 'n/a',
 }
 
 function platformTone(status: string): 'success' | 'warning' | 'danger' | 'info' | undefined {
-  if (status === 'stable' || status === 'ready') return 'success' as const
+  if (status === 'stable') return 'success' as const
   if (status === 'beta') return 'warning' as const
-  if (status === 'reference' || status === 'planned' || status === 'alpha' || status === 'proposed') return 'info' as const
+  if (status === 'planned' || status === 'spec' || status === 'proposed') return 'info' as const
+  if (status === 'deprecated') return 'danger' as const
   return undefined
 }
 

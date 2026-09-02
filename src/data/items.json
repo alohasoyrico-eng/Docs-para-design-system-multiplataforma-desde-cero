@@ -14,9 +14,9 @@
     "shellOf": [],
     "src": "primitives/TabBar.tsx",
     "platforms": {
-      "web": "reference",
-      "angular": "reference",
-      "flutter": "reference"
+      "web": "beta",
+      "angular": "spec",
+      "flutter": "beta"
     },
     "anatomy": "Barra sticky al fondo con safe-area inferior. Cada item: icono (outline/fill segun estado) + label 10.5px. El activo escala 1.12 el icono y toma --text-accent.",
     "tokens": [
@@ -90,9 +90,9 @@
     "shellOf": [],
     "src": "primitives/CircularProgress.tsx",
     "platforms": {
-      "web": "reference",
-      "angular": "reference",
-      "flutter": "reference"
+      "web": "beta",
+      "angular": "spec",
+      "flutter": "beta"
     },
     "anatomy": "",
     "tokens": [
@@ -193,9 +193,9 @@
     "shellOf": [],
     "src": "primitives/Timeline.tsx",
     "platforms": {
-      "web": "reference",
-      "angular": "reference",
-      "flutter": "reference"
+      "web": "beta",
+      "angular": "spec",
+      "flutter": "beta"
     },
     "anatomy": "Columna de nodos circulares conectados por una linea vertical + bloque de titulo/timestamp/descripcion por evento.",
     "tokens": [
@@ -255,9 +255,9 @@
     "shellOf": [],
     "src": "primitives/StatusView.tsx",
     "platforms": {
-      "web": "reference",
-      "angular": "reference",
-      "flutter": "reference"
+      "web": "beta",
+      "angular": "spec",
+      "flutter": "beta"
     },
     "anatomy": "Circulo de icono (con anillo girando en loading) + titulo + descripcion + hasta 2 acciones apiladas.",
     "tokens": [
@@ -776,15 +776,6 @@
         "r": false,
         "rw": "",
         "note": ""
-      },
-      {
-        "n": "onSettings",
-        "k": "event",
-        "t": "() => void",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": "En la firma de TopBar.jsx y sin uso en el cuerpo. No lo declara contracts/topbar.json. Prop muerta: se retira aguas arriba."
       }
     ],
     "dos": [
@@ -1403,15 +1394,6 @@
         "note": "Renderiza <button>, lift al hover"
       },
       {
-        "n": "selected",
-        "k": "prop",
-        "t": "boolean",
-        "d": "false",
-        "r": false,
-        "rw": "",
-        "note": "Borde accent"
-      },
-      {
         "n": "padding",
         "k": "prop",
         "t": "string|number",
@@ -1428,24 +1410,6 @@
         "r": false,
         "rw": "Solo con interactive",
         "note": "Solo con interactive"
-      },
-      {
-        "n": "variant",
-        "k": "prop",
-        "t": "'default' | 'minimal' | 'elevated' | 'ghost'",
-        "d": "'default'",
-        "r": false,
-        "rw": "",
-        "note": "Leido de la firma de Card.jsx. Las variantes se documentan aquí, no como ítems aparte"
-      },
-      {
-        "n": "accent",
-        "k": "prop",
-        "t": "string",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": "Color del borde en la variante elevated"
       },
       {
         "n": "surface",
@@ -3084,15 +3048,6 @@
         "note": "Color base de la serie"
       },
       {
-        "n": "highlightMax",
-        "k": "prop",
-        "t": "boolean",
-        "d": "true",
-        "r": false,
-        "rw": "",
-        "note": "La máxima en accent"
-      },
-      {
         "n": "format",
         "k": "renderProp",
         "t": "(v)=>string",
@@ -3303,15 +3258,6 @@
         "note": "MM/AA"
       },
       {
-        "n": "width",
-        "k": "prop",
-        "t": "number",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": "El alto sale de la proporción"
-      },
-      {
         "n": "onClick",
         "k": "event",
         "t": "() => void",
@@ -3462,7 +3408,7 @@
     "shellOf": [],
     "src": "components/MapCanvas.tsx",
     "platforms": {},
-    "anatomy": "Tiles de OpenStreetMap con pines de precio y ruta punteada en accent. La atribución «© OpenStreetMap» va abajo a la derecha y es <b>obligatoria por licencia</b>.",
+    "anatomy": "Tiles de OpenStreetMap con pines de precio y ruta punteada en accent. La atribución «© OpenStreetMap» va abajo a la derecha y es <b>obligatoria por licencia</b>. Dimensiona por su contenedor (ResizeObserver): dale altura al wrapper, no al componente.",
     "tokens": [],
     "variants": [],
     "members": [
@@ -3494,15 +3440,6 @@
         "note": ""
       },
       {
-        "n": "selectedId",
-        "k": "prop",
-        "t": "—",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": ""
-      },
-      {
         "n": "onPinClick",
         "k": "event",
         "t": "(pin) => void",
@@ -3519,33 +3456,6 @@
         "r": false,
         "rw": "",
         "note": "Punteada"
-      },
-      {
-        "n": "dark",
-        "k": "prop",
-        "t": "boolean",
-        "d": "false",
-        "r": false,
-        "rw": "",
-        "note": "Set de tiles, no tema"
-      },
-      {
-        "n": "height",
-        "k": "prop",
-        "t": "string | number",
-        "d": "",
-        "r": true,
-        "rw": "",
-        "note": "Requerido"
-      },
-      {
-        "n": "width",
-        "k": "prop",
-        "t": "string",
-        "d": "'100%'",
-        "r": false,
-        "rw": "",
-        "note": ""
       }
     ],
     "dos": [
@@ -3700,15 +3610,6 @@
         "r": false,
         "rw": "",
         "note": "Clic en un nodo"
-      },
-      {
-        "n": "width",
-        "k": "prop",
-        "t": "number | string",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": "Se ignora a propósito: viene de la era SVG y el chart es responsivo"
       }
     ],
     "dos": [
@@ -3907,15 +3808,6 @@
         "r": false,
         "rw": "",
         "note": ""
-      },
-      {
-        "n": "width",
-        "k": "prop",
-        "t": "number | string",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": "Se ignora a propósito: viene de la era SVG y el chart es responsivo"
       }
     ],
     "dos": [
@@ -4389,15 +4281,6 @@
         "k": "event",
         "t": "() => void",
         "d": "",
-        "r": false,
-        "rw": "",
-        "note": ""
-      },
-      {
-        "n": "align",
-        "k": "prop",
-        "t": "'right' | 'left'",
-        "d": "'right'",
         "r": false,
         "rw": "",
         "note": ""
@@ -5146,7 +5029,7 @@
     "name": "Button",
     "layer": "primitives",
     "status": "",
-    "summary": "La accion con texto. Pill, feedback de resorte, 5 variantes y 3 tamanos.",
+    "summary": "La accion con texto. Pill, feedback de resorte, 4 variantes y 3 tamanos.",
     "fn": [
       "actions"
     ],
@@ -5157,9 +5040,9 @@
     "shellOf": [],
     "src": "primitives/Button.tsx",
     "platforms": {
-      "web": "reference",
-      "angular": "reference",
-      "flutter": "reference"
+      "web": "beta",
+      "angular": "spec",
+      "flutter": "beta"
     },
     "anatomy": "Contenedor pill + icono opcional (leading/trailing) + label. Estado loading sustituye el icono por spinner y bloquea el click sin cambiar el ancho.",
     "tokens": [
@@ -6515,15 +6398,6 @@
         "r": false,
         "rw": "",
         "note": "Color de la barra"
-      },
-      {
-        "n": "size",
-        "k": "prop",
-        "t": "'sm' | 'md'",
-        "d": "'md'",
-        "r": false,
-        "rw": "",
-        "note": "Grosor"
       }
     ],
     "dos": [
@@ -6559,9 +6433,9 @@
     "shellOf": [],
     "src": "primitives/Divider.tsx",
     "platforms": {
-      "web": "reference",
-      "angular": "reference",
-      "flutter": "reference"
+      "web": "beta",
+      "angular": "spec",
+      "flutter": "beta"
     },
     "anatomy": "",
     "tokens": [
@@ -6897,15 +6771,6 @@
         "note": "Glifo Material Symbols, leading"
       },
       {
-        "n": "size",
-        "k": "prop",
-        "t": "'sm' | 'md' | 'lg'",
-        "d": "'md'",
-        "r": false,
-        "rw": "",
-        "note": "38 / 46 / 54px"
-      },
-      {
         "n": "disabled",
         "k": "prop",
         "t": "boolean",
@@ -6919,15 +6784,6 @@
         "k": "prop",
         "t": "boolean",
         "d": "false",
-        "r": false,
-        "rw": "",
-        "note": ""
-      },
-      {
-        "n": "emptyLabel",
-        "k": "prop",
-        "t": "string",
-        "d": "'Sin resultados'",
         "r": false,
         "rw": "",
         "note": ""
@@ -8726,9 +8582,9 @@
     "shellOf": [],
     "src": "components/QuickAction.tsx",
     "platforms": {
-      "web": "reference",
+      "web": "beta",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "beta"
     },
     "anatomy": "",
     "tokens": [
@@ -8823,7 +8679,7 @@
     "shellOf": [],
     "src": "pages/internal-tools/ITResumenPage.tsx",
     "platforms": {
-      "web": "reference",
+      "web": "beta",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -8863,7 +8719,7 @@
     ],
     "src": "primitives/Popover.tsx",
     "platforms": {
-      "web": "reference",
+      "web": "beta",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9001,9 +8857,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9114,7 +8970,7 @@
     ],
     "src": "components/DataGrid.tsx",
     "platforms": {
-      "web": "reference",
+      "web": "beta",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9177,7 +9033,7 @@
     ],
     "src": "primitives/Listbox.tsx",
     "platforms": {
-      "web": "reference",
+      "web": "beta",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9202,15 +9058,6 @@
         "n": "value",
         "k": "prop",
         "t": "string | string[]",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": ""
-      },
-      {
-        "n": "onSelect",
-        "k": "event",
-        "t": "(value: string) => void",
         "d": "",
         "r": false,
         "rw": "",
@@ -9247,7 +9094,7 @@
     ],
     "src": "primitives/ToggleControl.tsx",
     "platforms": {
-      "web": "reference",
+      "web": "beta",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9260,25 +9107,7 @@
     "variants": [],
     "members": [
       {
-        "n": "type",
-        "k": "prop",
-        "t": "'checkbox' | 'radio' | 'switch'",
-        "d": "",
-        "r": true,
-        "rw": "",
-        "note": ""
-      },
-      {
         "n": "checked",
-        "k": "prop",
-        "t": "boolean",
-        "d": "",
-        "r": false,
-        "rw": "",
-        "note": ""
-      },
-      {
-        "n": "indeterminate",
         "k": "prop",
         "t": "boolean",
         "d": "",
@@ -9309,9 +9138,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9422,9 +9251,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9538,7 +9367,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9568,7 +9397,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9596,9 +9425,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9628,7 +9457,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9656,9 +9485,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9688,7 +9517,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9718,7 +9547,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9748,7 +9577,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9776,9 +9605,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9808,7 +9637,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9836,9 +9665,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -9866,7 +9695,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9896,7 +9725,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9926,7 +9755,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9956,7 +9785,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -9986,7 +9815,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -10016,7 +9845,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -10046,9 +9875,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10078,7 +9907,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10106,7 +9935,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -10136,7 +9965,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -10168,7 +9997,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10198,7 +10027,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10228,7 +10057,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10256,9 +10085,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10288,7 +10117,7 @@
     "platforms": {
       "web": "n/a",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10316,9 +10145,9 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
-      "flutter": "reference"
+      "flutter": "spec"
     },
     "anatomy": "",
     "tokens": [],
@@ -10346,7 +10175,7 @@
     "shellOf": [],
     "src": "",
     "platforms": {
-      "web": "reference",
+      "web": "spec",
       "angular": "n/a",
       "flutter": "n/a"
     },
@@ -10376,7 +10205,7 @@
     "shellOf": [],
     "src": "primitives/AutoGrid.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10447,7 +10276,7 @@
     "shellOf": [],
     "src": "primitives/ChipGroup.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10502,7 +10331,7 @@
     "shellOf": [],
     "src": "primitives/DetailRow.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10576,7 +10405,7 @@
     "shellOf": [],
     "src": "primitives/PageFrame.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10650,7 +10479,7 @@
     "shellOf": [],
     "src": "primitives/SectionHeader.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10725,7 +10554,7 @@
     "shellOf": [],
     "src": "primitives/StatusPill.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10793,7 +10622,7 @@
     "shellOf": [],
     "src": "primitives/Calendar.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10904,7 +10733,7 @@
     "shellOf": [],
     "src": "primitives/ChartLegend.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -10967,7 +10796,7 @@
     "shellOf": [],
     "src": "primitives/FlowLogo.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11018,7 +10847,7 @@
     "shellOf": [],
     "src": "primitives/InlineCode.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11073,7 +10902,7 @@
     "shellOf": [],
     "src": "primitives/Specimen.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11145,7 +10974,7 @@
     "shellOf": [],
     "src": "components/CodeBlock.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11248,7 +11077,7 @@
     "shellOf": [],
     "src": "primitives/SectionBar.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11321,7 +11150,7 @@
     "shellOf": [],
     "src": "components/SectionRule.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11385,7 +11214,7 @@
     "shellOf": [],
     "src": "components/FilterBar.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11439,7 +11268,7 @@
     "shellOf": [],
     "src": "primitives/LimitBar.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11514,7 +11343,7 @@
     "shellOf": [],
     "src": "components/NavBar.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11587,7 +11416,7 @@
     "shellOf": [],
     "src": "components/PeekSheet.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11652,7 +11481,7 @@
     "shellOf": [],
     "src": "patterns/RouteBanner.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [
@@ -11733,7 +11562,7 @@
     "shellOf": [],
     "src": "patterns/AnatomyView.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11765,7 +11594,7 @@
     "shellOf": [],
     "src": "patterns/BalanceDisplay.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11797,7 +11626,7 @@
     "shellOf": [],
     "src": "components/CardCarousel.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11830,7 +11659,7 @@
     "shellOf": [],
     "src": "patterns/DocFooter.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11862,7 +11691,7 @@
     "shellOf": [],
     "src": "patterns/DocHero.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11895,7 +11724,7 @@
     "shellOf": [],
     "src": "patterns/DownloadCard.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11927,7 +11756,7 @@
     "shellOf": [],
     "src": "patterns/GuidanceCard.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11959,7 +11788,7 @@
     "shellOf": [],
     "src": "patterns/InstallCard.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -11991,7 +11820,7 @@
     "shellOf": [],
     "src": "patterns/NavCard.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12024,7 +11853,7 @@
     "shellOf": [],
     "src": "patterns/NipReveal.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12057,7 +11886,7 @@
     "shellOf": [],
     "src": "patterns/PageHeader.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12089,7 +11918,7 @@
     "shellOf": [],
     "src": "patterns/PlaygroundCanvas.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12121,7 +11950,7 @@
     "shellOf": [],
     "src": "patterns/ProfileMenu.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12153,7 +11982,7 @@
     "shellOf": [],
     "src": "patterns/ProposalCard.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12185,7 +12014,7 @@
     "shellOf": [],
     "src": "components/QuickActionBar.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12217,7 +12046,7 @@
     "shellOf": [],
     "src": "patterns/StateGrid.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
@@ -12249,7 +12078,7 @@
     "shellOf": [],
     "src": "patterns/TransactionGroup.tsx",
     "platforms": {
-      "web": "adopted"
+      "web": "stable"
     },
     "anatomy": "",
     "tokens": [],
